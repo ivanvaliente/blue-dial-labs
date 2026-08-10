@@ -286,6 +286,10 @@ h2 {
   padding-top: clamp(3.5rem, 6vw, 5.5rem);
 }
 
+.contact-audience-section {
+  padding-top: 0;
+}
+
 .audience-card {
   min-height: 20rem;
 }
@@ -424,13 +428,50 @@ h2 {
 }
 
 @media (max-width: 800px) {
+  .hero,
+  .page-hero,
+  .contact-page-hero {
+    min-height: auto;
+  }
+
+  .hero {
+    padding-block: 4rem;
+  }
+
+  .page-hero {
+    padding-block: 3.75rem;
+  }
+
+  .content-section,
+  .decision-section,
+  .partnership-cta {
+    padding-block: 3.75rem;
+  }
+
+  .feature-card,
+  .feature-card-wide,
+  .definition-grid article {
+    min-height: 0;
+  }
+
   h1,
   .page-hero h1 {
     font-size: clamp(3rem, 12.5vw, 4.5rem);
   }
 }
 
+@media (max-width: 700px) {
+  .audience-card,
+  .contact-audience-section .audience-card {
+    min-height: 0;
+  }
+}
+
 @media (max-width: 560px) {
+  .relationship-grid article {
+    min-height: 0;
+  }
+
   .decision-track-four {
     grid-template-columns: 1fr;
   }
