@@ -218,3 +218,220 @@
   .menu-toggle-lines::before,
   .menu-toggle-lines::after { transition: none; }
 }
+
+/* Visual calibration: tighten rhythm, moderate display scale, improve small-text legibility. */
+.hero {
+  min-height: 40rem;
+  padding-block: clamp(4.5rem, 7vw, 7rem);
+}
+
+h1 {
+  font-size: clamp(3.4rem, 6.2vw, 5.8rem);
+}
+
+h2 {
+  font-size: clamp(2.2rem, 3.6vw, 3.7rem);
+}
+
+.page-hero {
+  min-height: 30rem;
+  padding-block: clamp(4.25rem, 7vw, 6.5rem);
+}
+
+.page-hero h1 {
+  max-width: 14ch;
+  font-size: clamp(3.15rem, 5.5vw, 5rem);
+}
+
+.content-section,
+.decision-section,
+.partnership-cta {
+  padding-block: clamp(4.25rem, 7vw, 6.5rem);
+}
+
+.section-heading {
+  margin-bottom: clamp(2.25rem, 4vw, 3.75rem);
+}
+
+.boundary-callout {
+  margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.boundary-callout h2 {
+  font-size: clamp(1.9rem, 3vw, 3rem);
+}
+
+.principle-statement {
+  font-size: clamp(1.9rem, 3.2vw, 3.05rem);
+}
+
+.contact-inner {
+  padding-block: clamp(3.75rem, 6vw, 5.5rem);
+}
+
+.footer-main {
+  padding-block: 3.5rem;
+}
+
+.contact-page-hero {
+  min-height: 28rem;
+}
+
+.contact-layout {
+  padding-block: clamp(3.75rem, 6vw, 5.75rem);
+}
+
+.audience-section {
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.audience-card {
+  min-height: 20rem;
+}
+
+.contact-audience-section .audience-card {
+  min-height: 18rem;
+}
+
+.audience-card h3 {
+  font-size: clamp(1.9rem, 3.1vw, 2.8rem);
+  line-height: 1.04;
+}
+
+.feature-card {
+  min-height: 20rem;
+}
+
+.feature-card-wide {
+  min-height: 17.5rem;
+}
+
+.definition-grid article {
+  min-height: 16.5rem;
+}
+
+.definition-grid h3 {
+  margin-top: 3.25rem;
+}
+
+.relationship-grid article {
+  min-height: 16rem;
+}
+
+.disclosure-principle .section-shell {
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.disclosure-principle blockquote {
+  font-size: clamp(2rem, 3.8vw, 3.5rem);
+}
+
+.partner-neutrality-callout {
+  margin-top: clamp(3.5rem, 6vw, 5.5rem);
+  margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.collector-brief-copy h3 {
+  font-size: clamp(1.9rem, 3.4vw, 2.85rem);
+  line-height: 1.04;
+}
+
+.lifecycle-track span {
+  font-size: clamp(1.7rem, 2.7vw, 2.5rem);
+}
+
+.primary-nav {
+  font-size: 0.73rem;
+}
+
+.panel-topline,
+.stage-number,
+.card-index,
+.reference-path span,
+.reference-path strong,
+.quiet-list,
+.cta-addresses a > span:first-child,
+.updated-date,
+.footer-nav-group p {
+  font-size: 0.7rem;
+}
+
+.footer-bottom {
+  font-size: 0.68rem;
+}
+
+.decision-track small {
+  font-size: 0.78rem;
+}
+
+.identity-stack p,
+.form-note,
+.form-status,
+.mock-match-panel ul {
+  font-size: 0.86rem;
+}
+
+.mock-offer-heading p:last-child {
+  font-size: 0.88rem;
+}
+
+.collector-brief-topline,
+.collector-brief-specs dt,
+.mock-offer-topline,
+.mock-offer-price span,
+.mock-offer-specs dt,
+.mock-match-panel > p,
+.mock-offer-action span {
+  font-size: 0.68rem;
+}
+
+.decision-track-four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.promise-commitments {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.promise-commitments article,
+.promise-commitments article:nth-child(odd),
+.promise-commitments article:nth-child(even) {
+  grid-template-columns: 2.5rem 1fr;
+  padding: 1.75rem 1.35rem;
+  border-right: 1px solid var(--line);
+}
+
+.promise-commitments article:last-child {
+  border-right: 0;
+}
+
+@media (max-width: 860px) {
+  .promise-commitments {
+    grid-template-columns: 1fr;
+  }
+
+  .promise-commitments article,
+  .promise-commitments article:nth-child(odd),
+  .promise-commitments article:nth-child(even) {
+    padding-inline: 0;
+    border-right: 0;
+  }
+
+  .decision-track-four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  h1,
+  .page-hero h1 {
+    font-size: clamp(3rem, 12.5vw, 4.5rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .decision-track-four {
+    grid-template-columns: 1fr;
+  }
+}
