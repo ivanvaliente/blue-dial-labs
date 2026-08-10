@@ -1,6 +1,6 @@
 # Standard Time Labs corporate website
 
-Static corporate website currently published at [ivanvaliente.github.io/standard-time-labs](https://ivanvaliente.github.io/standard-time-labs/). `standardtimelabs.com` remains the intended custom domain. The site is intentionally dependency-light: semantic HTML, shared CSS, a small vanilla JavaScript file for navigation and local email composition, no JavaScript framework, no database, no analytics, and no cookie-dependent technology.
+Static corporate website published at [www.standardtimelabs.com](https://www.standardtimelabs.com/). The site is intentionally dependency-light: semantic HTML, shared CSS, a small vanilla JavaScript file for navigation and local email composition, no JavaScript framework, no database, no analytics, and no cookie-dependent technology.
 
 ## Scope
 
@@ -14,24 +14,23 @@ From the repository root:
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000/`. The regular pages use relative asset and navigation paths so the same markup works under the GitHub Pages project path and, later, at the custom-domain root. Use an HTTP preview when testing clean directory routes and custom 404 behavior.
+Then open `http://localhost:8000/`. The regular pages use relative asset and navigation paths so the same markup works in local HTTP previews and at the custom-domain root. Use an HTTP preview when testing clean directory routes and custom 404 behavior.
 
 ## Current GitHub Pages deployment
 
 The public repository is `ivanvaliente/standard-time-labs`. GitHub Pages deploys from `main` and `/ (root)` at:
 
-`https://ivanvaliente.github.io/standard-time-labs/`
+`https://www.standardtimelabs.com/`
 
-No `CNAME` file is committed while the site uses the GitHub Pages project URL. Canonical URLs, Open Graph URLs, `robots.txt`, `sitemap.xml`, and the custom 404 paths currently use that deployed URL.
+The committed `CNAME` sets `www.standardtimelabs.com` as the canonical host. The apex address, `https://standardtimelabs.com/`, redirects to `www`. Canonical URLs, Open Graph URLs, `robots.txt`, `sitemap.xml`, and the custom 404 paths all target the custom-domain root.
 
-## Moving to the custom domain
+## Deployment maintenance
 
-1. In GitHub account settings, open **Pages**, add `standardtimelabs.com`, and publish the unique TXT challenge GitHub provides. Keep that verification TXT record in DNS.
-2. In **Repository Settings → Pages**, set the custom domain to `standardtimelabs.com`. GitHub will add or update the root `CNAME` file for branch-based deployment.
-3. Update canonical URLs, Open Graph URLs, `robots.txt`, `sitemap.xml`, and the absolute paths in `404.html` from the project URL to `https://standardtimelabs.com/`.
-4. Add the web DNS records below while preserving all Microsoft 365 mail and verification records.
-5. Wait for GitHub's DNS check and certificate provisioning, then enable **Enforce HTTPS**.
-6. Confirm that `https://standardtimelabs.com/` loads and that `https://www.standardtimelabs.com/` redirects to the apex host.
+1. Keep the repository Pages source set to `main` and `/ (root)`.
+2. Keep `CNAME` set to `www.standardtimelabs.com`.
+3. Preserve the web DNS records below alongside all Microsoft 365 mail and verification records.
+4. Keep **Enforce HTTPS** enabled in the repository Pages settings.
+5. After deployment changes, confirm that `https://www.standardtimelabs.com/` loads and that `https://standardtimelabs.com/` redirects to `www`.
 
 ## DNS records
 
@@ -49,7 +48,7 @@ Create these web records at the DNS provider. The four IPv4 records are required
 | `AAAA` | `@` | `2606:50c0:8003::153` |
 | `CNAME` | `www` | `ivanvaliente.github.io` |
 
-The `www` CNAME must point directly to `ivanvaliente.github.io`, not to the repository path and not to `standardtimelabs.com`. Because the site's configured custom domain is the apex, GitHub Pages will redirect the correctly configured `www` host to `standardtimelabs.com`.
+The `www` DNS CNAME must point directly to `ivanvaliente.github.io`, not to the repository path and not to `standardtimelabs.com`. Because the site's configured custom domain is `www.standardtimelabs.com`, GitHub Pages redirects the correctly configured apex host to `www`.
 
 ### Do not disturb email DNS
 
