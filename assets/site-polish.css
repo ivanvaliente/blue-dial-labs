@@ -83,16 +83,10 @@
 }
 
 @media (max-width: 800px) {
-  .nav-shell,
-  @media (max-width: 560px) {
-    .nav-shell {
-      grid-template-columns: 1fr auto;
-    }
-  }
-
   .nav-shell {
     min-height: 4.75rem;
     grid-template-columns: 1fr auto;
+    row-gap: 0;
     padding-block: 0.85rem;
   }
 
@@ -124,6 +118,12 @@
 
   .primary-nav a[aria-current="page"]::after {
     display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav-shell {
+    grid-template-columns: 1fr auto;
   }
 }
 
