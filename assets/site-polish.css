@@ -82,7 +82,7 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 960px) {
   .nav-shell {
     min-height: 4.75rem;
     grid-template-columns: 1fr auto;
