@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://standardtimelabs.com/sitemap.xml
+Sitemap: https://ivanvaliente.github.io/standard-time-labs/sitemap.xml
