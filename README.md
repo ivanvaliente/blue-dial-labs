@@ -1,10 +1,10 @@
 # Standard Time Labs corporate website
 
-Static corporate website currently published at [ivanvaliente.github.io/standard-time-labs](https://ivanvaliente.github.io/standard-time-labs/). `standardtimelabs.com` remains the intended custom domain. The site is intentionally dependency-free: semantic HTML, one shared stylesheet, no JavaScript framework, no database, no analytics, and no cookie-dependent technology.
+Static corporate website currently published at [ivanvaliente.github.io/standard-time-labs](https://ivanvaliente.github.io/standard-time-labs/). `standardtimelabs.com` remains the intended custom domain. The site is intentionally dependency-light: semantic HTML, shared CSS, a small vanilla JavaScript file for navigation and local email composition, no JavaScript framework, no database, no analytics, and no cookie-dependent technology.
 
 ## Scope
 
-This is a pre-launch corporate credibility site. It does not provide Watch Collector OS application functionality, accounts, search, price aggregation, live integrations, affiliate links, ecommerce, or collector-data intake.
+This is a pre-launch corporate credibility site. It does not provide Watch Collector OS application functionality, accounts, search, price aggregation, live integrations, affiliate links, ecommerce, or collector-data intake. The contact form does not submit to a website backend; it prepares an email in the visitor's configured mail application.
 
 ## Local preview
 
@@ -68,7 +68,7 @@ Only remove or replace existing web-facing `A`/`AAAA` records at `@` or an exist
 
 The company and product are described as in development. The site intentionally makes no claim of live coverage, approved integrations, existing partnerships, user traction, trademark ownership, or guaranteed price accuracy.
 
-The privacy notice and commercial disclosure are initial operational copy, not legal advice. They should receive qualified professional review before public launch and again before adding forms, analytics, affiliate links, user accounts, international targeting, or collector-product data processing.
+The privacy notice and commercial disclosure are initial operational copy, not legal advice. They should receive qualified professional review before public launch and again before adding server-side form processing, analytics, affiliate links, user accounts, international targeting, or collector-product data processing.
 
 ## Official deployment references
 
