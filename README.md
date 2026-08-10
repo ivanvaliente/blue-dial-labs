@@ -1,6 +1,6 @@
 # Standard Time Labs corporate website
 
-Static corporate website for [standardtimelabs.com](https://standardtimelabs.com/). The site is intentionally dependency-free: semantic HTML, one shared stylesheet, no JavaScript framework, no database, no analytics, and no cookie-dependent technology.
+Static corporate website currently published at [ivanvaliente.github.io/standard-time-labs](https://ivanvaliente.github.io/standard-time-labs/). `standardtimelabs.com` remains the intended custom domain. The site is intentionally dependency-free: semantic HTML, one shared stylesheet, no JavaScript framework, no database, no analytics, and no cookie-dependent technology.
 
 ## Scope
 
@@ -14,19 +14,24 @@ From the repository root:
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000/`. Root-relative links require a local web server rather than opening the HTML files directly.
+Then open `http://localhost:8000/`. The regular pages use relative asset and navigation paths so the same markup works under the GitHub Pages project path and, later, at the custom-domain root. Use an HTTP preview when testing clean directory routes and custom 404 behavior.
 
-## GitHub Pages deployment
+## Current GitHub Pages deployment
 
-1. Create a public GitHub repository named `standard-time-labs-site` under the `ivanvaliente` account.
-2. Push these files to the `main` branch, with `index.html` and `CNAME` at the repository root.
-3. In **Repository Settings → Pages**, set **Source** to **Deploy from a branch**, then choose `main` and `/ (root)`.
-4. Set the custom domain to `standardtimelabs.com`. The committed `CNAME` file already uses that canonical host.
-5. Add the DNS records below. Preserve all Microsoft 365 mail and verification records.
-6. Wait for GitHub's DNS check and certificate provisioning to complete, then enable **Enforce HTTPS** in Pages settings.
-7. Confirm that `https://standardtimelabs.com/` loads and that `https://www.standardtimelabs.com/` redirects to the apex host.
+The public repository is `ivanvaliente/standard-time-labs`. GitHub Pages deploys from `main` and `/ (root)` at:
 
-GitHub recommends verifying the custom domain before changing DNS. In GitHub account settings, open **Pages**, add `standardtimelabs.com`, and publish the unique TXT challenge GitHub provides. Keep that verification TXT record in DNS.
+`https://ivanvaliente.github.io/standard-time-labs/`
+
+No `CNAME` file is committed while the site uses the GitHub Pages project URL. Canonical URLs, Open Graph URLs, `robots.txt`, `sitemap.xml`, and the custom 404 paths currently use that deployed URL.
+
+## Moving to the custom domain
+
+1. In GitHub account settings, open **Pages**, add `standardtimelabs.com`, and publish the unique TXT challenge GitHub provides. Keep that verification TXT record in DNS.
+2. In **Repository Settings → Pages**, set the custom domain to `standardtimelabs.com`. GitHub will add or update the root `CNAME` file for branch-based deployment.
+3. Update canonical URLs, Open Graph URLs, `robots.txt`, `sitemap.xml`, and the absolute paths in `404.html` from the project URL to `https://standardtimelabs.com/`.
+4. Add the web DNS records below while preserving all Microsoft 365 mail and verification records.
+5. Wait for GitHub's DNS check and certificate provisioning, then enable **Enforce HTTPS**.
+6. Confirm that `https://standardtimelabs.com/` loads and that `https://www.standardtimelabs.com/` redirects to the apex host.
 
 ## DNS records
 
