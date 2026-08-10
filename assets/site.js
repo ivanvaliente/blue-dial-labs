@@ -4,29 +4,29 @@
   const primaryNav = document.querySelector('.primary-nav');
 
   if (navShell && menuToggle && primaryNav) {
-    const closeMenu = () => {
-      navShell.classList.remove('nav-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+    const setMenuState = (isOpen) => {
+      navShell.classList.toggle('nav-open', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
     };
 
     menuToggle.addEventListener('click', () => {
-      const isOpen = navShell.classList.toggle('nav-open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      setMenuState(menuToggle.getAttribute('aria-expanded') !== 'true');
     });
 
     primaryNav.addEventListener('click', (event) => {
-      if (event.target.closest('a')) closeMenu();
+      if (event.target.closest('a')) setMenuState(false);
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        closeMenu();
+      if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+        setMenuState(false);
         menuToggle.focus();
       }
     });
 
     window.addEventListener('resize', () => {
-      if (window.matchMedia('(min-width: 801px)').matches) closeMenu();
+      if (window.matchMedia('(min-width: 801px)').matches) setMenuState(false);
     });
   }
 
