@@ -1,0 +1,64 @@
+(() => {
+  const navShell = document.querySelector('.nav-shell');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const primaryNav = document.querySelector('.primary-nav');
+
+  if (navShell && menuToggle && primaryNav) {
+    const closeMenu = () => {
+      navShell.classList.remove('nav-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navShell.classList.toggle('nav-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    primaryNav.addEventListener('click', (event) => {
+      if (event.target.closest('a')) closeMenu();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeMenu();
+        menuToggle.focus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.matchMedia('(min-width: 801px)').matches) closeMenu();
+    });
+  }
+
+  const contactForm = document.querySelector('[data-mailto-form]');
+  if (!contactForm) return;
+
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!contactForm.reportValidity()) return;
+
+    const data = new FormData(contactForm);
+    const recipient = contactForm.dataset.mailtoForm || 'hello@standardtimelabs.com';
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const organization = String(data.get('organization') || '').trim();
+    const reason = String(data.get('reason') || 'General inquiry').trim();
+    const message = String(data.get('message') || '').trim();
+
+    const subject = `Standard Time Labs — ${reason}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      organization ? `Organization: ${organization}` : null,
+      `Reason: ${reason}`,
+      '',
+      message,
+    ].filter((line) => line !== null).join('\n');
+
+    const status = contactForm.querySelector('.form-status');
+    if (status) status.textContent = 'Opening your email application with this message prefilled…';
+
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+})();
