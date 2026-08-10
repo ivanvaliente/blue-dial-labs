@@ -16,6 +16,8 @@
     <meta name="twitter:description" content="Better evidence for better watch decisions.">
     <meta name="theme-color" content="#f3f0e8">
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/site-polish.css">
+    <script src="assets/site.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -26,14 +28,15 @@
           <span>Standard Time</span>
           <span class="wordmark-labs">Labs</span>
         </a>
-        <nav class="primary-nav" aria-label="Primary navigation">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span class="menu-toggle-lines" aria-hidden="true"></span></button>
+        <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
           <a href="./" aria-current="page">Home</a>
           <a href="approach/">Approach</a>
           <a href="data-partners/">Data &amp; Partners</a>
           <a href="privacy/">Privacy</a>
           <a href="commercial-disclosure/">Disclosure</a>
+          <a href="contact/">Contact</a>
         </nav>
-        <a class="header-contact" href="mailto:hello@standardtimelabs.com">Contact</a>
       </div>
     </header>
 
@@ -194,7 +197,7 @@
           <p>Company</p>
           <a href="approach/">Approach</a>
           <a href="data-partners/">Data &amp; Partners</a>
-          <a href="mailto:hello@standardtimelabs.com">Contact</a>
+          <a href="contact/">Contact</a>
         </div>
         <div class="footer-nav-group">
           <p>Principles</p>
