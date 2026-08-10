@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://standardtimelabs.com/sitemap.xml
