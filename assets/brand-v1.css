@@ -1,4 +1,4 @@
-/* Blue Dial Labs Visual Identity v1.1
+/* Blue Dial Labs Visual Identity v1.2
    Brand layer loaded after the site's structural styles. */
 
 :root {
@@ -31,10 +31,10 @@
   --brand-steel: #8da2b0;
   --brand-blue-light: #a9c4d5;
 
-  /* Secondary accent: warm, material, and intentionally sparse. */
-  --brand-brass: #9b6b33;
-  --brand-brass-dark: #7a5123;
-  --brand-brass-light: #d7b579;
+  /* Secondary accent: warm copper red used only as visual punctuation. */
+  --accent-copper: #b65349;
+  --accent-copper-dark: #8a3e38;
+  --accent-copper-light: #d9958d;
 }
 
 /* Recalibrate hard-coded legacy colors that are not tokenized upstream. */
@@ -50,24 +50,24 @@
 }
 
 .eyebrow-light {
-  color: var(--brand-brass-light);
+  color: var(--accent-copper-light);
 }
 
 .signal-dot {
-  background: var(--brand-brass);
-  box-shadow: 0 0 0 4px rgb(155 107 51 / 14%);
+  background: var(--accent-copper);
+  box-shadow: 0 0 0 4px rgb(182 83 73 / 14%);
 }
 
 .status-line span + span::before {
-  color: var(--brand-brass);
+  color: var(--accent-copper);
 }
 
 .evidence-panel::before {
-  background: var(--brand-brass);
+  background: var(--accent-copper);
 }
 
 .principle-mark {
-  border-color: var(--brand-brass);
+  border-color: var(--accent-copper);
 }
 
 .form-field input:focus,
@@ -128,7 +128,7 @@
   background-color: var(--brand-navy);
 }
 
-/* Keep interactive emphasis blue; brass is visual punctuation, not an action color. */
+/* Keep interactive emphasis blue; copper red is visual punctuation, not an action color. */
 .button-primary:hover {
   border-color: var(--brand-blue-dark);
   background: var(--brand-blue-dark);
