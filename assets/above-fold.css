@@ -1,0 +1,89 @@
+/*
+  Human-first information hierarchy.
+
+  The corporate site deliberately retains detailed diligence content for
+  collectors, partners, technical teams, search engines, and agents. This
+  layer reduces the amount of vertical space consumed before that content
+  begins so a human visitor can understand the page's core proposition and
+  reach supporting evidence without crossing a full-screen cover page.
+*/
+
+.hero {
+  min-height: 38rem;
+  padding-block: clamp(3.75rem, 7vw, 6.25rem);
+}
+
+.page-hero {
+  min-height: 25rem;
+  align-items: center;
+  padding-block: clamp(3.5rem, 6vw, 5.25rem);
+}
+
+.page-hero h1 {
+  font-size: clamp(3.35rem, 5.8vw, 5.5rem);
+}
+
+.hero-intro,
+.page-hero-intro {
+  line-height: 1.55;
+}
+
+.hero-problem {
+  margin-bottom: 0.85rem;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(1.45rem, 2.15vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.hero-human-note {
+  max-width: 43rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.hero-human-note strong {
+  color: var(--ink);
+}
+
+/* Let the substantive section after an interior hero arrive sooner. */
+.page-hero + .content-section,
+.page-hero + .boundary-callout,
+.page-hero + .legal-layout,
+.page-hero + .contact-layout {
+  margin-top: -0.5rem;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .page-hero {
+    min-height: auto;
+    padding-block: 3.25rem;
+  }
+
+  .page-hero {
+    gap: 1.75rem;
+    align-items: start;
+  }
+
+  .hero-problem {
+    font-size: clamp(1.35rem, 5vw, 1.7rem);
+  }
+}
+
+@media (max-width: 620px) {
+  .hero,
+  .page-hero {
+    padding-block: 2.75rem;
+  }
+
+  .hero-human-note {
+    margin-top: 1.25rem;
+  }
+}
