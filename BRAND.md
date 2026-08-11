@@ -1,8 +1,8 @@
-# Blue Dial Labs Visual Identity v1.1
+# Blue Dial Labs Visual Identity v1.2
 
 ## Status
 
-Implemented as the first formal corporate visual system for Blue Dial Labs, with a v1.1 refinement that increases logo prominence and introduces a restrained secondary brass accent.
+Implemented as the first formal corporate visual system for Blue Dial Labs, with a v1.1 refinement that increased logo prominence and a v1.2 refinement that replaces the secondary brass accent with a restrained copper-red accent.
 
 This remains intentionally a focused identity system, not a website redesign. The existing information architecture, page layouts, typography stack, and product/partner messaging remain intact.
 
@@ -27,7 +27,7 @@ The mark is intended to suggest measurement, reference identity, observation, an
 
 The website uses the mark alongside a live-text `Blue Dial` + `LABS` wordmark. Live text remains accessible, responsive, and independent of a licensed logo font.
 
-Visual Identity v1.1 makes the header mark and wordmark moderately larger so the corporate identity reads more clearly without competing with page content. The footer lockup remains intentionally smaller.
+Visual Identity v1.1 made the header mark and wordmark moderately larger so the corporate identity reads more clearly without competing with page content. The footer lockup remains intentionally smaller.
 
 ## Palette
 
@@ -41,9 +41,9 @@ Visual Identity v1.1 makes the header mark and wordmark moderately larger so the
 | Dial blue dark | `#1f5577` | Accessible accent text and hover state |
 | Steel | `#8da2b0` | Secondary technical accent |
 | Blue light | `#a9c4d5` | Blue accent on dark surfaces |
-| Brass | `#9b6b33` | Sparse secondary visual punctuation on light surfaces |
-| Brass dark | `#7a5123` | Darker brass option where text-level contrast is required |
-| Brass light | `#d7b579` | Warm accent on dark navy surfaces |
+| Copper red | `#b65349` | Sparse secondary visual punctuation on light surfaces |
+| Copper red dark | `#8a3e38` | Darker companion where text-level contrast is required |
+| Copper red light | `#d9958d` | Warm accent on dark navy surfaces |
 | Alert orange | `#c86a45` | Reserved for future semantic alerts/actions, not general branding |
 | Alert orange dark | `#9d4b2f` | Dark semantic alert companion |
 
@@ -51,17 +51,17 @@ Visual Identity v1.1 makes the header mark and wordmark moderately larger so the
 
 Blue remains the primary identity and interaction color. Links, active states, emphasis, and the Reference Dial remain blue so the company continues to read unmistakably as Blue Dial Labs.
 
-Brass is a secondary accent only. It exists to add temperature and material contrast without turning the site into a blue-and-gold luxury treatment. Current uses are deliberately limited to small graphical punctuation such as the hero signal dot, evidence-panel rule, status separators, principle marks, and selected labels on dark bands.
+Copper red is a secondary accent only. It exists to add warm chromatic contrast without drifting toward gold, jewelry, or conventional blue-and-gold luxury branding. Current uses are deliberately limited to small graphical punctuation such as the hero signal dot, evidence-panel rule, status separators, principle marks, and selected labels on dark bands.
 
-Do not use brass as the default link color, CTA color, large background field, or broad decorative fill. If brass becomes visually dominant, the system has exceeded the intended accent ratio.
+Do not use copper red as the default link color, CTA color, large background field, or broad decorative fill. If copper red becomes visually dominant, the system has exceeded the intended accent ratio.
 
 The former site's general-purpose orange `signal` identity remains retired. For compatibility with the existing CSS architecture, the legacy `--signal` and `--signal-dark` tokens map to dial blue and dial blue dark.
 
-Orange remains reserved for genuinely exceptional or actionable information such as threshold events, warnings, or market changes rather than routine links and branding.
+Orange remains reserved for genuinely exceptional or actionable information such as threshold events, warnings, or market changes rather than routine links and branding. Because copper red and alert orange occupy nearby warm territory, the future product UI should validate alert semantics in context rather than assuming the current orange alert tokens are final.
 
 ## Typography
 
-Visual Identity v1.1 retains the site's established typography stack:
+Visual Identity v1.2 retains the site's established typography stack:
 
 - editorial serif for major headings;
 - sans serif for body and interface copy;
@@ -74,13 +74,13 @@ Changing typography remains intentionally excluded. The current combination alre
 `assets/site-polish.css` remains the public stylesheet entry point. It imports:
 
 1. `assets/site-polish-base.css` — the pre-refactor polish layer preserved verbatim; and
-2. `assets/brand-v1.css` — the Blue Dial Labs identity layer, currently at visual-system revision v1.1.
+2. `assets/brand-v1.css` — the Blue Dial Labs identity layer, currently at visual-system revision v1.2.
 
 This isolates brand changes from layout behavior and makes refinements easy to review or revert.
 
 ## Explicitly out of scope
 
-Visual Identity v1.1 does not:
+Visual Identity v1.2 does not:
 
 - redesign page layouts;
 - rewrite corporate or product positioning;
