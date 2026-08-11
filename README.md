@@ -1,6 +1,6 @@
-# Standard Time Labs corporate website
+# Blue Dial Labs corporate website
 
-Static corporate website published at [www.standardtimelabs.com](https://www.standardtimelabs.com/). The site is intentionally dependency-light: semantic HTML, shared CSS, a small vanilla JavaScript file for navigation and local email composition, no JavaScript framework, no database, no analytics, and no cookie-dependent technology.
+Static corporate website published at [www.bluediallabs.com](https://www.bluediallabs.com/). The site is intentionally dependency-light: semantic HTML, shared CSS, a small vanilla JavaScript file for navigation and local email composition, no JavaScript framework, no database, no analytics, and no cookie-dependent technology.
 
 ## Scope
 
@@ -20,21 +20,22 @@ Then open `http://localhost:8000/`. The regular pages use relative asset and nav
 
 The public repository is `ivanvaliente/standard-time-labs`. GitHub Pages deploys from `main` and `/ (root)` at:
 
-`https://www.standardtimelabs.com/`
+`https://www.bluediallabs.com/`
 
-The committed `CNAME` sets `www.standardtimelabs.com` as the canonical host. The apex address, `https://standardtimelabs.com/`, redirects to `www`. Canonical URLs, Open Graph URLs, `robots.txt`, `sitemap.xml`, and the custom 404 paths all target the custom-domain root.
+The committed `CNAME` sets `www.bluediallabs.com` as the canonical host. The apex address, `https://bluediallabs.com/`, should redirect to `www` once the apex and `www` DNS records are fully propagated and HTTPS is available. Canonical URLs, Open Graph URLs, `robots.txt`, `sitemap.xml`, and the custom 404 paths all target the Blue Dial Labs custom-domain root.
 
 ## Deployment maintenance
 
 1. Keep the repository Pages source set to `main` and `/ (root)`.
-2. Keep `CNAME` set to `www.standardtimelabs.com`.
-3. Preserve the web DNS records below alongside all Microsoft 365 mail and verification records.
-4. Keep **Enforce HTTPS** enabled in the repository Pages settings.
-5. After deployment changes, confirm that `https://www.standardtimelabs.com/` loads and that `https://standardtimelabs.com/` redirects to `www`.
+2. Keep `CNAME` set to `www.bluediallabs.com`.
+3. Preserve the Blue Dial Labs web DNS records below alongside all Microsoft 365 mail and verification records.
+4. Keep **Enforce HTTPS** enabled once GitHub makes it available for the custom domain.
+5. After deployment changes, confirm that `https://www.bluediallabs.com/` loads and that `https://bluediallabs.com/` redirects to `www`.
+6. Treat `standardtimelabs.com` as a legacy domain only. Redirect both its apex and `www` host permanently to the corresponding Blue Dial Labs URL; do not configure it as a second GitHub Pages canonical domain.
 
-## DNS records
+## Blue Dial Labs DNS records
 
-Create these web records at the DNS provider. The four IPv4 records are required for the apex when using `A` records; the four IPv6 records are recommended for IPv6 support.
+Create these web records at the DNS provider for `bluediallabs.com`. The four IPv4 records are required for the apex when using `A` records; the four IPv6 records are recommended for IPv6 support.
 
 | Type | Host | Value |
 | --- | --- | --- |
@@ -48,11 +49,22 @@ Create these web records at the DNS provider. The four IPv4 records are required
 | `AAAA` | `@` | `2606:50c0:8003::153` |
 | `CNAME` | `www` | `ivanvaliente.github.io` |
 
-The `www` DNS CNAME must point directly to `ivanvaliente.github.io`, not to the repository path and not to `standardtimelabs.com`. Because the site's configured custom domain is `www.standardtimelabs.com`, GitHub Pages redirects the correctly configured apex host to `www`.
+The `www` DNS CNAME must point directly to `ivanvaliente.github.io`, not to the repository path and not to `bluediallabs.com`. Because the site's configured custom domain is `www.bluediallabs.com`, GitHub Pages redirects the correctly configured Blue Dial Labs apex host to `www`.
+
+## Legacy Standard Time Labs domain
+
+`bluediallabs.com` is the canonical public domain from this migration forward. `standardtimelabs.com` should exist only to protect continuity and redirect existing links or visitors.
+
+DNS records by themselves do not create an HTTP redirect. Configure the legacy domain through the registrar, DNS/edge provider, or another redirect service so both of these permanently redirect to Blue Dial Labs, preferably preserving the request path:
+
+- `https://standardtimelabs.com/...` → `https://www.bluediallabs.com/...`
+- `https://www.standardtimelabs.com/...` → `https://www.bluediallabs.com/...`
+
+Once that redirect service is in place, the legacy domain's web-facing records should point to that redirect service rather than directly to this GitHub Pages site. Keep any legacy mail records that are still intentionally receiving mail during the transition.
 
 ### Do not disturb email DNS
 
-Do not delete or replace existing:
+Do not delete or replace existing mail records simply as part of the website move, including:
 
 - `MX` records for Microsoft 365;
 - the SPF `TXT` record;
@@ -61,7 +73,9 @@ Do not delete or replace existing:
 - Microsoft domain-verification records; or
 - any other mail-specific records.
 
-Only remove or replace existing web-facing `A`/`AAAA` records at `@` or an existing `www` record if they conflict with the GitHub Pages values above. Do not use a wildcard DNS record.
+For `bluediallabs.com`, make sure the equivalent Microsoft 365 mail and verification records are configured before relying on `@bluediallabs.com` addresses publicly. For `standardtimelabs.com`, retain or forward mail for as long as needed during the transition.
+
+Only remove or replace web-facing `A`/`AAAA` records at `@` or an existing `www` record when they conflict with the intended website or redirect configuration. Do not use a wildcard DNS record.
 
 ## Content and legal review
 
