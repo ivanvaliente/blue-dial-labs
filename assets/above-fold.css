@@ -4,13 +4,12 @@
   The corporate site deliberately retains detailed diligence content for
   collectors, partners, technical teams, search engines, and agents. This
   layer reduces the amount of vertical space consumed before that content
-  begins so a human visitor can understand the page's core proposition and
-  reach supporting evidence without crossing a full-screen cover page.
+  begins and gives the first viewport concrete product meaning.
 */
 
 .hero {
-  min-height: 38rem;
-  padding-block: clamp(3.75rem, 7vw, 6.25rem);
+  min-height: 36rem;
+  padding-block: clamp(3.5rem, 6.5vw, 5.75rem);
 }
 
 .page-hero {
@@ -38,18 +37,147 @@
   line-height: 1.2;
 }
 
-.hero-human-note {
-  max-width: 43rem;
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: 0.86rem;
-  line-height: 1.5;
+/* Homepage: make the concrete Pursuit the explanatory visual. */
+.hero-pursuit-card {
+  position: relative;
+  padding: clamp(1.35rem, 2.6vw, 2.15rem);
+  border: 1px solid var(--ink);
+  background: var(--paper-light);
+  box-shadow: 0.85rem 0.85rem 0 var(--paper-deep);
 }
 
-.hero-human-note strong {
-  color: var(--ink);
+.hero-pursuit-card::before {
+  position: absolute;
+  top: -0.36rem;
+  left: 1.8rem;
+  width: 4.5rem;
+  height: 0.36rem;
+  background: var(--brand-brass, var(--signal));
+  content: "";
+}
+
+.hero-pursuit-heading {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: end;
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-pursuit-heading h2 {
+  margin-bottom: 0.25rem;
+  font-family: var(--display);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  letter-spacing: -0.035em;
+}
+
+.hero-pursuit-heading p {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.hero-pursuit-heading .mock-offer-brand {
+  margin-bottom: 0.2rem;
+  color: var(--signal-dark);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-pursuit-price {
+  text-align: right;
+}
+
+.hero-pursuit-price span,
+.hero-pursuit-result span {
+  display: block;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.61rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-pursuit-price strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--display);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.hero-pursuit-criteria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+}
+
+.hero-pursuit-criteria div {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-pursuit-criteria div:nth-child(odd) {
+  padding-right: 1rem;
+  border-right: 1px solid var(--line);
+}
+
+.hero-pursuit-criteria div:nth-child(even) {
+  padding-left: 1rem;
+}
+
+.hero-pursuit-criteria dt {
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+.hero-pursuit-criteria dd {
+  margin: 0.2rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.hero-pursuit-result {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--brand-navy, var(--forest));
+  color: var(--white);
+}
+
+.hero-pursuit-result span {
+  color: var(--brand-blue-light, #c4d0d7);
+}
+
+.hero-pursuit-result strong {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.hero-pursuit-card .panel-caption {
+  margin: 1rem 0 0;
+}
+
+.pursuit-band .principle-inner {
+  padding-block: clamp(2.75rem, 4.5vw, 4rem);
+}
+
+.home-workflow-section {
+  padding-bottom: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.home-workflow-grid article {
+  min-height: 15rem;
+}
+
+.home-workflow-grid h3 {
+  margin-top: 2.75rem;
 }
 
 /* Let the substantive section after an interior hero arrive sooner. */
@@ -75,6 +203,10 @@
   .hero-problem {
     font-size: clamp(1.35rem, 5vw, 1.7rem);
   }
+
+  .hero-pursuit-card {
+    box-shadow: 0.55rem 0.55rem 0 var(--paper-deep);
+  }
 }
 
 @media (max-width: 620px) {
@@ -83,7 +215,18 @@
     padding-block: 2.75rem;
   }
 
-  .hero-human-note {
-    margin-top: 1.25rem;
+  .hero-pursuit-heading,
+  .hero-pursuit-criteria {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-pursuit-price {
+    text-align: left;
+  }
+
+  .hero-pursuit-criteria div:nth-child(odd),
+  .hero-pursuit-criteria div:nth-child(even) {
+    padding-inline: 0;
+    border-right: 0;
   }
 }
