@@ -39,14 +39,14 @@
     if (!contactForm.reportValidity()) return;
 
     const data = new FormData(contactForm);
-    const recipient = contactForm.dataset.mailtoForm || 'hello@standardtimelabs.com';
+    const recipient = contactForm.dataset.mailtoForm || 'hello@bluediallabs.com';
     const name = String(data.get('name') || '').trim();
     const email = String(data.get('email') || '').trim();
     const organization = String(data.get('organization') || '').trim();
     const reason = String(data.get('reason') || 'General inquiry').trim();
     const message = String(data.get('message') || '').trim();
 
-    const subject = `Standard Time Labs — ${reason}`;
+    const subject = `Blue Dial Labs — ${reason}`;
     const body = [
       `Name: ${name}`,
       `Email: ${email}`,
