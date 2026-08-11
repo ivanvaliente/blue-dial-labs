@@ -1,52 +1,87 @@
-# Blue Dial Labs corporate site
+# Blue Dial Labs corporate website
 
-This repository contains the static corporate website for Blue Dial Labs.
+Static corporate website published at [www.bluediallabs.com](https://www.bluediallabs.com/). The site is intentionally dependency-light: semantic HTML, shared CSS, a small vanilla JavaScript file for navigation and local email composition, no JavaScript framework, no database, no analytics, and no cookie-dependent technology.
 
-Production site: `https://www.bluediallabs.com`
+## Scope
 
-## Positioning
+This is a pre-launch corporate credibility site. It does not provide Watch Collector OS application functionality, accounts, search, price aggregation, live integrations, affiliate links, ecommerce, or collector-data intake. The contact form does not submit to a website backend; it prepares an email in the visitor's configured mail application.
 
-Blue Dial Labs is building independent software and data infrastructure for better watch decisions.
+## Local preview
 
-The public product language currently centers on:
+From the repository root:
 
-- **Pursuit** — the watch a collector wants plus the conditions under which they would actually buy it.
-- **Scout** — the intelligence behind a Pursuit: monitoring supported sources, checking identity and offer context, comparing qualifying opportunities, and surfacing changes that may justify action.
-- **How it works** — the public navigation label for the technical approach page at `/approach/`.
+```powershell
+python -m http.server 8000
+```
 
-Commercial relationships may support the business, but they cannot buy ranking, confidence, or a collector-facing recommendation.
+Then open `http://localhost:8000/`. The regular pages use relative asset and navigation paths so the same markup works in local HTTP previews and at the custom-domain root. Use an HTTP preview when testing clean directory routes and custom 404 behavior.
 
-## Site structure
+## Current GitHub Pages deployment
 
-- `/` — homepage
-- `/collectors/` — collector product journey
-- `/data-partners/` — retailer, dealer, marketplace, data, and technology partner journey
-- `/approach/` — how the evidence and decision model works
-- `/about/` — company context and current stage
-- `/contact/` — basic contact and interest flow
-- `/privacy/` — corporate-site privacy notice
-- `/commercial-disclosure/` — independence and commercial disclosure
-- `/data-standards/` — technical identity, source, offer, and evidence conventions
+The public repository is `ivanvaliente/standard-time-labs`. GitHub Pages deploys from `main` and `/ (root)` at:
 
-## Implementation
+`https://www.bluediallabs.com/`
 
-The site is plain static HTML, CSS, and JavaScript designed for GitHub Pages.
+The committed `CNAME` sets `www.bluediallabs.com` as the canonical host. The apex address, `https://bluediallabs.com/`, should redirect to `www` once the apex and `www` DNS records are fully propagated and HTTPS is available. Canonical URLs, Open Graph URLs, `robots.txt`, `sitemap.xml`, and the custom 404 paths all target the Blue Dial Labs custom-domain root.
 
-The contact form does not submit to a server-side database. It composes an email in the visitor's configured mail client. Any future change to server-side form handling must be paired with an explicit privacy and data-handling review.
+## Deployment maintenance
 
-## Visual identity
+1. Keep the repository Pages source set to `main` and `/ (root)`.
+2. Keep `CNAME` set to `www.bluediallabs.com`.
+3. Preserve the Blue Dial Labs web DNS records below alongside all Microsoft 365 mail and verification records.
+4. Keep **Enforce HTTPS** enabled once GitHub makes it available for the custom domain.
+5. After deployment changes, confirm that `https://www.bluediallabs.com/` loads and that `https://bluediallabs.com/` redirects to `www`.
+6. Treat any former corporate domain as redirect-only. Manage that redirect outside this repository rather than configuring it as a second GitHub Pages canonical domain.
 
-The current Blue Dial Labs visual identity is defined by the CSS layers under `assets/`:
+## Blue Dial Labs DNS records
 
-1. `styles.css` — structural base
-2. `site-polish-base.css` — retained pre-brand polish layer
-3. `brand-v1.css` — Blue Dial Labs identity tokens and overrides
-4. `above-fold.css` — commercial-compression and first-viewport hierarchy
+Create these web records at the DNS provider for `bluediallabs.com`. The four IPv4 records are required for the apex when using `A` records; the four IPv6 records are recommended for IPv6 support.
 
-`site-polish.css` is the final stylesheet entry point that imports the layered overrides.
+| Type | Host | Value |
+| --- | --- | --- |
+| `A` | `@` | `185.199.108.153` |
+| `A` | `@` | `185.199.109.153` |
+| `A` | `@` | `185.199.110.153` |
+| `A` | `@` | `185.199.111.153` |
+| `AAAA` | `@` | `2606:50c0:8000::153` |
+| `AAAA` | `@` | `2606:50c0:8001::153` |
+| `AAAA` | `@` | `2606:50c0:8002::153` |
+| `AAAA` | `@` | `2606:50c0:8003::153` |
+| `CNAME` | `www` | `ivanvaliente.github.io` |
 
-## Governance
+The `www` DNS CNAME must point directly to `ivanvaliente.github.io`, not to the repository path and not to `bluediallabs.com`. Because the site's configured custom domain is `www.bluediallabs.com`, GitHub Pages redirects the correctly configured Blue Dial Labs apex host to `www`.
 
-GitHub is the source of truth for this site. Changes should be made on branches and reviewed through pull requests rather than pushed directly to `main` unless repository governance explicitly calls for it.
+## Legacy-domain transition
 
-Do not introduce unsupported claims of traction, integrations, coverage, savings, live inventory, customer counts, or commercial relationships.
+`bluediallabs.com` is the canonical public domain from this migration forward. Any former corporate domain should exist only to protect continuity and redirect existing links or visitors.
+
+DNS records by themselves do not create an HTTP redirect. Configure the former apex and `www` host through the registrar, DNS/edge provider, or another redirect service so they permanently redirect to the corresponding `https://www.bluediallabs.com/...` path, preferably preserving the request path.
+
+Once that redirect service is in place, the former domain's web-facing records should point to that redirect service rather than directly to this GitHub Pages site. Keep any legacy mail records that are still intentionally receiving mail during the transition.
+
+### Do not disturb email DNS
+
+Do not delete or replace existing mail records simply as part of the website move, including:
+
+- `MX` records for Microsoft 365;
+- the SPF `TXT` record;
+- DKIM selector `CNAME` records;
+- the `_dmarc` `TXT` record;
+- Microsoft domain-verification records; or
+- any other mail-specific records.
+
+For `bluediallabs.com`, make sure the equivalent Microsoft 365 mail and verification records are configured before relying on `@bluediallabs.com` addresses publicly. For any legacy domain, retain or forward mail for as long as needed during the transition.
+
+Only remove or replace web-facing `A`/`AAAA` records at `@` or an existing `www` record when they conflict with the intended website or redirect configuration. Do not use a wildcard DNS record.
+
+## Content and legal review
+
+The company and product are described as in development. The site intentionally makes no claim of live coverage, approved integrations, existing partnerships, user traction, trademark ownership, or guaranteed price accuracy.
+
+The privacy notice and commercial disclosure are initial operational copy, not legal advice. They should receive qualified professional review before public launch and again before adding server-side form processing, analytics, affiliate links, user accounts, international targeting, or collector-product data processing.
+
+## Official deployment references
+
+- [Managing a custom domain for GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-github-pages-site)
+- [Securing a GitHub Pages site with HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https)
+- [Verifying a custom domain for GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-github-pages-site/verifying-your-custom-domain-for-github-pages)
