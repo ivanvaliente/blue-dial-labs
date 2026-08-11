@@ -1,4 +1,4 @@
-/* Blue Dial Labs Visual Identity v1
+/* Blue Dial Labs Visual Identity v1.1
    Brand layer loaded after the site's structural styles. */
 
 :root {
@@ -30,6 +30,11 @@
   --brand-navy: #102c3f;
   --brand-steel: #8da2b0;
   --brand-blue-light: #a9c4d5;
+
+  /* Secondary accent: warm, material, and intentionally sparse. */
+  --brand-brass: #9b6b33;
+  --brand-brass-dark: #7a5123;
+  --brand-brass-light: #d7b579;
 }
 
 /* Recalibrate hard-coded legacy colors that are not tokenized upstream. */
@@ -45,11 +50,24 @@
 }
 
 .eyebrow-light {
-  color: var(--brand-blue-light);
+  color: var(--brand-brass-light);
 }
 
 .signal-dot {
-  box-shadow: 0 0 0 4px rgb(45 111 152 / 14%);
+  background: var(--brand-brass);
+  box-shadow: 0 0 0 4px rgb(155 107 51 / 14%);
+}
+
+.status-line span + span::before {
+  color: var(--brand-brass);
+}
+
+.evidence-panel::before {
+  background: var(--brand-brass);
+}
+
+.principle-mark {
+  border-color: var(--brand-brass);
 }
 
 .form-field input:focus,
@@ -68,13 +86,14 @@
 /* Formalize the live-text wordmark with a compact Reference Dial symbol. */
 .wordmark {
   align-items: center;
-  gap: 0.62rem;
+  gap: 0.72rem;
+  font-size: clamp(1.42rem, 2vw, 1.72rem);
   letter-spacing: -0.03em;
 }
 
 .wordmark::before {
-  width: 1.42rem;
-  height: 1.42rem;
+  width: 1.78rem;
+  height: 1.78rem;
   flex: 0 0 auto;
   display: inline-block;
   background: url("./blue-dial-labs-mark.svg") center / contain no-repeat;
@@ -85,9 +104,17 @@
   color: var(--brand-blue-dark);
 }
 
+.footer-wordmark {
+  font-size: 1.14rem;
+}
+
 .footer-wordmark::before {
-  width: 1.18rem;
-  height: 1.18rem;
+  width: 1.28rem;
+  height: 1.28rem;
+}
+
+.footer-wordmark .wordmark-labs {
+  color: var(--brand-blue-light);
 }
 
 /* The dark bands should feel like Blue Dial Labs, not the former forest identity. */
@@ -101,7 +128,7 @@
   background-color: var(--brand-navy);
 }
 
-/* Keep interactive emphasis blue; orange is no longer a general-purpose brand accent. */
+/* Keep interactive emphasis blue; brass is visual punctuation, not an action color. */
 .button-primary:hover {
   border-color: var(--brand-blue-dark);
   background: var(--brand-blue-dark);
