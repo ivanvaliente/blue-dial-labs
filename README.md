@@ -31,7 +31,7 @@ The committed `CNAME` sets `www.bluediallabs.com` as the canonical host. The ape
 3. Preserve the Blue Dial Labs web DNS records below alongside all Microsoft 365 mail and verification records.
 4. Keep **Enforce HTTPS** enabled once GitHub makes it available for the custom domain.
 5. After deployment changes, confirm that `https://www.bluediallabs.com/` loads and that `https://bluediallabs.com/` redirects to `www`.
-6. Treat `standardtimelabs.com` as a legacy domain only. Redirect both its apex and `www` host permanently to the corresponding Blue Dial Labs URL; do not configure it as a second GitHub Pages canonical domain.
+6. Treat any former corporate domain as redirect-only. Manage that redirect outside this repository rather than configuring it as a second GitHub Pages canonical domain.
 
 ## Blue Dial Labs DNS records
 
@@ -51,16 +51,13 @@ Create these web records at the DNS provider for `bluediallabs.com`. The four IP
 
 The `www` DNS CNAME must point directly to `ivanvaliente.github.io`, not to the repository path and not to `bluediallabs.com`. Because the site's configured custom domain is `www.bluediallabs.com`, GitHub Pages redirects the correctly configured Blue Dial Labs apex host to `www`.
 
-## Legacy Standard Time Labs domain
+## Legacy-domain transition
 
-`bluediallabs.com` is the canonical public domain from this migration forward. `standardtimelabs.com` should exist only to protect continuity and redirect existing links or visitors.
+`bluediallabs.com` is the canonical public domain from this migration forward. Any former corporate domain should exist only to protect continuity and redirect existing links or visitors.
 
-DNS records by themselves do not create an HTTP redirect. Configure the legacy domain through the registrar, DNS/edge provider, or another redirect service so both of these permanently redirect to Blue Dial Labs, preferably preserving the request path:
+DNS records by themselves do not create an HTTP redirect. Configure the former apex and `www` host through the registrar, DNS/edge provider, or another redirect service so they permanently redirect to the corresponding `https://www.bluediallabs.com/...` path, preferably preserving the request path.
 
-- `https://standardtimelabs.com/...` → `https://www.bluediallabs.com/...`
-- `https://www.standardtimelabs.com/...` → `https://www.bluediallabs.com/...`
-
-Once that redirect service is in place, the legacy domain's web-facing records should point to that redirect service rather than directly to this GitHub Pages site. Keep any legacy mail records that are still intentionally receiving mail during the transition.
+Once that redirect service is in place, the former domain's web-facing records should point to that redirect service rather than directly to this GitHub Pages site. Keep any legacy mail records that are still intentionally receiving mail during the transition.
 
 ### Do not disturb email DNS
 
@@ -73,7 +70,7 @@ Do not delete or replace existing mail records simply as part of the website mov
 - Microsoft domain-verification records; or
 - any other mail-specific records.
 
-For `bluediallabs.com`, make sure the equivalent Microsoft 365 mail and verification records are configured before relying on `@bluediallabs.com` addresses publicly. For `standardtimelabs.com`, retain or forward mail for as long as needed during the transition.
+For `bluediallabs.com`, make sure the equivalent Microsoft 365 mail and verification records are configured before relying on `@bluediallabs.com` addresses publicly. For any legacy domain, retain or forward mail for as long as needed during the transition.
 
 Only remove or replace web-facing `A`/`AAAA` records at `@` or an existing `www` record when they conflict with the intended website or redirect configuration. Do not use a wildcard DNS record.
 
