@@ -4,6 +4,9 @@
   The pre-brand-refactor polish layer is preserved verbatim as
   site-polish-base.css. Brand v1 is a final cascade layer so the existing
   layout and interaction system remain intact while identity tokens evolve.
+  The commercial-compression layer then tightens first viewports and adds
+  concrete product hierarchy without removing deeper diligence content.
 */
 @import url("./site-polish-base.css");
 @import url("./brand-v1.css");
+@import url("./above-fold.css");
