@@ -1,0 +1,114 @@
+/* Blue Dial Labs Visual Identity v1
+   Brand layer loaded after the site's structural styles. */
+
+:root {
+  /* Existing warm editorial base retained intentionally. */
+  --paper: #f3f0e8;
+  --paper-deep: #e6e6e2;
+  --paper-light: #fbfaf6;
+
+  /* Blue-black replaces the former green ink/foundation. */
+  --ink: #132432;
+  --ink-soft: #52616b;
+  --line: #c9ccd0;
+  --line-dark: #526672;
+
+  /* Existing signal tokens map to the brand blue for compatibility.
+     Reserve orange for future alert/action semantics rather than identity. */
+  --signal: #2d6f98;
+  --signal-dark: #1f5577;
+  --alert: #c86a45;
+  --alert-dark: #9d4b2f;
+
+  /* Legacy forest tokens remain because structural CSS uses them for dark bands. */
+  --forest: #102c3f;
+  --forest-mid: #173e56;
+  --white: #fffdf7;
+
+  --brand-blue: #2d6f98;
+  --brand-blue-dark: #1f5577;
+  --brand-navy: #102c3f;
+  --brand-steel: #8da2b0;
+  --brand-blue-light: #a9c4d5;
+}
+
+/* Recalibrate hard-coded legacy colors that are not tokenized upstream. */
+.site-header {
+  background: rgb(243 240 232 / 95%);
+}
+
+.hero-home::before,
+.page-hero::before {
+  background-image:
+    linear-gradient(rgb(19 36 50 / 6%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(19 36 50 / 6%) 1px, transparent 1px);
+}
+
+.eyebrow-light {
+  color: var(--brand-blue-light);
+}
+
+.signal-dot {
+  box-shadow: 0 0 0 4px rgb(45 111 152 / 14%);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline-color: rgb(45 111 152 / 24%);
+}
+
+.collector-privacy-band > div:last-child > p,
+.lifecycle-track .lifecycle-focus small,
+.mock-offer-action span,
+.partner-section-intro {
+  color: #c4d0d7;
+}
+
+/* Formalize the live-text wordmark with a compact Reference Dial symbol. */
+.wordmark {
+  align-items: center;
+  gap: 0.62rem;
+  letter-spacing: -0.03em;
+}
+
+.wordmark::before {
+  width: 1.42rem;
+  height: 1.42rem;
+  flex: 0 0 auto;
+  display: inline-block;
+  background: url("./blue-dial-labs-mark.svg") center / contain no-repeat;
+  content: "";
+}
+
+.wordmark-labs {
+  color: var(--brand-blue-dark);
+}
+
+.footer-wordmark::before {
+  width: 1.18rem;
+  height: 1.18rem;
+}
+
+/* The dark bands should feel like Blue Dial Labs, not the former forest identity. */
+.principle-band,
+.contact-band,
+.dark-section,
+.disclosure-principle,
+.reference-path strong,
+.lifecycle-track .lifecycle-focus,
+.mock-offer-action {
+  background-color: var(--brand-navy);
+}
+
+/* Keep interactive emphasis blue; orange is no longer a general-purpose brand accent. */
+.button-primary:hover {
+  border-color: var(--brand-blue-dark);
+  background: var(--brand-blue-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wordmark::before {
+    transition: none;
+  }
+}

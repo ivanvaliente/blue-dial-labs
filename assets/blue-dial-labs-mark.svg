@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title desc">
+  <title id="title">Blue Dial Labs reference dial</title>
+  <desc id="desc">A restrained circular dial with reference indices and a blue decision hand.</desc>
+  <circle cx="24" cy="24" r="19" fill="none" stroke="#102c3f" stroke-width="3"/>
+  <path d="M13.6 8.1A19 19 0 0 1 38.8 12.2" fill="none" stroke="#2d6f98" stroke-width="3" stroke-linecap="round"/>
+  <g stroke="#102c3f" stroke-width="2" stroke-linecap="round">
+    <path d="M24 8.5v4"/>
+    <path d="M39.5 24h-4"/>
+    <path d="M24 39.5v-4"/>
+    <path d="M8.5 24h4"/>
+  </g>
+  <path d="M24 24L34 14" fill="none" stroke="#2d6f98" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="24" cy="24" r="3.25" fill="#102c3f"/>
+</svg>
