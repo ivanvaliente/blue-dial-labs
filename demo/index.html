@@ -3,18 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Private Product Demo — Blue Dial Labs</title>
-    <meta name="description" content="A private synthetic product demo showing how Blue Dial Labs can help collectors evaluate watch offers and how partners fit without buying placement.">
+    <title>Collector Product Demo — Blue Dial Labs</title>
+    <meta name="description" content="A private synthetic collector demo for building a Pursuit and seeing how different buying conditions change which watch offer deserves attention.">
     <meta name="robots" content="noindex,nofollow,noarchive">
     <meta name="theme-color" content="#f3f0e8">
     <link rel="stylesheet" href="../assets/styles.css">
     <link rel="stylesheet" href="../assets/site-polish.css">
     <link rel="stylesheet" href="../assets/demo.css">
+    <link rel="stylesheet" href="../assets/interactive-demo.css">
     <script src="../assets/site.js" defer></script>
     <script src="../assets/demo-scenario.js" defer></script>
     <script src="../assets/demo.js" defer></script>
   </head>
-  <body class="demo-page">
+  <body class="demo-page product-demo-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <div class="nav-shell">
@@ -25,185 +26,162 @@
     </header>
 
     <main id="main-content">
-      <section class="section-shell demo-hero">
-        <div class="demo-hero-copy">
-          <p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> Private product demo · pre-launch</p>
-          <h1>Which watch offer is actually worth <em>pursuing?</em></h1>
-          <p class="hero-intro">This synthetic walkthrough shows one collector decision from two perspectives. The same fictional market evidence powers both views: first the collector’s decision, then the partner’s role in earning relevance.</p>
-          <div class="demo-fixture-note" role="note"><strong>Synthetic fixture.</strong> The watch reference is real; every seller, price, policy, availability state, relationship, and market observation shown here is fictional. No live integration or partnership is implied.</div>
+      <section class="section-shell product-demo-hero">
+        <div>
+          <p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> Private collector demo · pre-launch</p>
+          <h1>Build a Pursuit. See what deserves <em>attention.</em></h1>
+          <p class="hero-intro">Change the buying conditions, evaluate the same synthetic market, and watch the decision change. The point is not to find the cheapest listing. It is to find the offer that fits this collector—or decide that none does.</p>
+          <div class="demo-fixture-note" role="note"><strong>Synthetic fixture.</strong> The Tissot reference is real. Every seller, price, policy, availability state, relationship, and market observation is fictional. No live integration, market coverage, or partnership is implied.</div>
         </div>
-        <div class="demo-hero-map" aria-label="Conceptual flow from market offers to collector decision">
-          <div><span>Market offers</span><small>Structured synthetic evidence</small></div>
-          <span class="demo-flow-arrow" aria-hidden="true">↓</span>
-          <div class="demo-flow-core"><span>Blue Dial Labs</span><small>Decision context</small></div>
-          <span class="demo-flow-arrow" aria-hidden="true">↓</span>
-          <div><span>Collector action</span><small>Buy · wait · reject</small></div>
+        <article class="product-demo-watch" aria-label="Watch used in the synthetic demo">
+          <p class="demo-mini-label">Demo reference</p>
+          <p class="mock-offer-brand" data-watch-brand></p>
+          <h2 data-watch-model></h2>
+          <p class="demo-reference">Reference <span data-watch-reference></span></p>
+          <p class="demo-variant" data-watch-variant></p>
+          <div class="product-demo-watch-note"><span>One reference</span><strong>Three synthetic offers</strong></div>
+        </article>
+      </section>
+
+      <section class="product-demo-band">
+        <div class="section-shell product-demo-band-inner">
+          <div><p class="eyebrow eyebrow-light">Collector simulation</p><p>Define → Evaluate → Inspect → Decide</p></div>
+          <p>This is a deterministic product-validation demo, not the production Scout or recommendation engine.</p>
         </div>
       </section>
 
-      <section class="demo-switch-band" aria-label="Demo perspective">
-        <div class="section-shell demo-switch-shell">
-          <div>
-            <p class="eyebrow eyebrow-light">Choose a perspective</p>
-            <p>One scenario. Two sides of the same decision.</p>
+      <section class="section-shell product-demo-workspace">
+        <div class="product-demo-builder" id="pursuit-builder">
+          <div class="product-demo-section-heading">
+            <p class="card-index">01 / Define</p>
+            <div><p class="eyebrow">Your Pursuit</p><h2>What would make this watch worth buying?</h2><p>Use the controls below as the collector's private decision policy. No real collector information is collected or submitted.</p></div>
           </div>
-          <div class="demo-tabs" role="tablist" aria-label="Demo perspective">
-            <button class="demo-tab" id="collector-tab" type="button" role="tab" aria-selected="true" aria-controls="collector-panel" data-demo-perspective="collector">Collector</button>
-            <button class="demo-tab" id="partner-tab" type="button" role="tab" aria-selected="false" aria-controls="partner-panel" data-demo-perspective="partner">Partner</button>
+
+          <form class="product-demo-form" id="demo-pursuit-form">
+            <div class="product-demo-field product-demo-field-wide">
+              <label for="demo-watch">Watch / reference</label>
+              <select id="demo-watch" name="watch" disabled>
+                <option>Tissot PRX Powermatic 80 · T137.407.11.041.00</option>
+              </select>
+              <small>This bounded demo uses one canonical reference.</small>
+            </div>
+
+            <div class="product-demo-field">
+              <label for="demo-max-cost">Maximum Estimated Delivered Cost</label>
+              <div class="product-demo-money-input"><span>$</span><input id="demo-max-cost" name="maximumDeliveredCost" type="number" min="500" max="900" step="5" value="725" inputmode="numeric"></div>
+              <small>A hard ceiling for this demo.</small>
+            </div>
+
+            <div class="product-demo-field">
+              <label for="demo-warranty">Manufacturer warranty</label>
+              <select id="demo-warranty" name="warrantyPolicy">
+                <option value="required">Required</option>
+                <option value="flexible">Flexible for meaningful savings</option>
+                <option value="irrelevant">Not important for this Pursuit</option>
+              </select>
+              <small>Changes whether non-authorized offers can qualify.</small>
+            </div>
+
+            <div class="product-demo-field" data-savings-field>
+              <label for="demo-savings">Savings needed to trade warranty</label>
+              <div class="product-demo-money-input"><span>$</span><input id="demo-savings" name="savingsThreshold" type="number" min="0" max="250" step="5" value="50" inputmode="numeric"></div>
+              <small>Used only when warranty is flexible.</small>
+            </div>
+
+            <div class="product-demo-field">
+              <label for="demo-returns">Minimum return window</label>
+              <select id="demo-returns" name="minimumReturnDays">
+                <option value="7">7 days</option>
+                <option value="14" selected>14 days</option>
+                <option value="21">21 days</option>
+                <option value="30">30 days</option>
+              </select>
+              <small>Offers below this window do not qualify.</small>
+            </div>
+
+            <div class="product-demo-field">
+              <label for="demo-channel">Where you are willing to buy</label>
+              <select id="demo-channel" name="channelPolicy">
+                <option value="any">Retailers or marketplaces</option>
+                <option value="direct">Direct retailer checkout only</option>
+              </select>
+              <small>Marketplace offers remain visible even when excluded.</small>
+            </div>
+
+            <div class="product-demo-form-actions">
+              <button class="button button-primary" type="submit">Evaluate this Pursuit <span aria-hidden="true">→</span></button>
+              <button class="demo-text-button" type="button" data-demo-reset>Reset</button>
+            </div>
+          </form>
+
+          <div class="product-demo-presets" aria-label="Try a decision scenario">
+            <p class="demo-mini-label">Or try a scenario</p>
+            <div>
+              <button type="button" data-demo-preset="warranty">Prioritize manufacturer warranty</button>
+              <button type="button" data-demo-preset="savings">Trade warranty for savings</button>
+              <button type="button" data-demo-preset="wait">Hold out for a lower price</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-demo-results" data-demo-results hidden>
+          <div class="product-demo-section-heading">
+            <p class="card-index">02 / Evaluate</p>
+            <div><p class="eyebrow">Scout result</p><h2>Same market. Different answer.</h2><p data-evaluation-summary aria-live="polite"></p></div>
+          </div>
+
+          <div class="product-demo-offer-grid" id="interactive-demo-offers" aria-live="polite"></div>
+
+          <div class="product-demo-section-heading product-demo-decision-heading">
+            <p class="card-index">03 / Decide</p>
+            <div><p class="eyebrow">Opportunity Decision</p><h2>What deserves action now?</h2><p>The explanation is tied to the conditions you just selected. Change those conditions and evaluate again to get a different result.</p></div>
+          </div>
+
+          <article class="product-demo-decision" aria-live="polite">
+            <div class="demo-decision-topline"><span data-interactive-label></span><span>For this Pursuit</span></div>
+            <div class="product-demo-decision-main">
+              <div>
+                <p class="demo-mini-label" data-interactive-offer-label>Recommended offer</p>
+                <h3 data-interactive-seller></h3>
+                <p data-interactive-seller-type></p>
+              </div>
+              <div class="demo-decision-cost" data-interactive-cost-wrap><span>Estimated Delivered Cost</span><strong data-interactive-cost></strong></div>
+            </div>
+            <p class="demo-decision-summary" data-interactive-summary></p>
+            <div class="demo-reason-grid">
+              <div><p class="demo-mini-label">Why now?</p><ul data-interactive-reasons></ul></div>
+              <div><p class="demo-mini-label">Tradeoffs / why not?</p><ul data-interactive-watchouts></ul></div>
+            </div>
+            <div class="demo-actions" aria-label="Simulated collector actions">
+              <button class="button button-primary" type="button" data-demo-action="view">View Offer <span aria-hidden="true">→</span></button>
+              <button class="button button-secondary" type="button" data-demo-action="wait">Wait</button>
+              <button class="demo-text-button" type="button" data-demo-action="reject">Reject</button>
+            </div>
+            <p class="demo-action-status" data-demo-action-status aria-live="polite"></p>
+          </article>
+
+          <div class="product-demo-edit-row">
+            <button class="button button-secondary" type="button" data-demo-edit>Change the Pursuit</button>
+            <p>Try requiring manufacturer warranty, relaxing it for savings, or lowering the maximum cost until the correct answer becomes Wait.</p>
           </div>
         </div>
       </section>
 
-      <div id="collector-panel" role="tabpanel" aria-labelledby="collector-tab" data-demo-panel="collector">
-        <section class="section-shell content-section demo-section">
-          <div class="demo-step-heading">
-            <p class="card-index">01 / Pursuit</p>
-            <div><p class="eyebrow">Define the decision</p><h2>The collector sets the buying conditions.</h2><p>The target is a canonical watch reference plus the conditions under which this collector would actually buy. The Pursuit stays stable while offers change.</p></div>
+      <section class="dark-section">
+        <div class="section-shell content-section product-demo-boundaries">
+          <div><p class="eyebrow eyebrow-light">What this demo is proving</p><h2>The decision belongs to the collector.</h2></div>
+          <div class="product-demo-boundary-grid">
+            <article><span>01</span><p>Cheapest advertised price does not automatically win.</p></article>
+            <article><span>02</span><p>Collector conditions can change the recommended offer.</p></article>
+            <article><span>03</span><p>No qualifying offer can correctly result in Wait.</p></article>
+            <article><span>04</span><p>Checkout remains with the original seller.</p></article>
           </div>
-          <div class="demo-pursuit-grid">
-            <article class="demo-watch-card">
-              <p class="mock-offer-brand" data-watch-brand></p>
-              <h3 data-watch-model></h3>
-              <p class="demo-reference">Reference <span data-watch-reference></span></p>
-              <p class="demo-variant" data-watch-variant></p>
-              <div class="demo-max-cost"><span>Maximum Estimated Delivered Cost</span><strong data-pursuit-maximum></strong></div>
-            </article>
-            <article class="demo-criteria-card">
-              <div class="demo-criteria-group"><p class="demo-mini-label">Required</p><ul data-pursuit-required></ul></div>
-              <div class="demo-criteria-group"><p class="demo-mini-label">Preferred</p><ul data-pursuit-preferred></ul></div>
-              <p class="demo-private-note"><span aria-hidden="true">◆</span> Synthetic collector criteria are shown here only for the demo. Real Pursuit data is private by default.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="soft-section">
-          <div class="section-shell content-section demo-section">
-            <div class="demo-step-heading">
-              <p class="card-index">02 / Offers</p>
-              <div><p class="eyebrow">Competing evidence</p><h2>Three offers. Three different tradeoffs.</h2><p>Advertised price is only one input. Delivered economics, warranty, returns, seller context, protections, availability, and post-sale support can change the decision.</p></div>
-            </div>
-            <div class="demo-offer-grid" id="demo-offers" aria-live="polite"></div>
-          </div>
-        </section>
-
-        <section class="section-shell content-section demo-section demo-decision-section">
-          <div class="demo-step-heading">
-            <p class="card-index">03 / Decision</p>
-            <div><p class="eyebrow">Opportunity Decision Card</p><h2>Opinionated, explainable, and specific to this collector.</h2><p>Change one collector preference below. The result changes without introducing a universal seller ranking.</p></div>
-          </div>
-
-          <div class="demo-decision-layout">
-            <fieldset class="demo-preference-control">
-              <legend>How important is manufacturer warranty?</legend>
-              <label><input type="radio" name="demo-preference" value="warranty-required" checked><span><strong>Required</strong><small>Manufacturer warranty is a hard buying condition.</small></span></label>
-              <label><input type="radio" name="demo-preference" value="flexible-savings"><span><strong>Flexible for meaningful savings</strong><small>Accept a retailer warranty when the savings are at least $50.</small></span></label>
-              <p class="demo-control-caption">Deterministic demo interaction. This is not the production recommendation engine.</p>
-            </fieldset>
-
-            <article class="demo-decision-card" id="demo-decision-card" aria-live="polite">
-              <div class="demo-decision-topline"><span data-decision-label></span><span>For this Pursuit</span></div>
-              <div class="demo-decision-offer"><div><p class="demo-mini-label">Recommended offer</p><h3 data-decision-seller></h3><p data-decision-seller-type></p></div><div class="demo-decision-cost"><span>Estimated Delivered Cost</span><strong data-decision-cost></strong></div></div>
-              <p class="demo-decision-summary" data-decision-summary></p>
-              <div class="demo-reason-grid">
-                <div><p class="demo-mini-label">Why now?</p><ul data-decision-reasons></ul></div>
-                <div><p class="demo-mini-label">Tradeoffs to inspect</p><ul data-decision-watchouts></ul></div>
-              </div>
-              <div class="demo-actions" aria-label="Illustrative collector actions">
-                <button class="button button-primary" type="button" data-demo-action="view">View Offer <span aria-hidden="true">→</span></button>
-                <button class="button button-secondary" type="button" data-demo-action="wait">Wait</button>
-                <button class="demo-text-button" type="button" data-demo-action="reject">Reject</button>
-              </div>
-              <p class="demo-action-status" data-demo-action-status aria-live="polite">Checkout remains with the original seller.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="dark-section">
-          <div class="section-shell content-section demo-neutrality-band">
-            <div><p class="eyebrow eyebrow-light">Commercial neutrality</p><h2>The seller cannot buy this outcome.</h2></div>
-            <p>Commercial compensation, attribution eligibility, and partner status are outside the synthetic recommendation inputs. A paying source can lose. A non-paying source can win. Waiting can still be the correct action.</p>
-          </div>
-        </section>
-      </div>
-
-      <div id="partner-panel" role="tabpanel" aria-labelledby="partner-tab" data-demo-panel="partner" hidden>
-        <section class="section-shell content-section demo-section">
-          <div class="demo-step-heading">
-            <p class="card-index">01 / Keep commerce</p>
-            <div><p class="eyebrow">Partner perspective</p><h2>Your commerce stack stays yours.</h2><p>Blue Dial Labs can consume an agreed structured API, feed, or export. The partner does not need to rebuild checkout, fulfillment, or customer ownership around us.</p></div>
-          </div>
-          <div class="demo-commerce-grid" aria-label="Partner retains commerce responsibilities">
-            <article><span>01</span><strong>Your inventory</strong></article>
-            <article><span>02</span><strong>Your pricing</strong></article>
-            <article><span>03</span><strong>Your checkout</strong></article>
-            <article><span>04</span><strong>Your fulfillment</strong></article>
-            <article><span>05</span><strong>Your customer relationship</strong></article>
-          </div>
-        </section>
-
-        <section class="soft-section">
-          <div class="section-shell content-section demo-section">
-            <div class="demo-step-heading">
-              <p class="card-index">02 / Decision context</p>
-              <div><p class="eyebrow">What Blue Dial Labs adds</p><h2>Structured inventory becomes collector-relevant evidence.</h2><p>The public story stops at evidence categories and the resulting decision. This demo does not expose scoring weights, ranking formulas, matching heuristics, or normalization methods.</p></div>
-            </div>
-            <div class="demo-partner-flow" aria-label="Simplified partner data flow">
-              <div><span>Structured inventory</span><small>Existing sanctioned feed or export</small></div><span aria-hidden="true">→</span>
-              <div><span>Canonical identity</span><small>Reference-level context</small></div><span aria-hidden="true">→</span>
-              <div><span>Offer evidence</span><small>Economics + terms + availability</small></div><span aria-hidden="true">→</span>
-              <div><span>Private collector fit</span><small>Evaluated without exposing the Pursuit</small></div><span aria-hidden="true">→</span>
-              <div class="demo-partner-flow-result"><span>Qualified relevance</span><small>Earned by fit</small></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section-shell content-section demo-section">
-          <div class="demo-step-heading">
-            <p class="card-index">03 / Why this offer appears</p>
-            <div><p class="eyebrow">Same synthetic market</p><h2>The authorized retailer can win without being cheapest.</h2><p>This is the same <strong>Synthetic Harbor Watches</strong> offer used in Collector mode. Its current status responds to the collector preference switch; commercial participation never improves the outcome.</p></div>
-          </div>
-          <div class="demo-partner-offer-layout">
-            <article class="demo-partner-offer-card" id="demo-partner-offer" aria-live="polite">
-              <div class="demo-decision-topline"><span>Synthetic partner offer</span><span data-partner-status></span></div>
-              <div class="demo-decision-offer"><div><p class="demo-mini-label">Seller</p><h3 data-partner-seller></h3><p data-partner-type></p></div><div class="demo-decision-cost"><span>Estimated Delivered Cost</span><strong data-partner-cost></strong></div></div>
-              <dl class="demo-partner-evidence">
-                <div><dt>Warranty</dt><dd data-partner-warranty></dd></div>
-                <div><dt>Returns</dt><dd data-partner-returns></dd></div>
-                <div><dt>Availability</dt><dd data-partner-availability></dd></div>
-                <div><dt>Post-sale support</dt><dd data-partner-service></dd></div>
-              </dl>
-            </article>
-            <article class="demo-partner-why-card">
-              <p class="demo-mini-label">Why it receives attention</p>
-              <ul>
-                <li>The offer maps to the pursued watch reference.</li>
-                <li>Decision-relevant economics and transaction terms are available.</li>
-                <li>It fits the collector’s current buying conditions strongly enough to be considered.</li>
-                <li>Its recommendation status is independent of referral or partner economics.</li>
-              </ul>
-              <p class="demo-private-note"><span aria-hidden="true">◆</span> The partner sees the relevance outcome—not the collector’s private maximum price, dream price, or complete Pursuit policy.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section-shell boundary-callout demo-portal-boundary">
-          <p class="eyebrow">Not a partner portal</p>
-          <div><h2>This walkthrough is a decision-loop demo, not a new dealer SaaS commitment.</h2><p>There are no partner accounts, inventory-management screens, CRM features, bid workflows, preferential-placement controls, or production integration claims behind this experience.</p></div>
-        </section>
-
-        <section class="dark-section">
-          <div class="section-shell content-section demo-clickout-section">
-            <div><p class="eyebrow eyebrow-light">04 / Qualified click-out</p><h2>Blue Dial Labs stops before checkout.</h2><p>Where supported by a future relationship, outbound traffic may be attributable. The transaction, fulfillment, and customer relationship remain with the original seller or marketplace.</p></div>
-            <div class="demo-clickout-flow" aria-label="Qualified click-out flow">
-              <div><span>Collector chooses</span><strong>View Offer</strong></div><span aria-hidden="true">→</span><div><span>Original seller site</span><strong>Existing checkout</strong></div><span aria-hidden="true">→</span><div><span>Partner retains</span><strong>Customer relationship</strong></div>
-            </div>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       <section class="section-shell demo-footer-note">
-        <p><strong>What this validates:</strong> whether the product concept can be understood quickly as a collector-specific decision layer and whether the partner role is credible without becoming a marketplace or sponsored-ranking system.</p>
-        <p><strong>What this does not represent:</strong> production recommendation logic, live market coverage, live pricing, approved integrations, partner relationships, traffic, conversions, or public product access.</p>
+        <p><strong>Not represented:</strong> live prices, production recommendation logic, real integrations, real partner relationships, affiliate tracking, market-wide coverage, user traction, traffic, conversions, or public product access.</p>
+        <p><strong>Commercial neutrality:</strong> seller payment, referral economics, and partner status are not inputs to this synthetic evaluation.</p>
       </section>
     </main>
 
@@ -213,7 +191,7 @@
         <div class="footer-nav-group"><p>Explore</p><a href="../collectors/">Collectors</a><a href="../data-partners/">Partners</a><a href="../approach/">How it works</a></div>
         <div class="footer-nav-group"><p>Company &amp; trust</p><a href="../about/">About</a><a href="../contact/">Contact</a><a href="../privacy/">Privacy</a><a href="../commercial-disclosure/">Independence &amp; disclosure</a><a href="../data-standards/">Data Standards</a></div>
       </div>
-      <div class="section-shell footer-bottom"><p>© 2026 Blue Dial Labs. All rights reserved.</p><p>Private synthetic demo · product access is not currently public.</p></div>
+      <div class="section-shell footer-bottom"><p>© 2026 Blue Dial Labs. All rights reserved.</p><p>Collector product access is not currently public.</p></div>
     </footer>
   </body>
 </html>
