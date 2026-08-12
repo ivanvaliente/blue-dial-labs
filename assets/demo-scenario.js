@@ -16,8 +16,11 @@
    * @property {string} completeness
    * @property {string} geography
    * @property {boolean} authorized
+   * @property {'manufacturer'|'retailer'|'seller'} warrantyKind
    * @property {string} warranty
+   * @property {number} returnWindowDays
    * @property {string} returns
+   * @property {boolean} directRetailer
    * @property {string} reputation
    * @property {string} protections
    * @property {string} availability
@@ -41,12 +44,14 @@
    * @property {{ name: string, maximumDeliveredCost: number, required: string[], preferred: string[] }} pursuit
    * @property {DemoOffer[]} offers
    * @property {Object<string, { label: string, shortLabel: string, description: string, recommendation: DemoRecommendation }>} preferenceVariants
+   * @property {{ maximumDeliveredCost: number, warrantyPolicy: string, savingsThreshold: number, minimumReturnDays: number, channelPolicy: string }} interactiveDefaults
+   * @property {Object<string, { label: string, maximumDeliveredCost: number, warrantyPolicy: string, savingsThreshold: number, minimumReturnDays: number, channelPolicy: string }> } presets
    * @property {{ anchorOfferId: string, narrative: string[] }} partnerNarrative
    */
 
   /** @type {DemoScenario} */
   const scenario = {
-    id: 'synthetic-prx-v0.1',
+    id: 'synthetic-prx-v0.2',
     watch: {
       brand: 'Tissot',
       collection: 'PRX',
@@ -66,7 +71,7 @@
       preferred: [
         'Manufacturer warranty',
         'Direct retailer checkout',
-        '21+ day return window',
+        '14+ day return window',
         'Clear post-sale support',
       ],
     },
@@ -87,8 +92,11 @@
         completeness: 'Full set',
         geography: 'United States',
         authorized: true,
+        warrantyKind: 'manufacturer',
         warranty: 'Manufacturer warranty · 2 years',
+        returnWindowDays: 30,
         returns: '30 days · no restocking fee',
+        directRetailer: true,
         reputation: 'Established enthusiast retailer',
         protections: 'Direct checkout · card protections',
         availability: 'In stock',
@@ -110,8 +118,11 @@
         completeness: 'Full set',
         geography: 'United States',
         authorized: false,
+        warrantyKind: 'retailer',
         warranty: 'Retailer warranty · 2 years',
+        returnWindowDays: 14,
         returns: '14 days · 10% restocking on non-defect returns',
+        directRetailer: true,
         reputation: 'Established discount retailer',
         protections: 'Direct checkout · card protections',
         availability: 'In stock',
@@ -133,8 +144,11 @@
         completeness: 'Full set',
         geography: 'United States',
         authorized: false,
+        warrantyKind: 'seller',
         warranty: 'Seller warranty · 1 year',
+        returnWindowDays: 7,
         returns: '7 days · buyer pays return shipping',
+        directRetailer: false,
         reputation: '98.7% positive · 1,400 synthetic sales',
         protections: 'Marketplace buyer protection',
         availability: '1 available',
@@ -148,13 +162,13 @@
         description: 'Treat manufacturer warranty as a hard buying condition.',
         recommendation: {
           offerId: 'harbor',
-          label: 'Strong Buy',
+          label: 'Worth Pursuing',
           summary: 'The authorized retailer costs more, but it is the only current offer that satisfies every hard buying condition.',
           reasons: [
             'Exact reference and requested variant are represented in the synthetic evidence.',
             'Manufacturer warranty requirement is met.',
             'Estimated Delivered Cost is $722 — within the collector’s $725 ceiling.',
-            'In-stock status, 30-day returns, and direct post-sale support strengthen transaction confidence.',
+            'In-stock status, 30-day returns, and direct post-sale support strengthen the fit.',
           ],
           watchouts: [
             'The gray-market offer is $81 cheaper on Estimated Delivered Cost.',
@@ -173,8 +187,8 @@
         description: 'Allow a non-manufacturer warranty when the savings are meaningful enough to this collector.',
         recommendation: {
           offerId: 'gray',
-          label: 'Strong Buy',
-          summary: 'Once warranty becomes negotiable, the discount retailer becomes the strongest fit for this collector’s stated tradeoff.',
+          label: 'Worth Pursuing',
+          summary: 'Once warranty becomes negotiable, the discount retailer becomes the strongest current fit for this collector’s stated tradeoff.',
           reasons: [
             'All remaining hard buying conditions are met.',
             'Estimated Delivered Cost is $641 — $81 below the authorized-retailer option.',
@@ -191,6 +205,39 @@
             marketplace: 'Qualifies · not preferred',
           },
         },
+      },
+    },
+    interactiveDefaults: {
+      maximumDeliveredCost: 725,
+      warrantyPolicy: 'required',
+      savingsThreshold: 50,
+      minimumReturnDays: 14,
+      channelPolicy: 'any',
+    },
+    presets: {
+      warranty: {
+        label: 'Prioritize manufacturer warranty',
+        maximumDeliveredCost: 725,
+        warrantyPolicy: 'required',
+        savingsThreshold: 50,
+        minimumReturnDays: 14,
+        channelPolicy: 'any',
+      },
+      savings: {
+        label: 'Trade warranty for meaningful savings',
+        maximumDeliveredCost: 725,
+        warrantyPolicy: 'flexible',
+        savingsThreshold: 50,
+        minimumReturnDays: 14,
+        channelPolicy: 'any',
+      },
+      wait: {
+        label: 'Hold out for a lower delivered cost',
+        maximumDeliveredCost: 620,
+        warrantyPolicy: 'flexible',
+        savingsThreshold: 50,
+        minimumReturnDays: 14,
+        channelPolicy: 'any',
       },
     },
     partnerNarrative: {
