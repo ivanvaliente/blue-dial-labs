@@ -4,46 +4,222 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>How it works — Blue Dial Labs</title>
-    <meta name="description" content="How Blue Dial Labs uses disciplined identity, evidence, economics, confidence, privacy, and commercial neutrality to support better watch decisions.">
+    <meta name="description" content="See how Blue Dial Labs turns a collector's buying conditions and market offers into decision context, and how partners fit without buying placement.">
     <link rel="canonical" href="https://www.bluediallabs.com/approach/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Blue Dial Labs">
     <meta property="og:title" content="How it works — Blue Dial Labs">
-    <meta property="og:description" content="Good decisions depend on disciplined evidence.">
+    <meta property="og:description" content="One collector decision, shown from both sides of the transaction.">
     <meta property="og:url" content="https://www.bluediallabs.com/approach/">
     <meta name="twitter:card" content="summary">
     <meta name="theme-color" content="#f3f0e8">
     <link rel="stylesheet" href="../assets/styles.css">
     <link rel="stylesheet" href="../assets/site-polish.css">
+    <link rel="stylesheet" href="../assets/demo.css">
     <script src="../assets/site.js" defer></script>
+    <script src="../assets/demo-scenario.js" defer></script>
+    <script src="../assets/approach-demo.js" defer></script>
   </head>
-  <body>
+  <body class="demo-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="site-header"><div class="nav-shell"><a class="wordmark" href="../" aria-label="Blue Dial Labs home"><span>Blue Dial</span><span class="wordmark-labs">Labs</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span class="menu-toggle-lines" aria-hidden="true"></span></button><nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation"><a href="../">Home</a><a href="../collectors/">Collectors</a><a href="../data-partners/">Partners</a><a href="../approach/" aria-current="page">How it works</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav></div></header>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="wordmark" href="../" aria-label="Blue Dial Labs home"><span>Blue Dial</span><span class="wordmark-labs">Labs</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span class="menu-toggle-lines" aria-hidden="true"></span></button>
+        <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation"><a href="../">Home</a><a href="../collectors/">Collectors</a><a href="../data-partners/">Partners</a><a href="../approach/" aria-current="page">How it works</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav>
+      </div>
+    </header>
 
     <main id="main-content">
-      <section class="page-hero section-shell"><div><p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> How it works</p><h1>Good decisions depend on <em>disciplined evidence.</em></h1></div><div class="page-hero-intro"><p class="hero-problem">Identify the right watch. Compare the right economics. Know when the evidence is not strong enough.</p><p>Blue Dial Labs keeps product identity, source observations, normalized economics, confidence, and collector context distinct so weak evidence does not turn into false certainty.</p></div></section>
-
-      <section class="section-shell content-section ruled-section">
-        <div class="section-heading split-heading"><div><p class="eyebrow">Why the architecture matters</p><h2>Technical discipline should produce visible decision quality.</h2></div><p>The system is not rigorous for its own sake. Each structural choice exists to prevent a specific class of bad collector decision.</p></div>
-        <div class="principles-grid approach-outcome-grid">
-          <article><span class="principle-mark" aria-hidden="true"></span><h3>Correct identity</h3><p>So a collector does not compare the wrong reference or variant as if it were equivalent.</p></article>
-          <article><span class="principle-mark" aria-hidden="true"></span><h3>Comparable economics</h3><p>So a lower headline price does not masquerade as a better deal when shipping, geography, fees, warranty, or other supported terms differ.</p></article>
-          <article><span class="principle-mark" aria-hidden="true"></span><h3>Confidence-aware matching</h3><p>So incomplete or fuzzy evidence cannot silently produce high-confidence alerts, valuations, assignments, or recommendations.</p></article>
-          <article><span class="principle-mark" aria-hidden="true"></span><h3>Historical evidence</h3><p>So today's price or availability does not erase yesterday's market context when retention rights permit history to be preserved.</p></article>
+      <section class="section-shell demo-hero">
+        <div class="demo-hero-copy">
+          <p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> How it works</p>
+          <h1>Which watch offer is actually worth <em>pursuing?</em></h1>
+          <p class="hero-intro">Blue Dial Labs starts with the collector's decision—not with one seller or marketplace. This illustrative walkthrough shows how the same market evidence can produce a different answer when the collector's buying conditions change.</p>
+          <div class="demo-fixture-note" role="note"><strong>Illustrative synthetic example.</strong> The watch reference is real; every seller, price, policy, availability state, relationship, and market observation shown here is fictional. No live integration or partnership is implied.</div>
         </div>
-        <div class="technical-link-line"><p>Technical teams can review the canonical identity hierarchy, seller/channel/source distinctions, and integration fields separately.</p><a class="text-link" href="../data-standards/">Review Data Standards <span aria-hidden="true">→</span></a></div>
+        <div class="demo-hero-map" aria-label="Conceptual flow from market offers to collector decision">
+          <div><span>Market offers</span><small>Structured decision-relevant evidence</small></div>
+          <span class="demo-flow-arrow" aria-hidden="true">↓</span>
+          <div class="demo-flow-core"><span>Blue Dial Labs</span><small>Collector-specific decision context</small></div>
+          <span class="demo-flow-arrow" aria-hidden="true">↓</span>
+          <div><span>Collector action</span><small>View offer · wait · reject</small></div>
+        </div>
       </section>
 
-      <section class="dark-section"><div class="section-shell content-section"><div class="section-heading split-heading"><div><p class="eyebrow eyebrow-light">Evidence architecture</p><h2>Keep observation, interpretation, and decision distinct.</h2></div><p>A source observation is not a normalized offer. A normalized offer is not automatically relevant to a particular collector. Keeping those layers separate makes corrections possible and prevents weak upstream evidence from becoming false downstream confidence.</p></div><div class="process-grid"><article><p class="card-index">Observed</p><h3>Source evidence</h3><p>What a source reported at a particular time, with source and timestamp retained where rights allow.</p><ul class="quiet-list"><li>Original identifiers</li><li>Price and availability</li><li>Source and timestamp</li></ul></article><article><p class="card-index">Interpreted</p><h3>Normalized offer</h3><p>A comparable representation with canonical identity, economics, seller, channel, terms, and confidence.</p><ul class="quiet-list"><li>Reference match</li><li>Condition and terms</li><li>Comparable components</li></ul></article><article><p class="card-index">Contextual</p><h3>Collector decision</h3><p>An evaluation against one collector's intent, constraints, supported economics, and confidence requirements.</p><ul class="quiet-list"><li>Fit and thresholds</li><li>Estimated delivered cost</li><li>Action and confidence</li></ul></article></div></div></section>
+      <section class="demo-switch-band" aria-label="How it works perspective">
+        <div class="section-shell demo-switch-shell">
+          <div>
+            <p class="eyebrow eyebrow-light">Choose a perspective</p>
+            <p>One scenario. Two sides of the same decision.</p>
+          </div>
+          <div class="demo-tabs" role="tablist" aria-label="How it works perspective">
+            <button class="demo-tab" id="collector-tab" type="button" role="tab" aria-selected="true" aria-controls="collector-panel" data-demo-perspective="collector">Collector</button>
+            <button class="demo-tab" id="partner-tab" type="button" role="tab" aria-selected="false" aria-controls="partner-panel" data-demo-perspective="partner">Partner</button>
+          </div>
+        </div>
+      </section>
 
-      <section class="section-shell content-section"><div class="section-heading"><p class="eyebrow">Operating rules</p><h2>What the system refuses to blur.</h2></div><div class="numbered-principles"><article><span>01</span><div><h3>Retain history where permitted</h3><p>Later changes should not blindly erase earlier market evidence when source rights and commercial terms permit historical retention.</p></div></article><article><span>02</span><div><h3>Gate low-confidence matches</h3><p>Low-confidence identity evidence may support investigation, but it must not silently drive high-confidence collector actions.</p></div></article><article><span>03</span><div><h3>Protect collector context</h3><p>Buying thresholds, preferences, rejection behavior, and collection information are private by default and shared only through deliberate permission.</p></div></article><article><span>04</span><div><h3>Separate revenue from advice</h3><p>Commercial relationships can support operations. They cannot improve source inclusion, rank, recommendation, or stated confidence.</p></div></article></div></section>
+      <div id="collector-panel" role="tabpanel" aria-labelledby="collector-tab" data-demo-panel="collector">
+        <section class="section-shell content-section demo-section">
+          <div class="demo-step-heading">
+            <p class="card-index">01 / Pursuit</p>
+            <div><p class="eyebrow">Define the decision</p><h2>The collector sets the buying conditions.</h2><p>The target is a canonical watch reference plus the conditions under which this collector would actually buy. The Pursuit stays stable while offers change.</p></div>
+          </div>
+          <div class="demo-pursuit-grid">
+            <article class="demo-watch-card">
+              <p class="mock-offer-brand" data-watch-brand></p>
+              <h3 data-watch-model></h3>
+              <p class="demo-reference">Reference <span data-watch-reference></span></p>
+              <p class="demo-variant" data-watch-variant></p>
+              <div class="demo-max-cost"><span>Maximum Estimated Delivered Cost</span><strong data-pursuit-maximum></strong></div>
+            </article>
+            <article class="demo-criteria-card">
+              <div class="demo-criteria-group"><p class="demo-mini-label">Required</p><ul data-pursuit-required></ul></div>
+              <div class="demo-criteria-group"><p class="demo-mini-label">Preferred</p><ul data-pursuit-preferred></ul></div>
+              <p class="demo-private-note"><span aria-hidden="true">◆</span> These criteria are synthetic. Real Pursuit thresholds and preferences are private by default.</p>
+            </article>
+          </div>
+        </section>
 
-      <section class="section-shell boundary-callout"><p class="eyebrow">A deliberate boundary</p><div><h2>Explainable enough to trust. Restrained enough to be honest.</h2><p>Matching confidence and recommendation confidence answer different questions. Both remain bounded by the quality of the underlying evidence.</p></div></section>
+        <section class="soft-section">
+          <div class="section-shell content-section demo-section">
+            <div class="demo-step-heading">
+              <p class="card-index">02 / Offers</p>
+              <div><p class="eyebrow">Competing evidence</p><h2>Three offers. Three different tradeoffs.</h2><p>Advertised price is only one input. Delivered economics, warranty, returns, seller context, protections, availability, and post-sale support can change which offer deserves attention.</p></div>
+            </div>
+            <div class="demo-offer-grid" id="demo-offers" aria-live="polite"></div>
+          </div>
+        </section>
 
-      <section class="contact-band"><div class="section-shell contact-inner"><div><p class="eyebrow eyebrow-light">See the model in context</p><h2>The same approach serves two different journeys.</h2></div><div class="contact-copy"><p>Collectors see how evidence becomes a decision. Partners see how trustworthy offers and data enter the system without buying preference.</p><div class="contact-links"><a href="../collectors/">For collectors <span aria-hidden="true">→</span></a><a href="../data-partners/">For partners <span aria-hidden="true">→</span></a></div></div></div></section>
+        <section class="section-shell content-section demo-section demo-decision-section">
+          <div class="demo-step-heading">
+            <p class="card-index">03 / Decision</p>
+            <div><p class="eyebrow">Opportunity Decision Card</p><h2>Opinionated, explainable, and specific to this collector.</h2><p>Change one collector preference below. The recommendation changes without introducing a universal seller ranking.</p></div>
+          </div>
+
+          <div class="demo-decision-layout">
+            <fieldset class="demo-preference-control">
+              <legend>How important is manufacturer warranty?</legend>
+              <label><input type="radio" name="approach-preference" value="warranty-required" checked><span><strong>Required</strong><small>Manufacturer warranty is a hard buying condition.</small></span></label>
+              <label><input type="radio" name="approach-preference" value="flexible-savings"><span><strong>Flexible for meaningful savings</strong><small>Accept a retailer warranty when the savings are at least $50.</small></span></label>
+              <p class="demo-control-caption">Illustrative interaction. It demonstrates collector-specific fit, not production recommendation logic.</p>
+            </fieldset>
+
+            <article class="demo-decision-card" aria-live="polite">
+              <div class="demo-decision-topline"><span data-decision-label></span><span>For this Pursuit</span></div>
+              <div class="demo-decision-offer"><div><p class="demo-mini-label">Recommended offer</p><h3 data-decision-seller></h3><p data-decision-seller-type></p></div><div class="demo-decision-cost"><span>Estimated Delivered Cost</span><strong data-decision-cost></strong></div></div>
+              <p class="demo-decision-summary" data-decision-summary></p>
+              <div class="demo-reason-grid">
+                <div><p class="demo-mini-label">Why now?</p><ul data-decision-reasons></ul></div>
+                <div><p class="demo-mini-label">Tradeoffs to inspect</p><ul data-decision-watchouts></ul></div>
+              </div>
+              <div class="demo-actions" aria-label="Illustrative collector actions">
+                <button class="button button-primary" type="button" data-approach-action="view">View Offer <span aria-hidden="true">→</span></button>
+                <button class="button button-secondary" type="button" data-approach-action="wait">Wait</button>
+                <button class="demo-text-button" type="button" data-approach-action="reject">Reject</button>
+              </div>
+              <p class="demo-action-status" data-approach-action-status aria-live="polite">Checkout remains with the original seller.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="dark-section">
+          <div class="section-shell content-section demo-neutrality-band">
+            <div><p class="eyebrow eyebrow-light">Commercial neutrality</p><h2>The seller cannot buy this outcome.</h2></div>
+            <p>Commercial compensation, attribution eligibility, and partner status are outside the illustrative recommendation inputs. A paying source can lose. A non-paying source can win. Waiting can still be the correct action.</p>
+          </div>
+        </section>
+      </div>
+
+      <div id="partner-panel" role="tabpanel" aria-labelledby="partner-tab" data-demo-panel="partner" hidden>
+        <section class="section-shell content-section demo-section">
+          <div class="demo-step-heading">
+            <p class="card-index">01 / Keep commerce</p>
+            <div><p class="eyebrow">Partner perspective</p><h2>Your commerce stack stays yours.</h2><p>Blue Dial Labs can consume an agreed structured API, feed, or export where available. The partner does not need to rebuild checkout, fulfillment, or customer ownership around us.</p></div>
+          </div>
+          <div class="demo-commerce-grid" aria-label="Partner retains commerce responsibilities">
+            <article><span>01</span><strong>Your inventory</strong></article>
+            <article><span>02</span><strong>Your pricing</strong></article>
+            <article><span>03</span><strong>Your checkout</strong></article>
+            <article><span>04</span><strong>Your fulfillment</strong></article>
+            <article><span>05</span><strong>Your customer relationship</strong></article>
+          </div>
+        </section>
+
+        <section class="soft-section">
+          <div class="section-shell content-section demo-section">
+            <div class="demo-step-heading">
+              <p class="card-index">02 / Decision context</p>
+              <div><p class="eyebrow">What Blue Dial Labs adds</p><h2>Structured inventory becomes collector-relevant evidence.</h2><p>The public story stops at evidence categories and the resulting decision. Scoring weights, ranking formulas, matching heuristics, normalization methods, and confidence formulas are not part of this explanation.</p></div>
+            </div>
+            <div class="demo-partner-flow" aria-label="Simplified partner data flow">
+              <div><span>Structured inventory</span><small>Existing sanctioned feed or export</small></div><span aria-hidden="true">→</span>
+              <div><span>Canonical identity</span><small>Reference-level context</small></div><span aria-hidden="true">→</span>
+              <div><span>Offer evidence</span><small>Economics + terms + availability</small></div><span aria-hidden="true">→</span>
+              <div><span>Private collector fit</span><small>Evaluated without exposing the Pursuit</small></div><span aria-hidden="true">→</span>
+              <div class="demo-partner-flow-result"><span>Qualified relevance</span><small>Earned by fit</small></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-shell content-section demo-section">
+          <div class="demo-step-heading">
+            <p class="card-index">03 / Why this offer appears</p>
+            <div><p class="eyebrow">Same illustrative market</p><h2>The authorized retailer can win without being cheapest.</h2><p>This is the same <strong>Synthetic Harbor Watches</strong> offer used in Collector mode. Its status responds to the collector preference switch; commercial participation never improves the outcome.</p></div>
+          </div>
+          <div class="demo-partner-offer-layout">
+            <article class="demo-partner-offer-card" aria-live="polite">
+              <div class="demo-decision-topline"><span>Synthetic partner offer</span><span data-partner-status></span></div>
+              <div class="demo-decision-offer"><div><p class="demo-mini-label">Seller</p><h3 data-partner-seller></h3><p data-partner-type></p></div><div class="demo-decision-cost"><span>Estimated Delivered Cost</span><strong data-partner-cost></strong></div></div>
+              <dl class="demo-partner-evidence">
+                <div><dt>Warranty</dt><dd data-partner-warranty></dd></div>
+                <div><dt>Returns</dt><dd data-partner-returns></dd></div>
+                <div><dt>Availability</dt><dd data-partner-availability></dd></div>
+                <div><dt>Post-sale support</dt><dd data-partner-service></dd></div>
+              </dl>
+            </article>
+            <article class="demo-partner-why-card">
+              <p class="demo-mini-label">Why it receives attention</p>
+              <ul>
+                <li>The offer maps to the pursued watch reference.</li>
+                <li>Decision-relevant economics and transaction terms are available.</li>
+                <li>It fits the collector's current buying conditions strongly enough to be considered.</li>
+                <li>Its recommendation status is independent of referral or partner economics.</li>
+              </ul>
+              <p class="demo-private-note"><span aria-hidden="true">◆</span> The partner sees the relevance outcome—not the collector's private maximum price, dream price, or complete Pursuit policy.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-shell boundary-callout demo-portal-boundary">
+          <p class="eyebrow">A deliberate boundary</p>
+          <div><h2>This is a partner view of the decision loop—not a partner portal.</h2><p>Blue Dial Labs is not committing here to partner accounts, inventory-management screens, CRM features, bid workflows, or preferential-placement controls.</p></div>
+        </section>
+
+        <section class="dark-section">
+          <div class="section-shell content-section demo-clickout-section">
+            <div><p class="eyebrow eyebrow-light">04 / Qualified click-out</p><h2>Blue Dial Labs stops before checkout.</h2><p>Where supported by a future relationship, outbound traffic may be attributable. The transaction, fulfillment, and customer relationship remain with the original seller or marketplace.</p></div>
+            <div class="demo-clickout-flow" aria-label="Qualified click-out flow">
+              <div><span>Collector chooses</span><strong>View Offer</strong></div><span aria-hidden="true">→</span><div><span>Original seller site</span><strong>Existing checkout</strong></div><span aria-hidden="true">→</span><div><span>Partner retains</span><strong>Customer relationship</strong></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="section-shell demo-footer-note">
+        <p><strong>The operating principle:</strong> Blue Dial Labs is being designed to standardize decision-relevant offer evidence and evaluate whether it fits the collector's private buying conditions.</p>
+        <p><strong>Current stage:</strong> the product is pre-launch. This page illustrates the intended decision experience; it does not claim live market coverage, production recommendation logic, approved integrations, partner relationships, traffic, conversions, or public product access.</p>
+      </section>
     </main>
 
-    <footer class="site-footer"><div class="section-shell footer-main"><div><a class="wordmark footer-wordmark" href="../" aria-label="Blue Dial Labs home"><span>Blue Dial</span><span class="wordmark-labs">Labs</span></a><p>Independent software and data infrastructure for better watch decisions.</p></div><div class="footer-nav-group"><p>Explore</p><a href="../collectors/">Collectors</a><a href="../data-partners/">Partners</a><a href="../approach/">How it works</a></div><div class="footer-nav-group"><p>Company &amp; trust</p><a href="../about/">About</a><a href="../contact/">Contact</a><a href="../privacy/">Privacy</a><a href="../commercial-disclosure/">Independence &amp; disclosure</a><a href="../data-standards/">Data Standards</a></div></div><div class="section-shell footer-bottom"><p>© 2026 Blue Dial Labs. All rights reserved.</p><p>Collector product access is not currently public.</p></div></footer>
+    <footer class="site-footer">
+      <div class="section-shell footer-main">
+        <div><a class="wordmark footer-wordmark" href="../" aria-label="Blue Dial Labs home"><span>Blue Dial</span><span class="wordmark-labs">Labs</span></a><p>Independent software and data infrastructure for better watch decisions.</p></div>
+        <div class="footer-nav-group"><p>Explore</p><a href="../collectors/">Collectors</a><a href="../data-partners/">Partners</a><a href="../approach/">How it works</a></div>
+        <div class="footer-nav-group"><p>Company &amp; trust</p><a href="../about/">About</a><a href="../contact/">Contact</a><a href="../privacy/">Privacy</a><a href="../commercial-disclosure/">Independence &amp; disclosure</a><a href="../data-standards/">Data Standards</a></div>
+      </div>
+      <div class="section-shell footer-bottom"><p>© 2026 Blue Dial Labs. All rights reserved.</p><p>Collector product access is not currently public.</p></div>
+    </footer>
   </body>
 </html>
