@@ -44,8 +44,8 @@
    * @property {{ name: string, maximumDeliveredCost: number, required: string[], preferred: string[] }} pursuit
    * @property {DemoOffer[]} offers
    * @property {Object<string, { label: string, shortLabel: string, description: string, recommendation: DemoRecommendation }>} preferenceVariants
-   * @property {{ maximumDeliveredCost: number, warrantyPolicy: string, savingsThreshold: number, minimumReturnDays: number, channelPolicy: string }} interactiveDefaults
-   * @property {Object<string, { label: string, maximumDeliveredCost: number, warrantyPolicy: string, savingsThreshold: number, minimumReturnDays: number, channelPolicy: string }> } presets
+   * @property {{ maximumDeliveredCost: number, warrantyPolicy: string, savingsThreshold: number, minimumReturnDays: number }} interactiveDefaults
+   * @property {Object<string, { label: string, maximumDeliveredCost: number, warrantyPolicy: string, savingsThreshold: number, minimumReturnDays: number }> } presets
    * @property {{ anchorOfferId: string, narrative: string[] }} partnerNarrative
    */
 
@@ -212,7 +212,6 @@
       warrantyPolicy: 'required',
       savingsThreshold: 50,
       minimumReturnDays: 14,
-      channelPolicy: 'any',
     },
     presets: {
       warranty: {
@@ -221,7 +220,6 @@
         warrantyPolicy: 'required',
         savingsThreshold: 50,
         minimumReturnDays: 14,
-        channelPolicy: 'any',
       },
       savings: {
         label: 'Trade warranty for meaningful savings',
@@ -229,7 +227,6 @@
         warrantyPolicy: 'flexible',
         savingsThreshold: 50,
         minimumReturnDays: 14,
-        channelPolicy: 'any',
       },
       wait: {
         label: 'Hold out for a lower delivered cost',
@@ -237,7 +234,6 @@
         warrantyPolicy: 'flexible',
         savingsThreshold: 50,
         minimumReturnDays: 14,
-        channelPolicy: 'any',
       },
     },
     partnerNarrative: {
