@@ -10,3 +10,16 @@
 @import url("./site-polish-base.css");
 @import url("./brand-v1.css");
 @import url("./above-fold.css");
+
+/* Keep the How It Works preference legend inside its bordered control card. */
+.demo-page .demo-preference-control legend {
+  float: left;
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.demo-page .demo-preference-control legend + label {
+  clear: both;
+  margin-top: 0;
+}
