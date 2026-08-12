@@ -19,7 +19,6 @@
     warrantyPolicy: document.querySelector('#demo-warranty'),
     savingsThreshold: document.querySelector('#demo-savings'),
     minimumReturnDays: document.querySelector('#demo-returns'),
-    channelPolicy: document.querySelector('#demo-channel'),
   };
 
   let currentDecision = null;
@@ -52,7 +51,6 @@
     warrantyPolicy: controls.warrantyPolicy.value,
     savingsThreshold: Number(controls.savingsThreshold.value),
     minimumReturnDays: Number(controls.minimumReturnDays.value),
-    channelPolicy: controls.channelPolicy.value,
   });
 
   const setControls = (settings) => {
@@ -60,7 +58,6 @@
     controls.warrantyPolicy.value = settings.warrantyPolicy;
     controls.savingsThreshold.value = String(settings.savingsThreshold);
     controls.minimumReturnDays.value = String(settings.minimumReturnDays);
-    controls.channelPolicy.value = settings.channelPolicy;
     syncSavingsField();
   };
 
@@ -82,9 +79,6 @@
     }
     if (offer.returnWindowDays < settings.minimumReturnDays) {
       failures.push(`${offer.returnWindowDays}-day returns below ${settings.minimumReturnDays}-day minimum`);
-    }
-    if (settings.channelPolicy === 'direct' && !offer.directRetailer) {
-      failures.push('Direct retailer checkout required');
     }
 
     return { offer, failures, qualifies: failures.length === 0 };
@@ -157,8 +151,6 @@
     } else {
       reasons.push('Warranty provider is not a selection constraint for this Pursuit.');
     }
-
-    if (settings.channelPolicy === 'direct') reasons.push('Direct retailer checkout requirement is met.');
 
     const watchouts = [];
     const harbor = scenario.offers.find((candidate) => candidate.id === 'harbor');
