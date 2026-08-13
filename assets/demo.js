@@ -115,10 +115,10 @@
     if (!recommended) {
       const misses = nearestMisses(evaluations);
       return {
-        label: 'Wait',
+        label: 'Nothing worth acting on right now',
         recommended: null,
         qualifying,
-        summary: `None of the three current synthetic offers meets all of this Pursuit's selected conditions. The correct action is to keep watching rather than force a purchase.`,
+        summary: `None of the three current synthetic offers meets all of this Pursuit's selected conditions. Scout would keep monitoring supported supply rather than force a purchase decision.`,
         reasons: [
           `Maximum Estimated Delivered Cost is ${money.format(settings.maximumDeliveredCost)}.`,
           `Minimum return window is ${settings.minimumReturnDays} days.`,
@@ -282,6 +282,8 @@
     setList('[data-interactive-watchouts]', decision.watchouts.length ? decision.watchouts : ['No additional tradeoff is material in this bounded fixture.']);
 
     const viewButton = document.querySelector('[data-demo-action="view"]');
+    const waitButton = document.querySelector('[data-demo-action="wait"]');
+    const rejectButton = document.querySelector('[data-demo-action="reject"]');
     const costWrap = document.querySelector('[data-interactive-cost-wrap]');
 
     if (decision.recommended) {
@@ -292,17 +294,21 @@
       setText('[data-interactive-cost]', money.format(offer.estimatedDeliveredCost));
       if (costWrap) costWrap.hidden = false;
       if (viewButton) viewButton.disabled = false;
+      if (waitButton) waitButton.disabled = false;
+      if (rejectButton) rejectButton.disabled = false;
     } else {
-      setText('[data-interactive-offer-label]', 'Current outcome');
+      setText('[data-interactive-offer-label]', 'Current monitoring state');
       setText('[data-interactive-seller]', 'No offer deserves action yet');
-      setText('[data-interactive-seller-type]', 'Keep this Pursuit active');
+      setText('[data-interactive-seller-type]', 'Scout keeps monitoring this Pursuit');
       setText('[data-interactive-cost]', '—');
       if (costWrap) costWrap.hidden = true;
       if (viewButton) viewButton.disabled = true;
+      if (waitButton) waitButton.disabled = true;
+      if (rejectButton) rejectButton.disabled = true;
     }
 
     const status = document.querySelector('[data-demo-action-status]');
-    if (status) status.textContent = decision.recommended ? 'Checkout remains with the original seller.' : 'Scout would keep watching supported supply for a qualifying change.';
+    if (status) status.textContent = decision.recommended ? 'Checkout remains with the original seller.' : 'No collector action is required. Scout would keep watching supported supply for a qualifying change.';
   };
 
   const evaluate = ({ scroll = true } = {}) => {
@@ -340,17 +346,14 @@
     document.querySelectorAll('[data-demo-action]').forEach((button) => {
       button.addEventListener('click', () => {
         const status = document.querySelector('[data-demo-action-status]');
-        if (!status || !currentDecision) return;
+        if (!status || !currentDecision || !currentDecision.recommended) return;
 
         if (button.dataset.demoAction === 'view') {
-          if (!currentDecision.recommended) return;
           status.textContent = `Demo only — View Offer would continue to ${currentDecision.recommended.offer.seller} for the seller's existing checkout. No live offer is opened.`;
         } else if (button.dataset.demoAction === 'wait') {
-          status.textContent = 'Wait selected — the Pursuit stays active while Scout continues watching supported supply.';
-        } else if (currentDecision.recommended) {
-          status.textContent = 'Reject selected — this synthetic opportunity is dismissed without ending the Pursuit.';
+          status.textContent = 'Wait selected — this Opportunity is deferred while the Pursuit stays active and Scout continues watching supported supply.';
         } else {
-          status.textContent = 'There is no current qualifying opportunity to reject; the Pursuit simply remains active.';
+          status.textContent = 'Reject selected — this synthetic Opportunity is dismissed without ending or silently changing the Pursuit.';
         }
       });
     });
