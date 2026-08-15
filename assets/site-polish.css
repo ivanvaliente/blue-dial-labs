@@ -23,3 +23,18 @@
   clear: both;
   margin-top: 0;
 }
+
+/* Highlight a top-level section without claiming the parent URL is this page. */
+.primary-nav a[aria-current="location"] {
+  color: var(--ink);
+}
+
+.primary-nav a[aria-current="location"]::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.65rem;
+  left: 0;
+  height: 2px;
+  background: var(--signal);
+  content: "";
+}
