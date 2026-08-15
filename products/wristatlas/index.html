@@ -30,12 +30,12 @@
     <main id="main-content">
       <section class="page-hero section-shell">
         <div><p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> Working product name · In development</p><h1>WristAtlas gives watch software a <em>canonical identity layer.</em></h1></div>
-        <p class="page-hero-intro">Watch data arrives with inconsistent names, reference formatting, aliases, variants, and source-specific identifiers. WristAtlas is the emerging Blue Dial Labs product boundary for resolving that evidence to stable canonical watch identities with provenance and confidence.</p>
+        <p class="page-hero-intro">Watch data arrives with inconsistent names, reference formatting, aliases, variants, and source-specific identifiers. WristAtlas is Blue Dial Labs' canonical watch identity product for resolving that evidence to stable canonical watch identities with provenance and confidence.</p>
       </section>
 
       <section class="principle-band"><div class="section-shell principle-inner"><p class="eyebrow eyebrow-light">Primary question</p><p class="principle-statement">What watch is this—and how confidently can the evidence be mapped to a canonical identity?</p></div></section>
 
-      <section class="section-shell content-section">
+      <section class="section-shell content-section" id="canonical-data-model">
         <div class="section-heading split-heading"><div><p class="eyebrow">Canonical data model</p><h2>A stable hierarchy for identifying the product.</h2></div><p>The canonical model separates a brand, collection, model, reference, and variant so downstream applications do not need to reinvent watch identity as free text.</p></div>
         <ol class="identity-stack" aria-label="Canonical watch identity hierarchy">
           <li><span>01</span><div><strong>Brand</strong><p>The manufacturer or marque.</p></div></li>
@@ -56,7 +56,7 @@
         </div>
       </div></section>
 
-      <section class="section-shell content-section">
+      <section class="section-shell content-section" id="data-api-concept">
         <div class="section-heading split-heading"><div><p class="eyebrow">Data / API concept</p><h2>Built first as infrastructure WristOwl already needs.</h2></div><p>WristAtlas may later support external search, lookup, identity-resolution, catalog-reconciliation, or data-feed use cases. Those are product hypotheses, not announcements of a public production API.</p></div>
         <div class="definition-grid">
           <article><p class="card-index">01 / Internal first</p><h3>Prove the identity layer inside Blue Dial Labs.</h3><p>WristOwl needs canonical identity for Pursuits, offer matching, market observations, ownership continuity, and confidence-aware recommendations.</p></article>
@@ -70,16 +70,16 @@
         <div class="outcome-list" aria-label="WristAtlas responsibility boundary"><div><span>01</span><p>Canonical identity</p></div><div><span>02</span><p>Aliases &amp; mappings</p></div><div><span>03</span><p>Provenance</p></div><div><span>04</span><p>Match confidence</p></div><div><span>05</span><p>No collector ranking</p></div></div>
       </section>
 
-      <section class="contact-band">
-        <div class="section-shell contact-inner"><div><p class="eyebrow eyebrow-light">Access &amp; contact</p><h2>WristAtlas is not currently offered as a public production data service.</h2></div><div class="contact-copy"><p>Blue Dial Labs is building WristAtlas as the canonical identity product that WristOwl depends on while validating the appropriate external access and commercialization model. The WristAtlas name remains subject to final clearance and founder approval.</p><div class="contact-links"><a href="../../contact/">Discuss the data problem <span aria-hidden="true">→</span></a><a href="../../data-standards/">Data Standards <span aria-hidden="true">→</span></a></div></div></div>
+      <section class="contact-band" id="access-contact">
+        <div class="section-shell contact-inner"><div><p class="eyebrow eyebrow-light">Access &amp; contact</p><h2>WristAtlas is not currently offered as a public production data service.</h2></div><div class="contact-copy"><p>Blue Dial Labs is building WristAtlas as the canonical identity product that WristOwl depends on while validating the appropriate external access and commercialization model. The WristAtlas name remains subject to final clearance and founder approval.</p><div class="contact-links"><a href="../../contact/?reason=wristatlas">Discuss the data problem <span aria-hidden="true">→</span></a><a href="../../data-standards/">Company Data Standards <span aria-hidden="true">→</span></a></div></div></div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="section-shell footer-main">
         <div><a class="wordmark footer-wordmark" href="../../" aria-label="Blue Dial Labs home"><span>Blue Dial</span><span class="wordmark-labs">Labs</span></a><p>Independent software and data infrastructure for better watch decisions.</p></div>
-        <div class="footer-nav-group"><p>WristAtlas</p><a href="./">Overview</a><a href="../../data-standards/">Data Standards</a><a href="../../contact/">Access / contact</a></div>
-        <div class="footer-nav-group"><p>Explore</p><a href="../wristowl/">WristOwl</a><a href="../../about/">About</a><a href="../../trust/">Trust</a><a href="../../contact/">Contact</a></div>
+        <div class="footer-nav-group"><p>WristAtlas</p><a href="./">Overview</a><a href="#canonical-data-model">Canonical data model</a><a href="#data-api-concept">Data / API concept</a><a href="#access-contact">Access / contact</a></div>
+        <div class="footer-nav-group"><p>Explore</p><a href="../wristowl/">WristOwl</a><a href="../../data-standards/">Company Data Standards</a><a href="../../trust/">Trust</a><a href="../../contact/?reason=wristatlas">Contact</a></div>
       </div>
       <div class="section-shell footer-bottom"><p>© 2026 Blue Dial Labs. All rights reserved.</p><p>WristAtlas is a working product name; no public production API is currently announced.</p></div>
     </footer>
