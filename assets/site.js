@@ -33,6 +33,17 @@
   const contactForm = document.querySelector('[data-mailto-form]');
   if (!contactForm) return;
 
+  const reasonSelect = contactForm.querySelector('#reason');
+  const reasonContext = new URLSearchParams(window.location.search).get('reason');
+  const reasonByContext = {
+    wristowl: 'WristOwl / collector product interest',
+    'wristowl-partner': 'WristOwl / partner pilot or offer-data collaboration',
+    wristatlas: 'WristAtlas / canonical identity and data',
+  };
+  const contextualReason = reasonByContext[reasonContext];
+
+  if (reasonSelect && contextualReason) reasonSelect.value = contextualReason;
+
   contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
