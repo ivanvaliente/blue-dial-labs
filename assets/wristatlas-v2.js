@@ -10,7 +10,7 @@
       model: "Submariner",
       reference: "124060",
       variant: "—",
-      note: "Reference 124060 is present in the current initial catalog. No WatchVariant is asserted for this curated example."
+      note: "This demo uses a canonical catalog record for reference 124060. No WatchVariant is asserted for this curated example."
     },
     tissot: {
       source: "“Tissot PRX Powermatic 80 blue T1374071104100”",
@@ -19,7 +19,7 @@
       model: "PRX 40mm",
       reference: "T137.407.11.041.00",
       variant: "—",
-      note: "The compact reference form T1374071104100 is recorded as an alias for the cataloged manufacturer reference. No WatchVariant is asserted for this curated example."
+      note: "The compact reference form T1374071104100 is recorded as an alias for the canonical reference used by this demo. No WatchVariant is asserted for this curated example."
     },
     casio: {
       source: "“Casio G Shock GA-2100-1A1 black”",
@@ -28,7 +28,7 @@
       model: "2100 Series",
       reference: "GA2100-1A1",
       variant: "—",
-      note: "The hyphenated GA-2100-1A1 form is recorded as an alias for the cataloged manufacturer reference. No WatchVariant is asserted for this curated example."
+      note: "The hyphenated GA-2100-1A1 form is recorded as an alias for the canonical reference used by this demo. No WatchVariant is asserted for this curated example."
     },
     tudor: {
       source: "“Tudor Black Bay 41 M7941A1A0NU-0001 full kit”",
@@ -37,7 +37,7 @@
       model: "Black Bay 41mm",
       reference: "M7941A1A0NU-0001",
       variant: "—",
-      note: "Reference M7941A1A0NU-0001 is present in the current initial catalog. No WatchVariant is asserted for this curated example."
+      note: "This demo uses a canonical catalog record for reference M7941A1A0NU-0001. No WatchVariant is asserted for this curated example."
     }
   };
 
@@ -68,6 +68,7 @@
   }
 
   buttons.forEach((button) => {
+    button.disabled = false;
     button.addEventListener("click", () => showExample(button.dataset.atlasExample));
   });
 })();
