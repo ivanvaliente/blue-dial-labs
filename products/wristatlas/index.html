@@ -3,19 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WristAtlas — Canonical watch identity by Blue Dial Labs</title>
-    <meta name="description" content="WristAtlas is the working product name for Blue Dial Labs' canonical watch identity and reference-data layer: brands, collections, models, references, variants, aliases, provenance, and confidence-aware resolution.">
+    <title>WristAtlas — Reliable watch identity by Blue Dial Labs</title>
+    <meta name="description" content="WristAtlas turns inconsistent watch descriptions and identifiers into stable canonical watch identity with provenance and confidence-aware resolution. Built for WristOwl first; external access remains future and unannounced.">
     <link rel="canonical" href="https://www.bluediallabs.com/products/wristatlas/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Blue Dial Labs">
-    <meta property="og:title" content="WristAtlas — Canonical watch identity">
-    <meta property="og:description" content="A canonical identity and reference-data layer for watch software.">
+    <meta property="og:title" content="WristAtlas — Reliable watch identity">
+    <meta property="og:description" content="Messy watch data in. Reliable canonical watch identity out.">
     <meta property="og:url" content="https://www.bluediallabs.com/products/wristatlas/">
     <meta name="twitter:card" content="summary">
     <meta name="theme-color" content="#f3f0e8">
     <link rel="stylesheet" href="../../assets/styles.css">
     <link rel="stylesheet" href="../../assets/site-polish.css">
+    <link rel="stylesheet" href="../../assets/wristatlas-v2.css">
     <script src="../../assets/site.js" defer></script>
+    <script src="../../assets/wristatlas-v2.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -28,60 +30,190 @@
     </header>
 
     <main id="main-content">
-      <section class="page-hero section-shell">
-        <div><p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> Working product name · In development</p><h1>WristAtlas gives watch software a <em>canonical identity layer.</em></h1></div>
-        <p class="page-hero-intro">Watch data arrives with inconsistent names, reference formatting, aliases, variants, and source-specific identifiers. WristAtlas is Blue Dial Labs' canonical watch identity product for resolving that evidence to stable canonical watch identities with provenance and confidence.</p>
+      <section class="page-hero section-shell wristatlas-hero">
+        <div>
+          <p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> Working product name · In development</p>
+          <h1>Messy watch data in. <em>Reliable watch identity out.</em></h1>
+          <div class="button-row wristatlas-hero-actions">
+            <a class="button-primary" href="#resolution-demo">See WristAtlas resolve a watch</a>
+            <a class="button-secondary" href="../../contact/?reason=wristatlas">Talk to us about watch data</a>
+          </div>
+        </div>
+        <p class="page-hero-intro">Listings, feeds, and catalogs rarely describe the same watch the same way. WristAtlas is Blue Dial Labs' canonical identity product for resolving supported evidence to a stable Brand → Collection → Model → Reference → Variant hierarchy while keeping provenance and uncertainty visible.</p>
       </section>
 
-      <section class="principle-band"><div class="section-shell principle-inner"><p class="eyebrow eyebrow-light">Primary question</p><p class="principle-statement">What watch is this—and how confidently can the evidence be mapped to a canonical identity?</p></div></section>
+      <section class="section-shell content-section wristatlas-problem" aria-labelledby="identity-problem-title">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow">The identity problem</p><h2 id="identity-problem-title">One watch can arrive as several different records.</h2></div>
+          <p>Reference punctuation changes. Model names get shortened. Source-specific identifiers do not travel across systems. Variant detail may be incomplete or contradictory. Without a stable identity layer, downstream software has to reconcile the same product repeatedly.</p>
+        </div>
+        <div class="atlas-problem-grid">
+          <article class="atlas-problem-card">
+            <p class="card-index">01 / Formatting</p>
+            <h3>Equivalent references do not always look equivalent.</h3>
+            <div class="atlas-string-pair" aria-label="Example equivalent reference formats"><code>T1374071104100</code><span aria-hidden="true">↔</span><code>T137.407.11.041.00</code></div>
+            <p>A compact source string and a punctuated manufacturer reference can represent the same canonical watch.</p>
+          </article>
+          <article class="atlas-problem-card">
+            <p class="card-index">02 / Fragmentation</p>
+            <h3>Source records are evidence, not shared identity.</h3>
+            <p>Listings and feeds may carry their own titles, SKUs, aliases, and taxonomy. Those values remain useful evidence, but they are not a durable cross-source key by themselves.</p>
+          </article>
+          <article class="atlas-problem-card">
+            <p class="card-index">03 / Uncertainty</p>
+            <h3>Ambiguity should not disappear downstream.</h3>
+            <p>A plausible reference match is different from a resolved variant, physical watch, authenticity judgment, or seller assessment. WristAtlas keeps those boundaries explicit.</p>
+          </article>
+        </div>
+      </section>
 
-      <section class="section-shell content-section" id="canonical-data-model">
-        <div class="section-heading split-heading"><div><p class="eyebrow">Canonical data model</p><h2>A stable hierarchy for identifying the product.</h2></div><p>The canonical model separates a brand, collection, model, reference, and variant so downstream applications do not need to reinvent watch identity as free text.</p></div>
-        <ol class="identity-stack" aria-label="Canonical watch identity hierarchy">
-          <li><span>01</span><div><strong>Brand</strong><p>The manufacturer or marque.</p></div></li>
-          <li><span>02</span><div><strong>Collection / Family</strong><p>The product family used to organize related models.</p></div></li>
-          <li><span>03</span><div><strong>Watch Model</strong><p>The model-level identity shared by references where appropriate.</p></div></li>
-          <li class="identity-focus"><span>04</span><div><strong>Reference</strong><p>The core canonical reference identity used across market evidence.</p></div></li>
-          <li><span>05</span><div><strong>Variant</strong><p>A materially distinct configuration below the reference when needed.</p></div></li>
+      <section class="soft-section atlas-demo-section" id="resolution-demo" aria-labelledby="resolution-demo-title">
+        <div class="section-shell content-section">
+          <div class="section-heading split-heading atlas-demo-heading">
+            <div><p class="eyebrow">Guided resolution demo</p><h2 id="resolution-demo-title">See inconsistent source evidence become one canonical identity.</h2></div>
+            <p>These four guided examples use references already represented in Blue Dial Labs' current canonical catalog work. They are illustrative, do not call a public API, and do not imply broader catalog coverage.</p>
+          </div>
+
+          <div class="atlas-demo" data-atlas-demo>
+            <div class="atlas-example-tabs" role="group" aria-label="Choose a guided WristAtlas example">
+              <button class="atlas-example-tab" type="button" data-atlas-example="rolex" aria-pressed="true" disabled>Rolex 124060</button>
+              <button class="atlas-example-tab" type="button" data-atlas-example="tissot" aria-pressed="false" disabled>Tissot PRX</button>
+              <button class="atlas-example-tab" type="button" data-atlas-example="casio" aria-pressed="false" disabled>Casio G-SHOCK</button>
+              <button class="atlas-example-tab" type="button" data-atlas-example="tudor" aria-pressed="false" disabled>TUDOR Black Bay</button>
+            </div>
+
+            <div class="atlas-demo-stage">
+              <article class="atlas-raw-card">
+                <div class="atlas-panel-label"><span>01</span><p>Messy source evidence</p></div>
+                <blockquote data-atlas-source>“Rolex Submariner 124060 blk dial full set”</blockquote>
+                <dl class="atlas-source-meta">
+                  <div><dt>What WristAtlas preserves</dt><dd>Original source wording remains evidence.</dd></div>
+                  <div><dt>What it does not assume</dt><dd>Listing language does not create a new canonical variant.</dd></div>
+                </dl>
+              </article>
+
+              <div class="atlas-resolution-arrow" aria-hidden="true"><span>Resolve</span><b>→</b></div>
+
+              <article class="atlas-output-card" aria-live="polite" aria-atomic="true">
+                <div class="atlas-panel-label"><span>02</span><p>Canonical result</p></div>
+                <dl class="atlas-resolution-list">
+                  <div><dt>Brand</dt><dd data-atlas-brand>Rolex</dd></div>
+                  <div><dt>Collection</dt><dd data-atlas-collection>Submariner</dd></div>
+                  <div><dt>Model</dt><dd data-atlas-model>Submariner</dd></div>
+                  <div class="atlas-reference-row"><dt>Reference</dt><dd data-atlas-reference>124060</dd></div>
+                  <div><dt>Variant</dt><dd data-atlas-variant>—</dd></div>
+                  <div><dt>Matching confidence</dt><dd><span class="atlas-confidence">High</span></dd></div>
+                </dl>
+                <p class="atlas-resolution-note" data-atlas-note>This demo uses a canonical catalog record for reference 124060. No WatchVariant is asserted for this curated example.</p>
+              </article>
+            </div>
+
+            <div class="atlas-demo-footnote">
+              <p><strong>What this demonstrates:</strong> canonical identity can remain stable even when source wording changes.</p>
+              <p><strong>What this does not claim:</strong> a production API response, comprehensive coverage, authenticity, physical-watch identity, seller quality, or numerical confidence precision.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell content-section" id="canonical-data-model" aria-labelledby="canonical-model-title">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow">Canonical output</p><h2 id="canonical-model-title">A stable hierarchy replaces repeated free-text reinvention.</h2></div>
+          <p>The hierarchy is product identity. It does not collapse a listing, purchase, ownership record, or individual physical watch into the same concept.</p>
+        </div>
+
+        <ol class="atlas-canonical-path" aria-label="Example canonical identity hierarchy for Rolex reference 124060">
+          <li><span class="atlas-path-index">01</span><span class="atlas-path-label">Brand</span><strong>Rolex</strong></li>
+          <li><span class="atlas-path-index">02</span><span class="atlas-path-label">Collection</span><strong>Submariner</strong></li>
+          <li><span class="atlas-path-index">03</span><span class="atlas-path-label">Model</span><strong>Submariner</strong></li>
+          <li class="atlas-path-focus"><span class="atlas-path-index">04</span><span class="atlas-path-label">Reference</span><strong>124060</strong></li>
+          <li><span class="atlas-path-index">05</span><span class="atlas-path-label">Variant</span><strong>Not asserted</strong></li>
         </ol>
-      </section>
 
-      <section class="soft-section"><div class="section-shell content-section">
-        <div class="section-heading"><p class="eyebrow">Product overview</p><h2>Identity, resolution, provenance, and confidence.</h2></div>
-        <div class="feature-grid">
-          <article class="feature-card"><p class="card-index">Canonical lookup</p><h3>Resolve a watch to a stable identity.</h3><p>Exact reference lookup, normalized reference forms, aliases, and structured attributes can converge on Blue Dial Labs-controlled canonical identifiers.</p></article>
-          <article class="feature-card"><p class="card-index">Variant resolution</p><h3>Do not flatten meaningful differences.</h3><p>Dial, material, configuration, generation, and other supported distinctions can remain explicit when they materially affect identity or comparison.</p></article>
-          <article class="feature-card"><p class="card-index">Provenance</p><h3>Preserve where an assertion came from.</h3><p>Canonical data should distinguish source evidence from normalized interpretation rather than losing lineage during ingestion.</p></article>
-          <article class="feature-card"><p class="card-index">Confidence</p><h3>Uncertainty stays visible.</h3><p>Low-confidence matches should remain candidates for review rather than silently becoming authoritative reference assignments.</p></article>
-        </div>
-      </div></section>
-
-      <section class="section-shell content-section" id="data-api-concept">
-        <div class="section-heading split-heading"><div><p class="eyebrow">Data / API concept</p><h2>Built first as infrastructure WristOwl already needs.</h2></div><p>WristAtlas may later support external search, lookup, identity-resolution, catalog-reconciliation, or data-feed use cases. Those are product hypotheses, not announcements of a public production API.</p></div>
-        <div class="definition-grid">
-          <article><p class="card-index">01 / Internal first</p><h3>Prove the identity layer inside Blue Dial Labs.</h3><p>WristOwl needs canonical identity for Pursuits, offer matching, market observations, ownership continuity, and confidence-aware recommendations.</p></article>
-          <article><p class="card-index">02 / Reusable boundary</p><h3>Keep the capability product-neutral.</h3><p>Stable identifiers and explicit contracts should make later reuse possible without creating a second competing identity namespace.</p></article>
-          <article><p class="card-index">03 / External later</p><h3>Commercialize only after validation.</h3><p>Public API access, authentication, quotas, coverage guarantees, pricing, SLAs, and external customer workflows remain unannounced.</p></article>
+        <div class="atlas-canonical-principles">
+          <article><p class="card-index">Stable identity</p><h3>Canonical values are not copied listing titles.</h3><p>Source wording can change while the canonical reference remains the same identity anchor.</p></article>
+          <article><p class="card-index">Evidence lineage</p><h3>Normalization should not erase provenance.</h3><p>WristAtlas is designed to distinguish what a source reported from the canonical interpretation built from that evidence.</p></article>
+          <article><p class="card-index">Confidence boundary</p><h3>Unknown stays unknown.</h3><p>A resolved reference does not require WristAtlas to invent a variant or silently upgrade incomplete evidence into stronger certainty.</p></article>
         </div>
       </section>
 
-      <section class="section-shell decision-section">
-        <div class="decision-copy"><p class="eyebrow">Relationship to WristOwl</p><h2>WristAtlas identifies. WristOwl decides.</h2><p>WristAtlas should not contain collector-specific rankings or recommendations. WristOwl should consume canonical identity rather than inventing a separate reference universe.</p><a class="text-link" href="../wristowl/">Explore WristOwl <span aria-hidden="true">→</span></a></div>
-        <div class="outcome-list" aria-label="WristAtlas responsibility boundary"><div><span>01</span><p>Canonical identity</p></div><div><span>02</span><p>Aliases &amp; mappings</p></div><div><span>03</span><p>Provenance</p></div><div><span>04</span><p>Match confidence</p></div><div><span>05</span><p>No collector ranking</p></div></div>
+      <section class="dark-section atlas-flow-section" aria-labelledby="data-flow-title">
+        <div class="section-shell content-section">
+          <div class="section-heading split-heading atlas-dark-heading">
+            <div><p class="eyebrow eyebrow-light">From evidence to usable identity</p><h2 id="data-flow-title">Resolve once. Carry the identity forward.</h2></div>
+            <p>WristAtlas establishes the product identity layer. Downstream systems can then work from a stable reference while preserving the evidence and confidence that supported it.</p>
+          </div>
+
+          <div class="atlas-flow" aria-label="WristAtlas data flow">
+            <div class="atlas-flow-step"><span>01</span><p>Listings, feeds, aliases &amp; identifiers</p></div>
+            <div class="atlas-flow-arrow" aria-hidden="true">→</div>
+            <div class="atlas-flow-step atlas-flow-focus"><span>02</span><p>WristAtlas resolution</p></div>
+            <div class="atlas-flow-arrow" aria-hidden="true">→</div>
+            <div class="atlas-flow-step"><span>03</span><p>Canonical identity + provenance + confidence</p></div>
+          </div>
+
+          <div class="atlas-flow-branches">
+            <article>
+              <p class="card-index">Used now</p>
+              <h3>WristOwl</h3>
+              <p>Canonical Pursuit targets, offer matching, reference-level market evidence, and ownership continuity depend on knowing what watch the evidence represents.</p>
+              <a class="text-link text-link-light" href="../wristowl/">Explore WristOwl <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="atlas-future-branch">
+              <p class="card-index">Future · only if validated</p>
+              <h3>External identity use</h3>
+              <p>Potential future uses include catalog reconciliation, reference lookup, external-identifier mapping, professional data feeds, or API access. None is announced as a public production service today.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell content-section" id="downstream-value" aria-labelledby="downstream-value-title">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow">Downstream value</p><h2 id="downstream-value-title">Stable identity makes better data work possible.</h2></div>
+          <p>WristAtlas is not valuable because it adds another watch database. Its job is to give supported evidence a durable identity so comparisons, history, and downstream decisions can refer to the same product consistently.</p>
+        </div>
+        <div class="atlas-value-grid">
+          <article><span>01</span><h3>Cross-source continuity</h3><p>Different source strings can converge on one canonical reference without discarding the original evidence.</p></article>
+          <article><span>02</span><h3>Reference-level history</h3><p>Market observations can attach to a durable product identity rather than temporary listing wording.</p></article>
+          <article><span>03</span><h3>Like-for-like comparison</h3><p>Downstream systems can determine whether evidence belongs to the same reference before attempting economic or product comparison.</p></article>
+          <article><span>04</span><h3>Explicit uncertainty</h3><p>Unresolved variants and lower-confidence identity evidence can remain visible instead of silently becoming authoritative facts.</p></article>
+        </div>
+      </section>
+
+      <section class="section-shell decision-section atlas-current-use" id="data-api-concept">
+        <div class="decision-copy">
+          <p class="eyebrow">Internal first, external later</p>
+          <h2>Built for WristOwl first. Designed so the identity layer can stand on its own later.</h2>
+          <p>WristAtlas exists today because Blue Dial Labs needs canonical watch identity for its collector decision product. Keeping that capability product-neutral preserves the option for broader use without forcing a second commercial operating surface before external demand is validated.</p>
+          <a class="text-link" href="../../data-standards/">Company Data Standards <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="atlas-boundary-list" aria-label="Current WristAtlas stage boundary">
+          <div><span>Now</span><p>Canonical identity infrastructure for Blue Dial Labs products</p></div>
+          <div><span>Now</span><p>Canonical reference data and supported aliases</p></div>
+          <div><span>Now</span><p>Provenance and confidence-aware identity boundaries</p></div>
+          <div class="atlas-boundary-future"><span>Later</span><p>External access only after product and commercial validation</p></div>
+        </div>
       </section>
 
       <section class="contact-band" id="access-contact">
-        <div class="section-shell contact-inner"><div><p class="eyebrow eyebrow-light">Access &amp; contact</p><h2>WristAtlas is not currently offered as a public production data service.</h2></div><div class="contact-copy"><p>Blue Dial Labs is building WristAtlas as the canonical identity product that WristOwl depends on while validating the appropriate external access and commercialization model. The WristAtlas name remains subject to final clearance and founder approval.</p><div class="contact-links"><a href="../../contact/?reason=wristatlas">Discuss the data problem <span aria-hidden="true">→</span></a><a href="../../data-standards/">Company Data Standards <span aria-hidden="true">→</span></a></div></div></div>
+        <div class="section-shell contact-inner">
+          <div><p class="eyebrow eyebrow-light">Watch data conversations</p><h2>Working through an identity or reference-data problem?</h2></div>
+          <div class="contact-copy">
+            <p>Blue Dial Labs is interested in learning where watch identity breaks in real catalogs, feeds, and software workflows. That conversation does not imply pilot access, a catalog-audit service, or a public WristAtlas API.</p>
+            <div class="contact-links"><a href="../../contact/?reason=wristatlas">Talk to us about watch data <span aria-hidden="true">→</span></a><a href="../../data-standards/">Company Data Standards <span aria-hidden="true">→</span></a></div>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="section-shell footer-main">
         <div><a class="wordmark footer-wordmark" href="../../" aria-label="Blue Dial Labs home"><span>Blue Dial</span><span class="wordmark-labs">Labs</span></a><p>Independent software and data infrastructure for better watch decisions.</p></div>
-        <div class="footer-nav-group"><p>WristAtlas</p><a href="./">Overview</a><a href="#canonical-data-model">Canonical data model</a><a href="#data-api-concept">Data / API concept</a><a href="#access-contact">Access / contact</a></div>
+        <div class="footer-nav-group"><p>WristAtlas</p><a href="./">Overview</a><a href="#resolution-demo">Resolution demo</a><a href="#canonical-data-model">Canonical output</a><a href="#data-api-concept">Current / future use</a></div>
         <div class="footer-nav-group"><p>Explore</p><a href="../wristowl/">WristOwl</a><a href="../../data-standards/">Company Data Standards</a><a href="../../trust/">Trust</a><a href="../../contact/?reason=wristatlas">Contact</a></div>
       </div>
-      <div class="section-shell footer-bottom"><p>© 2026 Blue Dial Labs. All rights reserved.</p><p>WristAtlas is a working product name; no public production API is currently announced.</p></div>
+      <div class="section-shell footer-bottom"><p>© 2026 Blue Dial Labs. All rights reserved.</p><p>WristAtlas is a working product name; no public production API, coverage guarantee, pricing, or SLA is currently announced.</p></div>
     </footer>
   </body>
 </html>
