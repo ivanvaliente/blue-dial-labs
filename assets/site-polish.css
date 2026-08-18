@@ -38,3 +38,42 @@
   background: var(--signal);
   content: "";
 }
+
+/*
+  Desktop editorial alignment.
+
+  The paired desktop compositions use an eyebrow above the left display
+  heading. Align the right-hand copy with that display heading instead of
+  vertically centering/bottom-aligning it against the full left column.
+  Keep each hero's existing vertical posture by centering (or, for the
+  WristAtlas V2 exception, bottom-positioning) the grid row itself.
+  Feature-card headings use deliberate spacing so unequal copy lengths do
+  not create large variable voids above sibling headings.
+
+  The breakpoint stays above the existing <= 860px responsive hero behavior,
+  leaving the mobile/tablet composition unchanged.
+*/
+@media (min-width: 861px) {
+  .page-hero {
+    align-content: center;
+    align-items: start;
+  }
+
+  .page-hero.wristatlas-hero {
+    align-content: end;
+    align-items: start;
+  }
+
+  .split-heading {
+    align-items: start;
+  }
+
+  .page-hero-intro,
+  .split-heading > p {
+    margin-top: 2.72rem;
+  }
+
+  .feature-card h3 {
+    margin-top: 2rem;
+  }
+}
