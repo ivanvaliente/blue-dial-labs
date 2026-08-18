@@ -53,6 +53,7 @@
 */
 @media (min-width: 861px) {
   .page-hero,
+  .page-hero.wristatlas-hero,
   .split-heading {
     align-items: start;
   }
