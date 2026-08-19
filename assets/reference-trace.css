@@ -87,12 +87,12 @@
   white-space: nowrap;
 }
 
-.trace-fragment:nth-of-type(2) {
+.trace-fragment:nth-child(3) {
   margin-left: clamp(1rem, 5vw, 3.6rem);
   color: rgb(19 36 50 / 62%);
 }
 
-.trace-fragment:nth-of-type(3) {
+.trace-fragment:nth-child(4) {
   margin-left: clamp(0.35rem, 2.5vw, 1.5rem);
   color: rgb(19 36 50 / 48%);
 }
@@ -254,8 +254,8 @@
   }
 
   .trace-fragment,
-  .trace-fragment:nth-of-type(2),
-  .trace-fragment:nth-of-type(3) {
+  .trace-fragment:nth-child(3),
+  .trace-fragment:nth-child(4) {
     margin-left: 0;
     white-space: normal;
   }
