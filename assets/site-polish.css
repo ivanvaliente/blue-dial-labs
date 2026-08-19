@@ -6,10 +6,13 @@
   layout and interaction system remain intact while identity tokens evolve.
   The commercial-compression layer then tightens first viewports and adds
   concrete product hierarchy without removing deeper diligence content.
+  The visual-precision layer adds evidence-first graphics and restrained
+  interaction polish without changing the established information architecture.
 */
 @import url("./site-polish-base.css");
 @import url("./brand-v1.css");
 @import url("./above-fold.css");
+@import url("./visual-precision.css");
 
 /* Keep the How It Works preference legend inside its bordered control card. */
 .demo-page .demo-preference-control legend {
