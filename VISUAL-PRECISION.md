@@ -1,10 +1,12 @@
-# Blue Dial Labs Visual Precision Refinement v0.1
+# Blue Dial Labs Visual Precision Refinement v0.2
 
 ## Status
 
 Implemented as a focused website refinement on top of Blue Dial Labs Visual Identity v1.2.
 
 This is not a replacement brand system or a broad website redesign. The established typography stack, warm editorial paper surface, navy/blue identity, navigation, information architecture, and mobile behavior remain intact.
+
+v0.2 refines the homepage treatment after live visual review of v0.1. The original hero Reference Instrument communicated the architecture correctly but rendered too much like an internal diagnostic/application panel: too many borders, controls, monospace labels, and competing hierarchy. The lighter Reference Trace keeps the product story while removing most interface chrome.
 
 ## Objective
 
@@ -33,20 +35,37 @@ Good visual subjects include:
 
 ## Implemented homepage treatment
 
-### Reference Instrument
+### Reference Trace
 
-The former text-led portfolio card is replaced by an illustrative evidence flow:
+The homepage hero uses a deliberately light, editorial/technical illustration instead of a pseudo-application card.
 
-1. synthetic ambiguous market text;
-2. WristAtlas identity resolution through the canonical hierarchy;
-3. WristOwl collector-context decision outcomes; and
-4. the shared principle: structured evidence before recommendation.
+The trace shows:
 
-The example is explicitly labeled synthetic and illustrative so it does not imply live product coverage or a production recommendation.
+1. several synthetic source fragments describing the same watch inconsistently;
+2. a restrained resolution axis rather than a grid of controls;
+3. one canonical WristAtlas identity result; and
+4. a quiet handoff to WristOwl collector decision context.
+
+The canonical example uses Rolex reference `124060`, already represented in the current WristAtlas guided-resolution material. The synthetic source wording includes an intentionally ambiguous `124O60` fragment to demonstrate why source evidence and canonical identity should remain distinct. The result does not assert a variant.
+
+The example is explicitly labeled synthetic and illustrative so it does not imply live product coverage, a production recommendation, or a broader catalog claim.
+
+### Why the v0.1 hero was replaced
+
+The first Reference Instrument was conceptually correct but visually too literal. It used a bordered card, multiple section dividers, canonical-hierarchy cells, decision-outcome cells, a heavy navy result block, and extensive monospace metadata. In the rendered homepage this made the visual feel closer to a developer console or admin panel than a calm evidence instrument.
+
+The replacement therefore follows these rules:
+
+- typography and spatial relationships carry the hierarchy before boxes do;
+- source evidence remains loose and slightly irregular;
+- canonical identity receives the strongest visual emphasis;
+- WristOwl appears as the next responsibility, not as a simulated production decision;
+- reference/dial geometry remains faint background structure rather than foreground decoration;
+- disclaimers remain concise and subordinate.
 
 ### Product responsibility signals
 
-The two homepage product cards now show their jobs as compact diagrams:
+The two homepage product cards continue to show their jobs as compact diagrams:
 
 - WristOwl: `Pursuit → Evidence → Decision`
 - WristAtlas: `Brand → Collection → Model → Reference → Variant`
@@ -55,11 +74,11 @@ These diagrams supplement rather than replace explanatory copy.
 
 ### Abstract reference field
 
-The dark corporate principle band receives restrained circular reference geometry. It evokes a measurement/reference instrument without depicting a literal wristwatch, movement, gear, crown, or luxury-product silhouette.
+The dark corporate principle band retains restrained circular reference geometry. It evokes a measurement/reference instrument without depicting a literal wristwatch, movement, gear, crown, or luxury-product silhouette.
 
 ### Interaction polish
 
-Buttons and text links receive short, restrained hover transitions. Motion is removed when the user requests reduced motion.
+Buttons and text links retain short, restrained hover transitions. Motion is removed when the user requests reduced motion.
 
 ## Invariants retained
 

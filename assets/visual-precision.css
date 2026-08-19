@@ -1,199 +1,11 @@
 /*
-  Blue Dial Labs — Visual Precision Refinement v0.1
+  Blue Dial Labs — Visual Precision Refinement
 
-  Evidence is the visual language. This layer adds restrained reference-
-  instrument graphics and interaction polish without changing the established
-  typography, palette, information architecture, or mobile navigation.
+  Evidence is the visual language. This shared layer retains the compact
+  product-responsibility diagrams, restrained reference-field geometry, and
+  interaction polish established in v0.1. The homepage-specific Reference
+  Trace lives in reference-trace.css.
 */
-
-/* Homepage evidence instrument */
-.hero-reference-instrument {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: clamp(1.35rem, 2.6vw, 2.15rem);
-  border: 1px solid var(--ink);
-  background: var(--white);
-  box-shadow: 0.85rem 0.85rem 0 var(--paper-deep);
-}
-
-.hero-reference-instrument::before {
-  position: absolute;
-  z-index: -1;
-  top: -5.75rem;
-  right: -5.25rem;
-  width: 15rem;
-  height: 15rem;
-  border: 1px solid rgb(45 111 152 / 13%);
-  border-radius: 50%;
-  outline: 1px solid rgb(45 111 152 / 7%);
-  outline-offset: 2.6rem;
-  content: "";
-}
-
-.hero-reference-instrument::after {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 2.2rem;
-  width: 1px;
-  height: 9rem;
-  background: rgb(45 111 152 / 10%);
-  content: "";
-}
-
-.hero-reference-instrument .panel-topline {
-  position: relative;
-  z-index: 1;
-}
-
-.reference-observation {
-  position: relative;
-  z-index: 1;
-  padding-block: 1.2rem 1.1rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.reference-observation-label,
-.reference-step-label,
-.reference-supported-label {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  color: var(--ink-soft);
-  font-family: var(--mono);
-  font-size: 0.61rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.reference-confidence {
-  color: var(--accent-copper-dark);
-}
-
-.reference-raw {
-  max-width: 34rem;
-  margin: 0.65rem 0 0;
-  font-family: var(--mono);
-  font-size: clamp(0.94rem, 1.55vw, 1.08rem);
-  font-weight: 700;
-  letter-spacing: 0.015em;
-  line-height: 1.55;
-}
-
-.reference-raw-ambiguous {
-  color: var(--accent-copper-dark);
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 0.24em;
-}
-
-.reference-source {
-  margin: 0.45rem 0 0;
-  color: var(--ink-soft);
-  font-size: 0.76rem;
-}
-
-.reference-trace {
-  position: relative;
-  z-index: 1;
-}
-
-.reference-trace-step {
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  gap: 0.9rem;
-  padding-block: 1.05rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.reference-step-index {
-  padding-top: 0.05rem;
-  color: var(--brand-blue-dark);
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.reference-system {
-  margin: 0 0 0.55rem;
-  font-size: 0.9rem;
-  font-weight: 750;
-}
-
-.reference-path-compact,
-.reference-outcome-track {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-}
-
-.reference-path-compact span,
-.reference-outcome-track span {
-  min-width: 0;
-  padding: 0.55rem 0.35rem;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.reference-path-compact span:last-child {
-  background: var(--brand-navy);
-  color: var(--white);
-}
-
-.reference-supported-label {
-  margin-bottom: 0.55rem;
-}
-
-.reference-outcome-track {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.reference-outcome-track span {
-  color: var(--ink);
-  background: var(--paper-light);
-}
-
-.reference-instrument-result {
-  position: relative;
-  z-index: 1;
-  margin-top: 1rem;
-  padding: 0.95rem 1rem;
-  background: var(--brand-navy);
-  color: var(--white);
-}
-
-.reference-instrument-result span {
-  display: block;
-  color: var(--brand-blue-light);
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.reference-instrument-result strong {
-  display: block;
-  margin-top: 0.25rem;
-  font-size: 0.92rem;
-}
-
-.hero-reference-instrument .panel-caption {
-  position: relative;
-  z-index: 1;
-  margin: 0.9rem 0 0;
-}
 
 /* Product cards: show the different jobs through compact system diagrams. */
 .product-signal {
@@ -290,10 +102,6 @@
 }
 
 @media (max-width: 860px) {
-  .hero-reference-instrument {
-    box-shadow: 0.55rem 0.55rem 0 var(--paper-deep);
-  }
-
   .pursuit-band::before,
   .pursuit-band::after {
     opacity: 0.65;
@@ -301,23 +109,6 @@
 }
 
 @media (max-width: 620px) {
-  .hero-reference-instrument::before {
-    top: -6.5rem;
-    right: -7rem;
-  }
-
-  .reference-path-compact {
-    grid-template-columns: 1fr;
-  }
-
-  .reference-path-compact span {
-    text-align: left;
-  }
-
-  .reference-outcome-track {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .pursuit-band::before,
   .pursuit-band::after {
     display: none;
