@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#f3f0e8">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="assets/site-polish.css">
+    <link rel="stylesheet" href="assets/reference-trace.css">
     <script src="assets/site.js" defer></script>
   </head>
   <body>
@@ -38,33 +39,27 @@
           <div class="button-row"><a class="button button-primary" href="products/">Explore products <span aria-hidden="true">→</span></a><a class="button button-secondary" href="trust/">How we build trust</a></div>
         </div>
 
-        <article class="hero-reference-instrument" aria-label="Illustrative Blue Dial Labs evidence flow">
-          <div class="panel-topline"><span>Reference instrument / 01</span><span>Illustrative flow</span></div>
-          <div class="reference-observation">
-            <div class="reference-observation-label"><span>Observed market text</span><span class="reference-confidence">Unresolved identity</span></div>
-            <p class="reference-raw">DIVER 41 · BLACK · 2025 · FULL SET · REF <span class="reference-raw-ambiguous">12?610-LN</span></p>
-            <p class="reference-source">Synthetic seller title + attributes + transaction context</p>
+        <figure class="hero-reference-trace" aria-label="Illustrative trace from inconsistent watch evidence to canonical identity and collector decision context">
+          <figcaption class="reference-trace-kicker">Reference trace / illustrative</figcaption>
+          <div class="trace-source-field">
+            <p class="trace-source-label">Observed source evidence</p>
+            <p class="trace-fragment">ROLEX SUBMARINER 41 · BLACK</p>
+            <p class="trace-fragment">SUB <span class="trace-fragment-uncertain">124O60</span> · FULL SET</p>
+            <p class="trace-fragment">124060 · 2025 · SOURCE RECORD</p>
           </div>
-          <div class="reference-trace">
-            <div class="reference-trace-step">
-              <span class="reference-step-index">01</span>
-              <div>
-                <p class="reference-system">WristAtlas / establish identity</p>
-                <div class="reference-path-compact" aria-label="Canonical identity hierarchy"><span>Brand</span><span>Collection</span><span>Model</span><span>Reference</span><span>Variant</span></div>
-              </div>
-            </div>
-            <div class="reference-trace-step">
-              <span class="reference-step-index">02</span>
-              <div>
-                <p class="reference-system">WristOwl / add collector context</p>
-                <p class="reference-supported-label">Supported decision outcomes</p>
-                <div class="reference-outcome-track" aria-label="Illustrative supported decision outcomes"><span>Act</span><span>Wait</span><span>Another source</span><span>Do nothing</span></div>
-              </div>
-            </div>
+          <div class="trace-axis" aria-hidden="true"><span></span></div>
+          <div class="trace-resolution">
+            <p class="trace-resolution-label">WristAtlas / canonical identity</p>
+            <p class="trace-reference">124060</p>
+            <p class="trace-identity">Rolex · Submariner</p>
+            <p class="trace-confidence">Reference resolved · variant not asserted</p>
           </div>
-          <div class="reference-instrument-result"><span>Shared principle</span><strong>Structured evidence before recommendation.</strong></div>
-          <p class="panel-caption">Synthetic example for product explanation. WristOwl and WristAtlas are in development.</p>
-        </article>
+          <div class="trace-decision">
+            <p class="trace-decision-label">WristOwl / collector context</p>
+            <p class="trace-decision-statement">Identity becomes evidence for <em>a better decision.</em></p>
+          </div>
+          <p class="trace-caption">Synthetic source wording · illustrative product explanation · products in development</p>
+        </figure>
       </section>
 
       <section class="principle-band pursuit-band"><div class="section-shell principle-inner"><p class="eyebrow eyebrow-light">Blue Dial Labs</p><p class="principle-statement">Independent software and data infrastructure for better watch decisions.</p></div></section>
