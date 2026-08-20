@@ -1,0 +1,1 @@
+The Blue Dial Labs production mark is traced from the approved identity board; do not redraw or reinterpret the symbol without explicit approval.
