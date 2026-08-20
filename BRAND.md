@@ -6,7 +6,7 @@ Implemented as the current corporate visual system for Blue Dial Labs.
 
 v2.0 adopts the approved **BD Dial Monogram** as the primary corporate symbol while preserving the site's existing information architecture, page layouts, typography stack, warm editorial surface, and established navy/blue palette. This is a focused identity refinement rather than a website redesign.
 
-The approved identity board is the visual source of truth for the symbol. Production geometry is traced from that approved mark rather than reconstructed as a separate interpretation.
+The approved identity board is the visual source of truth for the symbol. Production assets are manually redrawn as clean vector geometry from that approved design. Bitmap contour tracing is explicitly rejected because it preserves raster stair-stepping and produces visibly jagged SVG edges.
 
 The prior Reference Dial remains part of the design history but is superseded as the primary corporate mark.
 
@@ -35,11 +35,13 @@ This ambiguity is intentional. Blue Dial Labs is a software and data company ser
 
 The mark must not be embellished with crowns, lugs, gears, watch-case silhouettes, metallic effects, gradients, or luxury-brand ornament.
 
+The production SVG uses native vector primitives and Bézier geometry rather than a pixel-by-pixel raster outline. Curves and circles must remain smooth at arbitrary display sizes.
+
 ## Small-size mark
 
 `assets/blue-dial-labs-mark-micro.svg`
 
-The micro mark is traced from the simplified mark shown on the approved identity board. Use it where the full outer measurement detail would become noise, including the mobile header and very small identity applications.
+The micro mark is a clean vector redraw of the simplified mark shown on the approved identity board. Use it where the full outer measurement detail would become noise, including the mobile header and very small identity applications.
 
 On dark surfaces, the same approved micro geometry is rendered in light form through CSS rather than maintaining a separately redrawn inverse symbol. This avoids introducing a second interpretation of the logo.
 
@@ -104,10 +106,10 @@ Changing the broader typography system remains intentionally excluded.
 
 Primary identity assets are:
 
-- `assets/blue-dial-labs-mark.svg` — the approved detailed symbol geometry;
-- `assets/blue-dial-labs-mark-micro.svg` — the approved small-size symbol geometry;
-- `favicon.svg` — favicon treatment; and
-- `favicon.ico` — browser fallback.
+- `assets/blue-dial-labs-mark.svg` — the approved detailed symbol redrawn as clean vector geometry;
+- `assets/blue-dial-labs-mark-micro.svg` — the approved small-size symbol redrawn as clean vector geometry;
+- `favicon.svg` — favicon treatment generated from the clean micro geometry; and
+- `favicon.ico` — browser fallback generated from the same micro geometry.
 
 This isolates brand changes from layout behavior and makes refinements easy to review or revert.
 
