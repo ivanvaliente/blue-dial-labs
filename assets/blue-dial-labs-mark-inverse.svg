@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Blue Dial Labs inverse mark</title>
+  <desc id="desc">A simplified light BD dial monogram for dark surfaces.</desc>
+  <circle cx="60" cy="60" r="43" fill="none" stroke="#fffdf7" stroke-width="5"/>
+  <circle cx="60" cy="60" r="32" fill="none" stroke="#fffdf7" stroke-width="4"/>
+  <g fill="#a9c4d5">
+    <rect x="55.5" y="5" width="9" height="17" rx="1"/>
+    <rect x="98" y="55.5" width="17" height="9" rx="1"/>
+    <rect x="55.5" y="98" width="9" height="17" rx="1"/>
+    <rect x="5" y="55.5" width="17" height="9" rx="1"/>
+  </g>
+  <g stroke="#a9c4d5" stroke-width="3" stroke-linecap="round">
+    <path d="M60 10v9" transform="rotate(45 60 60)"/>
+    <path d="M60 10v9" transform="rotate(135 60 60)"/>
+    <path d="M60 10v9" transform="rotate(225 60 60)"/>
+    <path d="M60 10v9" transform="rotate(315 60 60)"/>
+  </g>
+  <g fill="#fffdf7">
+    <path transform="translate(39 76) scale(.045 -.045)" d="M39 644 76 641C122 637 123 633 124 543V95C124 61 119 47 104 38L72 20V-3C139 -1 167 0 198 0C223 0 253 -1 301 -2C331 -3 331 -3 340 -3C500 -3 611 87 611 216C611 269 591 313 556 338C519 363 486 372 406 377C491 407 519 421 551 450C574 472 588 508 588 546C588 637 527 681 399 681L316 680C291 679 222 678 206 678L118 679L39 681ZM265 348H295C411 348 461 304 461 202C461 98 414 52 308 52C291 52 282 53 265 56ZM265 627C288 630 302 631 322 631C404 631 440 598 440 524C440 437 396 400 295 400H265Z"/>
+    <path transform="translate(49 76) scale(.045 -.045)" d="M68 20V-3C155 -1 195 0 224 0C251 0 287 -1 320 -2C343 -3 366 -3 379 -3C498 -3 608 39 683 113C751 180 786 268 786 376C786 471 759 549 709 598C651 655 567 681 437 681L301 679C203 678 203 678 196 678C183 678 183 678 35 681V644L72 641C118 637 119 633 120 543V95C119 59 115 47 100 38ZM261 627C284 630 299 631 323 631C393 631 472 618 514 599C534 589 553 576 570 559C615 515 636 447 636 348C636 246 612 171 563 123C513 74 442 52 329 52C302 52 286 53 261 57Z"/>
+  </g>
+</svg>
