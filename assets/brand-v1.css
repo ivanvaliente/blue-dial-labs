@@ -165,11 +165,13 @@
     font-size: 1.34rem;
   }
 
+  /* Preserve the same corporate symbol across desktop and mobile. The primary
+     mark is only scaled down here; mobile must not swap to a different-looking
+     identity mark. */
   .wordmark::before {
-    width: 2rem;
-    height: 2rem;
+    width: 2.1rem;
+    height: 2.1rem;
     margin-right: 0.58rem;
-    background-image: url("./blue-dial-labs-mark-micro.svg");
   }
 
   .wordmark > span:first-child {
