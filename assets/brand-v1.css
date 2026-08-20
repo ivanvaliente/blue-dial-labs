@@ -1,4 +1,4 @@
-/* Blue Dial Labs Visual Identity v1.2
+/* Blue Dial Labs Visual Identity v2.0
    Brand layer loaded after the site's structural styles. */
 
 :root {
@@ -83,38 +83,61 @@
   color: #c4d0d7;
 }
 
-/* Formalize the live-text wordmark with a compact Reference Dial symbol. */
+/* Primary lockup: the approved BD dial monogram plus a live editorial wordmark.
+   Live text keeps the site accessible and responsive while the SVG owns the symbol. */
 .wordmark {
   align-items: center;
-  gap: 0.72rem;
-  font-size: clamp(1.42rem, 2vw, 1.72rem);
-  letter-spacing: -0.03em;
+  gap: 0;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2vw, 1.68rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
 }
 
 .wordmark::before {
-  width: 1.78rem;
-  height: 1.78rem;
+  width: 2.35rem;
+  height: 2.35rem;
   flex: 0 0 auto;
   display: inline-block;
+  margin-right: 0.72rem;
   background: url("./blue-dial-labs-mark.svg") center / contain no-repeat;
   content: "";
 }
 
+.wordmark > span:first-child {
+  padding-left: 0.72rem;
+  border-left: 1px solid rgb(19 36 50 / 28%);
+}
+
 .wordmark-labs {
-  color: var(--brand-blue-dark);
+  margin-left: 0.24em;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
 }
 
 .footer-wordmark {
-  font-size: 1.14rem;
+  font-size: 1.25rem;
 }
 
 .footer-wordmark::before {
-  width: 1.28rem;
-  height: 1.28rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 0.58rem;
+  background-image: url("./blue-dial-labs-mark-inverse.svg");
+}
+
+.footer-wordmark > span:first-child {
+  padding-left: 0.58rem;
+  border-left-color: rgb(255 253 247 / 30%);
 }
 
 .footer-wordmark .wordmark-labs {
-  color: var(--brand-blue-light);
+  color: var(--white);
 }
 
 /* The dark bands should feel like Blue Dial Labs, not the former forest identity. */
@@ -132,6 +155,27 @@
 .button-primary:hover {
   border-color: var(--brand-blue-dark);
   background: var(--brand-blue-dark);
+}
+
+@media (max-width: 560px) {
+  .wordmark {
+    font-size: 1.34rem;
+  }
+
+  .wordmark::before {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.58rem;
+    background-image: url("./blue-dial-labs-mark-micro.svg");
+  }
+
+  .wordmark > span:first-child {
+    padding-left: 0.58rem;
+  }
+
+  .footer-wordmark::before {
+    background-image: url("./blue-dial-labs-mark-inverse.svg");
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
