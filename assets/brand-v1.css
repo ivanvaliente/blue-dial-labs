@@ -84,7 +84,8 @@
 }
 
 /* Primary lockup: the approved BD dial monogram plus a live editorial wordmark.
-   Live text keeps the site accessible and responsive while the SVG owns the symbol. */
+   The symbol geometry is traced directly from the approved identity board rather
+   than reconstructed as a new interpretation. */
 .wordmark {
   align-items: center;
   gap: 0;
@@ -129,7 +130,8 @@
   width: 1.6rem;
   height: 1.6rem;
   margin-right: 0.58rem;
-  background-image: url("./blue-dial-labs-mark-inverse.svg");
+  background-image: url("./blue-dial-labs-mark-micro.svg");
+  filter: brightness(0) invert(1);
 }
 
 .footer-wordmark > span:first-child {
@@ -172,10 +174,6 @@
 
   .wordmark > span:first-child {
     padding-left: 0.58rem;
-  }
-
-  .footer-wordmark::before {
-    background-image: url("./blue-dial-labs-mark-inverse.svg");
   }
 }
 
