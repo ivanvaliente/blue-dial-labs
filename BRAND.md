@@ -6,6 +6,8 @@ Implemented as the current corporate visual system for Blue Dial Labs.
 
 v2.0 adopts the approved **BD Dial Monogram** as the primary corporate symbol while preserving the site's existing information architecture, page layouts, typography stack, warm editorial surface, and established navy/blue palette. This is a focused identity refinement rather than a website redesign.
 
+The approved identity board is the visual source of truth for the symbol. Production geometry is traced from that approved mark rather than reconstructed as a separate interpretation.
+
 The prior Reference Dial remains part of the design history but is superseded as the primary corporate mark.
 
 ## Brand idea
@@ -16,16 +18,16 @@ The identity deliberately avoids looking like a watch manufacturer, luxury retai
 
 ## Primary mark — BD Dial Monogram
 
-The primary mark combines an interlocked `BD` monogram with a restrained reference-dial system.
+The primary mark combines the approved central monogram with a restrained reference-dial system.
 
 It contains:
 
-- an interlocked `BD` monogram as the dominant identity element;
-- concentric dial/reference geometry;
+- the approved central monogram as the dominant identity element;
+- circular dial/reference geometry;
 - four strong cardinal indices;
 - smaller measurement indices;
 - sparse observation nodes and evidence rays; and
-- the established Blue Dial Labs navy/blue palette.
+- the established Blue Dial Labs navy treatment.
 
 The visual metaphor is intentionally broader than a literal watch face. It should be readable as a precision instrument, measurement system, reference field, and watch-dial reference at the same time.
 
@@ -33,40 +35,23 @@ This ambiguity is intentional. Blue Dial Labs is a software and data company ser
 
 The mark must not be embellished with crowns, lugs, gears, watch-case silhouettes, metallic effects, gradients, or luxury-brand ornament.
 
-## Small-size and inverse marks
-
-The identity includes simplified production variants rather than forcing the detailed primary mark into every context.
-
-### Micro mark
+## Small-size mark
 
 `assets/blue-dial-labs-mark-micro.svg`
 
-Use for small display sizes where the outer evidence detail of the primary mark would become noise. It retains:
+The micro mark is traced from the simplified mark shown on the approved identity board. Use it where the full outer measurement detail would become noise, including the mobile header and very small identity applications.
 
-- the `BD` monogram;
-- concentric dial geometry;
-- four cardinal indices; and
-- four restrained diagonal indices.
-
-The mobile header and favicon treatment use this simplified geometry.
-
-### Inverse mark
-
-`assets/blue-dial-labs-mark-inverse.svg`
-
-Use on dark navy/ink surfaces. The geometry remains unchanged while the principal strokes become warm white and the dial accents use the established light blue.
-
-The website footer uses the inverse mark.
+On dark surfaces, the same approved micro geometry is rendered in light form through CSS rather than maintaining a separately redrawn inverse symbol. This avoids introducing a second interpretation of the logo.
 
 ## Wordmark and lockup
 
-The website uses the SVG symbol alongside a live-text `Blue Dial Labs` wordmark rather than baking the company name into a raster or font-dependent logo image.
+The website uses the approved SVG symbol alongside a live-text `Blue Dial Labs` wordmark rather than baking the company name into a raster or font-dependent logo image.
 
 The primary horizontal lockup is:
 
 `[BD Dial Monogram] | Blue Dial Labs`
 
-The wordmark uses the site's established editorial display-serif stack. A thin divider separates the symbol from the company name. `Blue Dial` and `Labs` now read as one corporate name rather than using a separate monospace treatment for `LABS`.
+The wordmark uses the site's established editorial display-serif stack. A thin divider separates the symbol from the company name. `Blue Dial` and `Labs` read as one corporate name rather than using a separate monospace treatment for `LABS`.
 
 Live text remains accessible, responsive, searchable, and independent of a licensed logo font.
 
@@ -90,7 +75,7 @@ Live text remains accessible, responsive, searchable, and independent of a licen
 
 ## Color semantics
 
-Blue remains the primary identity and interaction color. Links, active states, emphasis, and the BD Dial Monogram remain blue so the company continues to read unmistakably as Blue Dial Labs.
+Blue remains the primary identity and interaction color. Links, active states, emphasis, and the BD Dial Monogram remain blue/navy so the company continues to read unmistakably as Blue Dial Labs.
 
 Copper red is a secondary accent only. It exists to add warm chromatic contrast without drifting toward gold, jewelry, or conventional blue-and-gold luxury branding. Current uses are deliberately limited to small graphical punctuation such as the hero signal dot, evidence-panel rule, status separators, principle marks, and selected labels on dark bands.
 
@@ -119,11 +104,10 @@ Changing the broader typography system remains intentionally excluded.
 
 Primary identity assets are:
 
-- `assets/blue-dial-labs-mark.svg` — detailed primary symbol;
-- `assets/blue-dial-labs-mark-micro.svg` — small-size symbol;
-- `assets/blue-dial-labs-mark-inverse.svg` — dark-surface symbol;
-- `favicon.svg` — favicon treatment using the micro geometry; and
-- `favicon.ico` — browser fallback generated from the same micro geometry.
+- `assets/blue-dial-labs-mark.svg` — the approved detailed symbol geometry;
+- `assets/blue-dial-labs-mark-micro.svg` — the approved small-size symbol geometry;
+- `favicon.svg` — favicon treatment; and
+- `favicon.ico` — browser fallback.
 
 This isolates brand changes from layout behavior and makes refinements easy to review or revert.
 
