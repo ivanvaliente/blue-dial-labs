@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Blue Dial Labs">
-  <rect width="120" height="120" rx="20" fill="#f3f0e8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Blue Dial Labs micro mark</title>
+  <desc id="desc">Simplified Blue Dial Labs BD dial monogram.</desc>
   <circle cx="60" cy="60" r="45" fill="none" stroke="#102c3f" stroke-width="6"/>
   <g fill="#102c3f">
     <rect x="56.5" y="0" width="7" height="19" rx="1"/>

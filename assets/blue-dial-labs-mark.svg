@@ -1,14 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title desc">
-  <title id="title">Blue Dial Labs reference dial</title>
-  <desc id="desc">A restrained circular dial with reference indices and a blue decision hand.</desc>
-  <circle cx="24" cy="24" r="19" fill="none" stroke="#102c3f" stroke-width="3"/>
-  <path d="M13.6 8.1A19 19 0 0 1 38.8 12.2" fill="none" stroke="#2d6f98" stroke-width="3" stroke-linecap="round"/>
-  <g stroke="#102c3f" stroke-width="2" stroke-linecap="round">
-    <path d="M24 8.5v4"/>
-    <path d="M39.5 24h-4"/>
-    <path d="M24 39.5v-4"/>
-    <path d="M8.5 24h4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+  <title id="title">Blue Dial Labs mark</title>
+  <desc id="desc">Blue Dial Labs BD dial monogram.</desc>
+  <g fill="none" stroke="#102c3f" stroke-linejoin="round">
+    <circle cx="100" cy="100" r="72" stroke-width="9"/>
+    <g stroke-width="3" stroke-linecap="square">
+      <path d="M100 8v10" transform="rotate(15 100 100)"/>
+      <path d="M100 8v10" transform="rotate(30 100 100)"/>
+      <path d="M100 8v10" transform="rotate(60 100 100)"/>
+      <path d="M100 8v10" transform="rotate(75 100 100)"/>
+      <path d="M100 8v10" transform="rotate(105 100 100)"/>
+      <path d="M100 8v10" transform="rotate(120 100 100)"/>
+      <path d="M100 8v10" transform="rotate(150 100 100)"/>
+      <path d="M100 8v10" transform="rotate(165 100 100)"/>
+      <path d="M100 8v10" transform="rotate(195 100 100)"/>
+      <path d="M100 8v10" transform="rotate(210 100 100)"/>
+      <path d="M100 8v10" transform="rotate(240 100 100)"/>
+      <path d="M100 8v10" transform="rotate(255 100 100)"/>
+      <path d="M100 8v10" transform="rotate(285 100 100)"/>
+      <path d="M100 8v10" transform="rotate(300 100 100)"/>
+      <path d="M100 8v10" transform="rotate(330 100 100)"/>
+      <path d="M100 8v10" transform="rotate(345 100 100)"/>
+    </g>
+    <g stroke-width="4" stroke-linecap="square">
+      <path d="M132 68l19-19"/>
+      <path d="M151 151l-19-19"/>
+      <path d="M68 132l-19 19"/>
+      <path d="M49 49l19 19"/>
+    </g>
   </g>
-  <path d="M24 24L34 14" fill="none" stroke="#2d6f98" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="24" cy="24" r="3.25" fill="#102c3f"/>
+  <g fill="#102c3f">
+    <rect x="95" y="0" width="10" height="28" rx="1"/>
+    <rect x="172" y="95" width="28" height="10" rx="1"/>
+    <rect x="95" y="172" width="10" height="28" rx="1"/>
+    <rect x="0" y="95" width="28" height="10" rx="1"/>
+    <circle cx="42" cy="26" r="7"/>
+    <circle cx="158" cy="26" r="7"/>
+    <circle cx="158" cy="174" r="7"/>
+    <circle cx="42" cy="174" r="7"/>
+  </g>
+  <path fill="#102c3f" fill-rule="evenodd" d="
+    M68 57 H104 C114 56 121 57 126 60 C132 64 136 70 136 77
+    C136 86 133 92 126 97 C132 102 136 109 136 119
+    C136 129 132 136 126 139 C123 142 119 143 117 143 H68 Z
+
+    M79 67 C80 66 81 66 83 66 H114 C119 66 123 71 123 77 V85
+    C123 89 121 91 118 92 C115 94 111 94 108 94 C106 94 105 92 105 90
+    V71 H95 V91 C95 93 94 94 92 94 H81 C80 94 79 92 79 90 Z
+
+    M79 105 C80 103 82 103 85 103 H95 V130 H105 V105
+    C106 103 108 103 110 103 H118 C122 105 125 110 125 116 V121
+    C125 126 122 130 119 132 C116 134 112 134 108 134 H81
+    C80 134 79 132 79 130 Z"/>
 </svg>
