@@ -66,8 +66,20 @@
   text-transform: uppercase;
 }
 
-/* Portfolio cards use the standalone marks as restrained product identifiers.
-   The adjacent live headings remain the accessible product names. */
+/* Portfolio cards use the same horizontal product lockup language as the
+   individual product pages while retaining semantic h3 headings. */
+.audience-card h3.product-card-lockup {
+  max-width: none;
+  margin-top: 0;
+}
+
+.product-card-name,
+.product-card-wordmark,
+.product-card-descriptor {
+  display: block;
+}
+
+/* Retain standalone mark support for any other portfolio-card treatment. */
 .product-card-mark {
   display: block;
   width: clamp(3.8rem, 6vw, 5rem);
