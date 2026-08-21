@@ -16,6 +16,16 @@
   flex: 0 0 auto;
 }
 
+/* The current WristOwl source mark is a traced raster asset whose SVG still
+   carries a light background. Blend that light field into the surrounding
+   paper and constrain the circular mark so it reads like the transparent
+   WristAtlas asset without changing layout or the approved artwork. */
+.wristowl-product-mark,
+.product-card-mark-wristowl {
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+}
+
 .wristatlas-product-name,
 .wristowl-product-name {
   min-width: 0;
@@ -63,10 +73,6 @@
   width: clamp(3.8rem, 6vw, 5rem);
   height: auto;
   margin: 0 0 1.35rem;
-}
-
-.product-card-mark-wristowl {
-  border-radius: 50%;
 }
 
 @media (max-width: 680px) {
