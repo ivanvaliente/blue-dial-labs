@@ -2,7 +2,7 @@
 
 ## Status
 
-WristAtlas and WristOwl now have production product-level identities beneath the Blue Dial Labs corporate visual system.
+WristAtlas and WristOwl have product-level identities beneath the Blue Dial Labs corporate visual system.
 
 Blue Dial Labs remains the company identity and site-wide masthead. Product identities appear inside their product pages and do not replace the corporate header.
 
@@ -12,7 +12,7 @@ Blue Dial Labs remains the company identity and site-wide masthead. Product iden
 - **WristOwl** — collector decision-intelligence product
 - **WristAtlas** — canonical watch identity and data infrastructure product
 
-A product page may display its product mark prominently inside the page hero, but it must not imply a separate company or site.
+A product page may display its product identity prominently inside the page hero, but it must not imply a separate company or site.
 
 ## WristAtlas identity
 
@@ -55,75 +55,55 @@ Descriptor:
 
 ### Source concept
 
-The WristOwl direction comes from the supplied owl inside a watch/dial reference system.
+The current approved WristOwl direction is the originally supplied owl/dial artwork.
 
-The original concept successfully communicates watchfulness and intelligence, but its binary eye text, gear-like rings, network graph, feather circuitry, and crown-like ornament were too dense for normal web sizes.
+That artwork deliberately combines:
 
-### Production refinement
+- a detailed owl silhouette;
+- gear-like binary/data eyes;
+- a watch/dial bezel and crown;
+- circuit/network-node detail in the wings; and
+- the `WristOwl` / `Collector decision intelligence` wordmark treatment.
 
-Product Identity v0.2 preserves the concept while deliberately removing most decorative detail.
+The detail is part of the identity. A previous attempt to simplify the owl into a generic small-scale vector mark was rejected because it changed the character of the design and read as cartoonish/mascot-like.
 
-The production WristOwl mark retains:
+### Current production treatment
 
-- a clear owl silhouette;
-- two prominent watchful eyes;
-- a central beak and restrained wing/body geometry;
-- an outer precision-dial circle;
-- four cardinal indices that suggest monitoring/reference thresholds;
-- four small decision/data points in the full mark; and
-- the shared Blue Dial Labs navy/blue/steel palette.
+For Product Identity v0.2, fidelity takes priority over forced vectorization.
 
-The production mark removes:
+The corporate site therefore uses a web-optimized copy of the original approved artwork:
 
-- binary digits inside the eyes;
-- gear teeth;
-- dense network-node webs;
-- ornamental feather circuitry;
-- the crown/watch-crown element;
-- tiny decorative ticks; and
-- raster contour tracing.
+- `assets/wristowl-logo-original.jpg`
 
-The objective is an owl that reads clearly as **watchful decision intelligence**, not a mascot, cybersecurity emblem, or generic AI logo.
+The hero displays the original composition directly rather than replacing it with a redrawn symbol + live-text lockup.
 
-### Assets
+This is intentionally different from WristAtlas. A future WristOwl SVG is acceptable only if it is a faithful reproduction of this approved artwork rather than a stylistic simplification or reinterpretation.
 
-- `assets/wristowl-mark.svg` — primary product symbol
-- `assets/wristowl-mark-micro.svg` — reduced-detail small-size symbol
-- `assets/wristowl-mark-inverse.svg` — dark-surface symbol
+### Rejected treatment
 
-All production product marks use native SVG geometry. Do not convert bitmap contours into SVG paths.
+Do not reintroduce the simplified owl/dial assets from the initial v0.2 attempt. In particular, avoid:
 
-### Wordmark
-
-The corporate site uses live text rather than baking `WristOwl` into the image asset.
-
-Hero lockup:
-
-`[WristOwl mark] | WristOwl`
-
-Descriptor:
-
-`Collector decision intelligence`
-
-The existing product-stage disclosure — `Working product name · Pre-launch` — remains separate from the identity lockup.
+- oversized circular eyes with pupils;
+- smile-like feather geometry;
+- mascot/cartoon facial proportions;
+- aggressive removal of the gear/data/circuit language; or
+- a separate micro mark that visibly changes the identity.
 
 ## Responsive behavior
 
-Primary product marks remain preferred at page-hero sizes on both desktop and mobile when they remain legible.
+WristAtlas scales its vector hero lockup in place.
 
-Micro marks are reserved for genuinely constrained applications. A narrow viewport by itself is not a reason to swap to a visibly different product identity.
-
-Product hero lockups scale in place instead of changing identity between breakpoints.
+WristOwl scales the approved original composition proportionally in the hero. Do not swap it for a different-looking mobile mark simply because the viewport is narrow.
 
 ## Corporate relationship
 
-The three identities intentionally share palette and precision language while remaining distinct:
+The three identities share palette and horological/technical language while remaining distinct:
 
 - Blue Dial Labs — BD dial monogram
-- WristOwl — owl + precision dial
+- WristOwl — detailed owl + watch/data system
 - WristAtlas — globe/reference grid + compass
 
-This should make both products feel built by Blue Dial Labs without making the marks interchangeable.
+The shared system should make both products feel built by Blue Dial Labs without making their symbols interchangeable.
 
 ## Product-stage language
 
