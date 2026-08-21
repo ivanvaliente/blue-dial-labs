@@ -1,0 +1,85 @@
+/* Product Identity v0.1
+   Product marks complement the Blue Dial Labs corporate masthead; they do not replace it. */
+
+.wristatlas-product-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(0.85rem, 1.8vw, 1.2rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.wristatlas-product-mark {
+  width: clamp(4.9rem, 7vw, 6.2rem);
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.wristatlas-product-name {
+  min-width: 0;
+  padding-left: clamp(0.85rem, 1.8vw, 1.2rem);
+  border-left: 1px solid rgb(19 36 50 / 24%);
+}
+
+.wristatlas-product-wordmark,
+.wristatlas-product-descriptor {
+  margin: 0;
+}
+
+.wristatlas-product-wordmark {
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 760;
+  line-height: 0.95;
+  letter-spacing: 0.015em;
+}
+
+.wristatlas-product-descriptor {
+  margin-top: 0.48rem;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: clamp(0.62rem, 1vw, 0.74rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 680px) {
+  .wristatlas-product-lockup {
+    gap: 0.72rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .wristatlas-product-mark {
+    width: 4.35rem;
+  }
+
+  .wristatlas-product-name {
+    padding-left: 0.72rem;
+  }
+
+  .wristatlas-product-wordmark {
+    font-size: clamp(1.42rem, 7vw, 1.8rem);
+  }
+
+  .wristatlas-product-descriptor {
+    max-width: 17rem;
+    font-size: 0.58rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .wristatlas-product-mark {
+    width: 3.8rem;
+  }
+
+  .wristatlas-product-wordmark {
+    font-size: 1.34rem;
+  }
+
+  .wristatlas-product-descriptor {
+    max-width: 13rem;
+    letter-spacing: 0.055em;
+  }
+}
