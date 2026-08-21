@@ -69,15 +69,16 @@ The detail is part of the identity. A previous attempt to simplify the owl into 
 
 ### Current production treatment
 
-For Product Identity v0.2, fidelity takes priority over forced vectorization.
+For Product Identity v0.2, fidelity remains the priority. The founder has approved a faithful SVG conversion of the original artwork for production use.
 
-The corporate site therefore uses a web-optimized copy of the original approved artwork:
+Assets:
 
-- `assets/wristowl-logo-original.jpg`
+- `assets/wristowl-logo.svg` — the production SVG, composed of native vector paths; and
+- `assets/wristowl-logo-original.jpg` — the exact founder-approved JPEG source, retained as provenance for the vector conversion.
 
-The hero displays the original composition directly rather than replacing it with a redrawn symbol + live-text lockup.
+The hero displays the SVG directly rather than replacing it with a redrawn symbol + live-text lockup. The conversion retains the original detailed owl/dial composition; it does not embed the JPEG inside an SVG.
 
-This is intentionally different from WristAtlas. A future WristOwl SVG is acceptable only if it is a faithful reproduction of this approved artwork rather than a stylistic simplification or reinterpretation.
+This is intentionally different from WristAtlas. Any future revision of the WristOwl SVG must remain a faithful reproduction of this approved artwork rather than a stylistic simplification or reinterpretation.
 
 ### Rejected treatment
 

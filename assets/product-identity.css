@@ -45,8 +45,8 @@
   text-transform: uppercase;
 }
 
-/* WristOwl deliberately uses the founder-approved original artwork in this
-   iteration. Do not substitute a simplified mascot-style redraw. */
+/* WristOwl uses the founder-approved, faithful SVG conversion of the original
+   artwork. Do not substitute a simplified mascot-style redraw. */
 .wristowl-product-logo {
   display: block;
   width: min(100%, 32rem);
