@@ -1,31 +1,37 @@
-/* Product Identity v0.2
+/* Product Identity v0.3
    Product marks complement the Blue Dial Labs corporate masthead; they do not replace it. */
 
-.wristatlas-product-lockup {
+.wristatlas-product-lockup,
+.wristowl-product-lockup {
   display: inline-flex;
   align-items: center;
   gap: clamp(0.85rem, 1.8vw, 1.2rem);
   margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
 
-.wristatlas-product-mark {
+.wristatlas-product-mark,
+.wristowl-product-mark {
   width: clamp(4.9rem, 7vw, 6.2rem);
   height: auto;
   flex: 0 0 auto;
 }
 
-.wristatlas-product-name {
+.wristatlas-product-name,
+.wristowl-product-name {
   min-width: 0;
   padding-left: clamp(0.85rem, 1.8vw, 1.2rem);
   border-left: 1px solid rgb(19 36 50 / 24%);
 }
 
 .wristatlas-product-wordmark,
-.wristatlas-product-descriptor {
+.wristatlas-product-descriptor,
+.wristowl-product-wordmark,
+.wristowl-product-descriptor {
   margin: 0;
 }
 
-.wristatlas-product-wordmark {
+.wristatlas-product-wordmark,
+.wristowl-product-wordmark {
   color: var(--ink);
   font-family: var(--sans);
   font-size: clamp(1.65rem, 3vw, 2.35rem);
@@ -34,7 +40,12 @@
   letter-spacing: 0.015em;
 }
 
-.wristatlas-product-descriptor {
+.wristowl-product-wordmark {
+  letter-spacing: 0.005em;
+}
+
+.wristatlas-product-descriptor,
+.wristowl-product-descriptor {
   margin-top: 0.48rem;
   color: var(--ink-soft);
   font-family: var(--mono);
@@ -45,55 +56,66 @@
   text-transform: uppercase;
 }
 
-/* WristOwl uses the founder-approved, faithful SVG conversion of the original
-   artwork. Do not substitute a simplified mascot-style redraw. */
-.wristowl-product-logo {
+/* Portfolio cards use the standalone marks as restrained product identifiers.
+   The adjacent live headings remain the accessible product names. */
+.product-card-mark {
   display: block;
-  width: min(100%, 32rem);
+  width: clamp(3.8rem, 6vw, 5rem);
   height: auto;
-  margin: 0 0 clamp(1.35rem, 2.8vw, 1.85rem);
-  mix-blend-mode: multiply;
+  margin: 0 0 1.35rem;
+}
+
+.product-card-mark-wristowl {
+  border-radius: 50%;
 }
 
 @media (max-width: 680px) {
-  .wristatlas-product-lockup {
+  .wristatlas-product-lockup,
+  .wristowl-product-lockup {
     gap: 0.72rem;
     margin-bottom: 1.35rem;
   }
 
-  .wristatlas-product-mark {
+  .wristatlas-product-mark,
+  .wristowl-product-mark {
     width: 4.35rem;
   }
 
-  .wristatlas-product-name {
+  .wristatlas-product-name,
+  .wristowl-product-name {
     padding-left: 0.72rem;
   }
 
-  .wristatlas-product-wordmark {
+  .wristatlas-product-wordmark,
+  .wristowl-product-wordmark {
     font-size: clamp(1.42rem, 7vw, 1.8rem);
   }
 
-  .wristatlas-product-descriptor {
+  .wristatlas-product-descriptor,
+  .wristowl-product-descriptor {
     max-width: 17rem;
     font-size: 0.58rem;
   }
 
-  .wristowl-product-logo {
-    width: min(100%, 28rem);
-    margin-bottom: 1.2rem;
+  .product-card-mark {
+    width: 4rem;
+    margin-bottom: 1.1rem;
   }
 }
 
 @media (max-width: 390px) {
-  .wristatlas-product-mark {
+  .wristatlas-product-mark,
+  .wristowl-product-mark {
     width: 3.8rem;
   }
 
-  .wristatlas-product-wordmark {
+  .wristatlas-product-wordmark,
+  .wristowl-product-wordmark {
     font-size: 1.34rem;
   }
 
-  .wristatlas-product-descriptor {
+  .wristatlas-product-descriptor,
+  .wristowl-product-descriptor {
     max-width: 13rem;
     letter-spacing: 0.055em;
   }
