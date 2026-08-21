@@ -1,4 +1,4 @@
-/* Product Identity v0.1
+/* Product Identity v0.2
    Product marks complement the Blue Dial Labs corporate masthead; they do not replace it. */
 
 .wristatlas-product-lockup {
@@ -45,6 +45,16 @@
   text-transform: uppercase;
 }
 
+/* WristOwl deliberately uses the founder-approved original artwork in this
+   iteration. Do not substitute a simplified mascot-style redraw. */
+.wristowl-product-logo {
+  display: block;
+  width: min(100%, 32rem);
+  height: auto;
+  margin: 0 0 clamp(1.35rem, 2.8vw, 1.85rem);
+  mix-blend-mode: multiply;
+}
+
 @media (max-width: 680px) {
   .wristatlas-product-lockup {
     gap: 0.72rem;
@@ -66,6 +76,11 @@
   .wristatlas-product-descriptor {
     max-width: 17rem;
     font-size: 0.58rem;
+  }
+
+  .wristowl-product-logo {
+    width: min(100%, 28rem);
+    margin-bottom: 1.2rem;
   }
 }
 
