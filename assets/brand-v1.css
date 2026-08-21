@@ -127,8 +127,8 @@
 }
 
 .footer-wordmark::before {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.35rem;
+  height: 1.35rem;
   margin-right: 0.58rem;
   background-image: url("./blue-dial-labs-mark-micro.svg");
   filter: brightness(0) invert(1);
