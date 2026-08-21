@@ -8,7 +8,7 @@
     <rect x="56.5" y="101" width="7" height="19" rx="1"/>
     <rect x="0" y="56.5" width="19" height="7" rx="1"/>
   </g>
-  <path fill="#102c3f" fill-rule="evenodd" d="
+  <path fill="#102c3f" fill-rule="evenodd" transform="translate(0 -4)" d="
     M40 34 H62 C69 34 74 35 77 38 C81 41 83 45 83 50
     C83 56 81 60 76 63 C81 66 84 71 84 77
     C84 84 81 89 77 91 C75 94 71 95 68 95 H40 Z
