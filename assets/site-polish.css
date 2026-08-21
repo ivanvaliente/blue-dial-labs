@@ -52,7 +52,7 @@
   heading. Align the right-hand copy with that display heading instead of
   vertically centering/bottom-aligning it against the full left column.
   Keep each hero's existing vertical posture by centering (or, for the
-  WristAtlas V2 exception, bottom-positioning) the grid row itself.
+  product-identity hero exceptions, bottom-positioning) the grid row itself.
   Feature-card headings use deliberate spacing so unequal copy lengths do
   not create large variable voids above sibling headings.
 
@@ -65,7 +65,8 @@
     align-items: start;
   }
 
-  .page-hero.wristatlas-hero {
+  .page-hero.wristatlas-hero,
+  .page-hero.wristowl-hero {
     align-content: end;
     align-items: start;
   }
