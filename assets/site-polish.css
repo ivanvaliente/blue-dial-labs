@@ -8,11 +8,14 @@
   concrete product hierarchy without removing deeper diligence content.
   The visual-precision layer adds evidence-first graphics and restrained
   interaction polish without changing the established information architecture.
+  Product identity then adds scoped product marks without replacing the
+  site-wide Blue Dial Labs corporate masthead.
 */
 @import url("./site-polish-base.css");
 @import url("./brand-v1.css");
 @import url("./above-fold.css");
 @import url("./visual-precision.css");
+@import url("./product-identity.css");
 
 /* Keep the How It Works preference legend inside its bordered control card. */
 .demo-page .demo-preference-control legend {
