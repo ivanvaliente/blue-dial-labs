@@ -41,9 +41,9 @@ The production SVG uses native vector primitives and Bézier geometry rather tha
 
 `assets/blue-dial-labs-mark-micro.svg`
 
-The micro mark is a clean vector redraw of the simplified mark shown on the approved identity board. Use it where the full outer measurement detail would become noise, including the mobile header and very small identity applications.
+The micro mark is a clean vector redraw of the simplified mark shown on the approved identity board. Reserve it for genuinely constrained contexts such as favicons and compact footer treatment. The website header uses the primary corporate mark at all responsive breakpoints; mobile scales the same symbol down rather than swapping to a different-looking identity.
 
-On dark surfaces, the same approved micro geometry is rendered in light form through CSS rather than maintaining a separately redrawn inverse symbol. This avoids introducing a second interpretation of the logo.
+On dark surfaces, the micro geometry may be rendered in light form through CSS rather than maintaining a separately redrawn inverse symbol. This avoids introducing a second interpretation of the logo.
 
 ## Wordmark and lockup
 
