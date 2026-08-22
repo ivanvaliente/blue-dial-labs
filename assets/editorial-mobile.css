@@ -37,7 +37,7 @@
   .hero-home h1 {
     max-width: 9.75ch;
     margin-bottom: 2rem;
-    font-size: clamp(3.3rem, 13.6vw, 4.25rem);
+    /* font-size: clamp(3.3rem, 13.6vw, 4.25rem); */
     letter-spacing: -0.055em;
     line-height: 0.94;
   }

@@ -24,6 +24,7 @@
 @import url("./editorial-refinement.css");
 @import url("./editorial-mobile.css");
 @import url("./product-presentation-refinement.css");
+@import url("./mobile-menu-overlay.css");
 
 /* Keep the How It Works preference legend inside its bordered control card. */
 .demo-page .demo-preference-control legend {
