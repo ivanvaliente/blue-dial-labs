@@ -1,0 +1,30 @@
+/*
+  Mobile navigation stays in the established accessible disclosure pattern,
+  but its open state is now a layered drawer. It therefore never changes the
+  document flow or pushes the page content down.
+*/
+@media (max-width: 900px) {
+  .site-header {
+    z-index: 30;
+  }
+
+  .nav-shell {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .primary-nav {
+    position: absolute;
+    inset: 100% 0 auto;
+    z-index: 1;
+    max-height: calc(100dvh - 5.5rem);
+    margin: 0;
+    padding: 0.35rem 0 1rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid var(--line);
+    border-top: 0;
+    background: rgb(243 240 232 / 98%);
+    box-shadow: 0 1.25rem 2rem rgb(19 36 50 / 18%);
+  }
+}
