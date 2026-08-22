@@ -33,7 +33,7 @@
 @media (max-width: 680px) {
   .wristatlas-product-mark,
   .wristowl-product-mark {
-    width: 6.25rem;
+    /* width: 6.25rem; */
   }
 
   .product-card-mark {
@@ -44,7 +44,7 @@
 @media (max-width: 390px) {
   .wristatlas-product-mark,
   .wristowl-product-mark {
-    width: 5.5rem;
+    /* width: 5.5rem; */
   }
 
   .product-card-mark {
