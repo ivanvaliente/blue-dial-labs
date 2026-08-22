@@ -194,7 +194,7 @@ p:last-child {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  margin-bottom: 1.6rem;
+  /* margin-bottom: 1.6rem; */
   color: var(--signal-dark);
   font-family: var(--mono);
   font-size: 0.7rem;
@@ -830,7 +830,7 @@ h3 {
 .boundary-callout {
   display: grid;
   grid-template-columns: 0.35fr 1fr;
-  gap: 3rem;
+  gap: 2rem;
   margin-bottom: clamp(5rem, 9vw, 8rem);
   padding: clamp(2rem, 5vw, 4rem);
   border: 1px solid var(--ink);
