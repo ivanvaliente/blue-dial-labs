@@ -2,10 +2,10 @@
   Blue Dial Labs — Navigation focus treatment
 
   Desktop disclosure trays de-emphasize the page beneath them with a restrained
-  blur and paper-toned scrim. Mobile uses a lighter scrim-only treatment while
-  the opaque navigation panel is open. The site header and navigation surfaces
-  remain sharp because each focus layer sits below the header in the stacking
-  order.
+  blur and paper-toned scrim. Mobile uses a lighter blur plus ink-toned scrim
+  while the opaque navigation panel is open. The site header and navigation
+  surfaces remain sharp because each focus layer sits below the header in the
+  stacking order.
 */
 
 @media (min-width: 901px) {
@@ -54,10 +54,14 @@
     content: "";
     opacity: 0;
     pointer-events: none;
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
     transition:
       visibility 0s linear 220ms,
       opacity 180ms ease-in,
-      background-color 180ms ease-in;
+      background-color 180ms ease-in,
+      -webkit-backdrop-filter 220ms ease-in,
+      backdrop-filter 220ms ease-in;
   }
 
   body.nav-mobile-menu-focus::before {
@@ -65,10 +69,14 @@
     background: rgb(19 36 50 / 8%);
     opacity: 1;
     pointer-events: auto;
+    -webkit-backdrop-filter: blur(1.5px);
+    backdrop-filter: blur(1.5px);
     transition:
       visibility 0s linear 0s,
       opacity 220ms ease-out,
-      background-color 220ms ease-out;
+      background-color 220ms ease-out,
+      -webkit-backdrop-filter 230ms ease-out,
+      backdrop-filter 230ms ease-out;
   }
 }
 
@@ -76,6 +84,12 @@
   @media (min-width: 901px) {
     body.nav-disclosure-focus::before {
       background: rgb(243 240 232 / 30%);
+    }
+  }
+
+  @media (max-width: 900px) {
+    body.nav-mobile-menu-focus::before {
+      background: rgb(19 36 50 / 11%);
     }
   }
 }
