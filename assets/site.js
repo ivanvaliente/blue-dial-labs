@@ -215,6 +215,10 @@
       navShell.classList.toggle('nav-open', isOpen);
       menuToggle.setAttribute('aria-expanded', String(isOpen));
       menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      document.body.classList.toggle(
+        'nav-mobile-menu-focus',
+        isOpen && window.matchMedia('(max-width: 900px)').matches,
+      );
       if (!isOpen) closeSubmenus();
     };
 

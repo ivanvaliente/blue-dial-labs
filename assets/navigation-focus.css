@@ -1,10 +1,11 @@
 /*
-  Blue Dial Labs — Desktop navigation focus treatment
+  Blue Dial Labs — Navigation focus treatment
 
-  When a desktop disclosure tray is open, de-emphasize the page beneath it
-  with a restrained blur and paper-toned scrim. The header and tray remain
-  sharp because the focus layer sits below the site header in the stacking
-  order. Mobile navigation is intentionally unchanged.
+  Desktop disclosure trays de-emphasize the page beneath them with a restrained
+  blur and paper-toned scrim. Mobile uses a lighter scrim-only treatment while
+  the opaque navigation panel is open. The site header and navigation surfaces
+  remain sharp because each focus layer sits below the header in the stacking
+  order.
 */
 
 @media (min-width: 901px) {
@@ -43,6 +44,34 @@
   }
 }
 
+@media (max-width: 900px) {
+  body::before {
+    position: fixed;
+    z-index: 29;
+    inset: 0;
+    visibility: hidden;
+    background: rgb(19 36 50 / 0%);
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      visibility 0s linear 220ms,
+      opacity 180ms ease-in,
+      background-color 180ms ease-in;
+  }
+
+  body.nav-mobile-menu-focus::before {
+    visibility: visible;
+    background: rgb(19 36 50 / 8%);
+    opacity: 1;
+    pointer-events: auto;
+    transition:
+      visibility 0s linear 0s,
+      opacity 220ms ease-out,
+      background-color 220ms ease-out;
+  }
+}
+
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   @media (min-width: 901px) {
     body.nav-disclosure-focus::before {
@@ -54,6 +83,13 @@
 @media (prefers-reduced-motion: reduce) and (min-width: 901px) {
   body::before,
   body.nav-disclosure-focus::before {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 900px) {
+  body::before,
+  body.nav-mobile-menu-focus::before {
     transition: none;
   }
 }
