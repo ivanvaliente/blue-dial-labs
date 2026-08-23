@@ -12,9 +12,10 @@
   site-wide Blue Dial Labs corporate masthead. The editorial-refinement layer
   adds the reversible desktop experiment; editorial-mobile translates the same
   visual principles to the existing stacked mobile layout. Product presentation
-  then adds a small final layer for shared mark prominence and mobile portfolio
-  card spacing. Each refinement remains independently reversible by removing its
-  corresponding import.
+  then adds shared mark prominence and mobile portfolio-card spacing; the mobile
+  menu layer owns the polished panel and motion behavior; navigation disclosure
+  progressively adds desktop trays and mobile sub-accordions. Each refinement
+  remains independently reversible by removing its corresponding import.
 */
 @import url("./site-polish-base.css");
 @import url("./brand-v1.css");
@@ -25,6 +26,7 @@
 @import url("./editorial-mobile.css");
 @import url("./product-presentation-refinement.css");
 @import url("./mobile-menu-overlay.css");
+@import url("./navigation-disclosure.css");
 
 /* Keep the How It Works preference legend inside its bordered control card. */
 .demo-page .demo-preference-control legend {
