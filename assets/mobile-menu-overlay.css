@@ -16,9 +16,11 @@
     isolation: isolate;
   }
 
+  /* Keep the icon button's full touch target without drawing a box around it. */
+  .menu-toggle,
   .nav-shell.nav-open .menu-toggle {
-    border-color: var(--ink);
-    background: var(--paper-light);
+    border: 0;
+    background: transparent;
   }
 
   /*
