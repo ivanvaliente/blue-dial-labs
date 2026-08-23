@@ -14,7 +14,8 @@
   visual principles to the existing stacked mobile layout. Product presentation
   then adds shared mark prominence and mobile portfolio-card spacing; the mobile
   menu layer owns the polished panel and motion behavior; navigation disclosure
-  progressively adds desktop trays and mobile sub-accordions. Each refinement
+  progressively adds desktop trays and mobile sub-accordions; desktop-density
+  then tightens only the widest paired editorial compositions. Each refinement
   remains independently reversible by removing its corresponding import.
 */
 @import url("./site-polish-base.css");
@@ -27,6 +28,7 @@
 @import url("./product-presentation-refinement.css");
 @import url("./mobile-menu-overlay.css");
 @import url("./navigation-disclosure.css");
+@import url("./desktop-density-refinement.css");
 
 /* Keep the How It Works preference legend inside its bordered control card. */
 .demo-page .demo-preference-control legend {
