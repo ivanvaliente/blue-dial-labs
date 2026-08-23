@@ -183,9 +183,18 @@
       navGroups.push({ group, toggle });
     });
 
+    const syncDisclosureFocusState = () => {
+      const hasOpenDesktopSubmenu =
+        window.matchMedia('(min-width: 901px)').matches &&
+        navGroups.some((navGroup) => navGroup.toggle.getAttribute('aria-expanded') === 'true');
+
+      document.body.classList.toggle('nav-disclosure-focus', hasOpenDesktopSubmenu);
+    };
+
     const setSubmenuState = (navGroup, isOpen) => {
       navGroup.group.classList.toggle('is-open', isOpen);
       navGroup.toggle.setAttribute('aria-expanded', String(isOpen));
+      syncDisclosureFocusState();
     };
 
     const closeSubmenus = (except = null) => {
