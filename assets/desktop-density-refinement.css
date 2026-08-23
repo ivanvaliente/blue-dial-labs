@@ -1,0 +1,41 @@
+/*
+  Blue Dial Labs — Wide Desktop Density Refinement
+
+  The editorial system intentionally uses asymmetric paired compositions, but
+  on wide desktop viewports the combination of a dominant left grid track,
+  narrow copy track, and 9–10rem gap leaves a middle zone that can read as
+  unused space. This layer keeps the asymmetry while bringing related content
+  closer together.
+
+  Scope is intentionally >= 1100px so tablet and mobile compositions remain
+  unchanged. Rollback: remove the single import from site-polish.css.
+*/
+
+@media (min-width: 1100px) {
+  /*
+    Interior heroes: retain a dominant display column, but give the supporting
+    introduction enough width to move left and read as part of one composition.
+  */
+  .page-hero {
+    grid-template-columns: minmax(0, 1.02fr) minmax(22rem, 0.65fr);
+    gap: clamp(3.5rem, 4.5vw, 5rem);
+  }
+
+  .page-hero h1 {
+    max-width: 13ch;
+  }
+
+  /*
+    Paired section introductions: reduce the oversized editorial gutter and
+    let the heading occupy slightly more of its track. This preserves visible
+    negative space without creating an empty middle column effect.
+  */
+  .split-heading {
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.68fr);
+    gap: clamp(3.5rem, 4.5vw, 5rem);
+  }
+
+  .split-heading h2 {
+    max-width: 16.5ch;
+  }
+}
