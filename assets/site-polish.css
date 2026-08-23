@@ -58,6 +58,31 @@
   content: "";
 }
 
+/* Keep desktop product submenu cards aligned with the overview card. */
+@media (min-width: 901px) {
+  .nav-submenu-products .nav-product-link {
+    grid-template-areas:
+      "mark title"
+      "mark description";
+    grid-template-rows: auto auto;
+    align-content: start;
+  }
+
+  .nav-submenu-products .nav-product-link .nav-product-mark {
+    grid-area: mark;
+  }
+
+  .nav-submenu-products .nav-product-link .nav-submenu-link-title {
+    grid-area: title;
+    align-self: start;
+  }
+
+  .nav-submenu-products .nav-product-link .nav-submenu-link-description {
+    grid-area: description;
+    align-self: start;
+  }
+}
+
 /*
   Desktop editorial alignment.
 
