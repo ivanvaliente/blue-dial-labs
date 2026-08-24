@@ -1,4 +1,4 @@
-# Blue Dial Labs Visual Precision Refinement v0.2
+# Blue Dial Labs Visual Precision Refinement v0.3
 
 ## Status
 
@@ -6,7 +6,9 @@ Implemented as a focused website refinement on top of Blue Dial Labs Visual Iden
 
 This is not a replacement brand system or a broad website redesign. The established typography stack, warm editorial paper surface, navy/blue identity, navigation, information architecture, and mobile behavior remain intact.
 
-v0.2 refines the homepage treatment after live visual review of v0.1. The original hero Reference Instrument communicated the architecture correctly but rendered too much like an internal diagnostic/application panel: too many borders, controls, monospace labels, and competing hierarchy. The lighter Reference Trace keeps the product story while removing most interface chrome.
+v0.2 refined the homepage treatment after live visual review of v0.1. The original hero Reference Instrument communicated the architecture correctly but rendered too much like an internal diagnostic/application panel: too many borders, controls, monospace labels, and competing hierarchy. The lighter Reference Trace keeps the product story while removing most interface chrome.
+
+v0.3 preserves that lighter treatment while improving first-view hierarchy. The Reference Trace receives a faint instrument-field boundary and slightly stronger canonical emphasis so it separates from the surrounding page grid without returning to a conventional bordered SaaS card. The homepage CTA pair is also made deliberately asymmetric: `Explore products` remains the button-level primary action, while `How we build trust` becomes a lighter supporting text action.
 
 ## Objective
 
@@ -49,6 +51,24 @@ The trace shows:
 The canonical example uses Rolex reference `124060`, already represented in the current WristAtlas guided-resolution material. The synthetic source wording includes an intentionally ambiguous `124O60` fragment to demonstrate why source evidence and canonical identity should remain distinct. The result does not assert a variant.
 
 The example is explicitly labeled synthetic and illustrative so it does not imply live product coverage, a production recommendation, or a broader catalog claim.
+
+### v0.3 hierarchy refinement
+
+The Reference Trace remains an open editorial composition rather than becoming a UI card. Its stronger definition comes from:
+
+- a very low-contrast top/bottom boundary and translucent paper field rather than a full heavy container;
+- modestly stronger source-evidence and resolution-axis contrast;
+- a more visible canonical-resolution rule; and
+- slightly stronger size, weight, and navy emphasis on the canonical `124060` result.
+
+This refinement is intended to make the trace read as a deliberate precision-instrument inset while preserving the surrounding grid and avoiding shadows, floating panels, or dashboard chrome.
+
+The hero action hierarchy is intentionally asymmetric:
+
+- `Explore products` remains the solid primary CTA; and
+- `How we build trust` is presented as a lighter text-level supporting action rather than a competing outlined button.
+
+The hero positioning copy and audience scope remain unchanged.
 
 ### Why the v0.1 hero was replaced
 
