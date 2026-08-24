@@ -2,7 +2,7 @@
 
 ## Status
 
-Implemented as a focused website refinement on top of Blue Dial Labs Visual Identity v1.2.
+Implemented as a focused website refinement on top of Blue Dial Labs Visual Identity v2.0.
 
 This is not a replacement brand system or a broad website redesign. The established typography stack, warm editorial paper surface, navy/blue identity, navigation, information architecture, and mobile behavior remain intact.
 
