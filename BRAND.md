@@ -99,10 +99,12 @@ Changing the broader typography system remains intentionally excluded.
 
 ## Site integration
 
-`assets/site-polish.css` remains the public stylesheet entry point. It imports:
+`assets/site-polish.css` remains the public shared stylesheet entry point. After the 2026 CSS stabilization pass it imports only:
 
-1. `assets/site-polish-base.css` — the pre-refactor polish layer preserved verbatim; and
-2. `assets/brand-v1.css` — the current Blue Dial Labs identity layer, now at visual-system revision v2.0.
+1. `assets/site-polish-base.css` — the established structural/polish layer retained without visual changes; and
+2. `assets/site-refinements.css` — the accepted brand, above-fold, visual-precision, product-identity, editorial, navigation, alignment, and homepage Reference Trace refinements in their deployed cascade order.
+
+The prior one-file-per-refinement CSS layers remain available through Git history but are no longer production assets. Specialized demo and WristAtlas experience styles remain page-specific rather than being folded into the corporate shared layer.
 
 Primary identity assets are:
 
@@ -111,7 +113,7 @@ Primary identity assets are:
 - `favicon.svg` — favicon treatment generated from the clean micro geometry; and
 - `favicon.ico` — browser fallback generated from the same micro geometry.
 
-This isolates brand changes from layout behavior and makes refinements easy to review or revert.
+This keeps the stable corporate cascade easy to reason about while preserving specialized page styling and the full design evolution in documentation and Git history.
 
 ## Explicitly out of scope
 
