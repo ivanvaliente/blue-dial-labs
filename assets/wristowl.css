@@ -1,0 +1,253 @@
+/*
+  WristOwl product-page narrative refinements.
+
+  Keep these styles page-specific so the collector acquisition story can evolve
+  without changing shared corporate-site or WristAtlas presentation.
+*/
+
+.wristowl-friction-section {
+  padding-bottom: clamp(4.5rem, 8vw, 7rem);
+}
+
+.wristowl-friction-heading {
+  max-width: 48rem;
+  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+}
+
+.wristowl-friction-heading h2 {
+  max-width: 15ch;
+}
+
+.wristowl-friction-intro {
+  max-width: 44rem;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+.wristowl-friction-flow {
+  max-width: 72rem;
+  margin: 0;
+  padding: clamp(1.7rem, 3vw, 2.4rem) 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(1.45rem, 2.45vw, 2.2rem);
+  letter-spacing: -0.025em;
+  line-height: 1.45;
+}
+
+.wristowl-friction-flow span {
+  color: var(--brand-blue-dark);
+  font-family: var(--sans);
+  font-size: 0.72em;
+  padding-inline: 0.18em;
+}
+
+.wristowl-friction-closer {
+  max-width: 44rem;
+  margin-top: clamp(1.6rem, 3vw, 2.25rem);
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.wristowl-shift-section {
+  padding-block: clamp(5rem, 9vw, 8rem);
+}
+
+.wristowl-shift-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.65fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: end;
+  margin-bottom: clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.wristowl-shift-heading h2 {
+  max-width: 15ch;
+}
+
+.wristowl-shift-heading > p {
+  max-width: 31rem;
+  color: var(--ink-soft);
+  line-height: 1.72;
+}
+
+.wristowl-shift-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-top: 1px solid var(--ink);
+}
+
+.wristowl-shift-table th,
+.wristowl-shift-table td {
+  width: 50%;
+  padding: 1.25rem 1.25rem 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+}
+
+.wristowl-shift-table th {
+  color: var(--signal-dark);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.wristowl-shift-table td:first-child {
+  color: var(--ink-soft);
+}
+
+.wristowl-shift-table td:last-child {
+  position: relative;
+  padding-left: clamp(1.25rem, 3vw, 2.5rem);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.wristowl-shift-table td:last-child::before {
+  position: absolute;
+  left: 0;
+  color: var(--signal-dark);
+  content: "→";
+  font-weight: 500;
+}
+
+.wristowl-shift-thesis {
+  max-width: 36ch;
+  margin: clamp(2.5rem, 5vw, 4.25rem) 0 0;
+  font-family: var(--display);
+  font-size: clamp(1.85rem, 3.3vw, 3rem);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.wristowl-shift-thesis strong {
+  color: var(--signal-dark);
+  font-weight: 500;
+}
+
+.wristowl-manifesto {
+  border-top: 1px solid var(--line);
+  background: var(--paper-deep);
+}
+
+.wristowl-manifesto-inner {
+  padding-block: clamp(5rem, 9vw, 8rem);
+}
+
+.wristowl-manifesto h2 {
+  max-width: 19ch;
+  margin-bottom: 1.75rem;
+  font-size: clamp(2.75rem, 5.4vw, 5.25rem);
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+.wristowl-manifesto-copy {
+  max-width: 43rem;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+@media (min-width: 901px) {
+  .wristowl-friction-section {
+    padding-top: clamp(6.5rem, 9vw, 8.5rem);
+  }
+}
+
+@media (max-width: 800px) {
+  .wristowl-friction-section,
+  .wristowl-shift-section,
+  .wristowl-manifesto-inner {
+    padding-block: 4.75rem;
+  }
+
+  .wristowl-shift-heading {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .wristowl-friction-section,
+  .wristowl-shift-section,
+  .wristowl-manifesto-inner {
+    padding-block: 4.25rem;
+  }
+
+  .wristowl-friction-flow {
+    font-size: clamp(1.35rem, 6.2vw, 1.8rem);
+    line-height: 1.5;
+  }
+
+  .wristowl-shift-table,
+  .wristowl-shift-table tbody,
+  .wristowl-shift-table tr,
+  .wristowl-shift-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .wristowl-shift-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .wristowl-shift-table tr {
+    padding-block: 1.35rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .wristowl-shift-table td {
+    padding: 0;
+    border: 0;
+  }
+
+  .wristowl-shift-table td::before {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--signal-dark);
+    content: attr(data-label);
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .wristowl-shift-table td:last-child {
+    margin-top: 0.85rem;
+    padding-left: 0;
+  }
+
+  .wristowl-shift-table td:last-child::before {
+    position: static;
+    content: attr(data-label);
+    font-weight: 700;
+  }
+
+  .wristowl-shift-thesis {
+    margin-top: 2.5rem;
+    font-size: clamp(1.75rem, 8vw, 2.35rem);
+  }
+
+  .wristowl-manifesto h2 {
+    font-size: clamp(2.55rem, 12vw, 3.6rem);
+  }
+}
