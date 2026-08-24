@@ -14,6 +14,32 @@
   margin: 0;
   padding: clamp(1rem, 2vw, 1.5rem) clamp(0.5rem, 2vw, 1.25rem);
   overflow: hidden;
+  border-top: 1px solid rgb(16 44 63 / 12%);
+  border-bottom: 1px solid rgb(16 44 63 / 12%);
+  background: linear-gradient(110deg, rgb(251 250 246 / 16%), rgb(251 250 246 / 58%) 60%, rgb(251 250 246 / 28%));
+}
+
+.hero-home .button-row {
+  align-items: center;
+  gap: clamp(0.9rem, 2vw, 1.25rem);
+}
+
+.hero-secondary-link {
+  min-height: 3.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 0.25rem;
+  color: var(--brand-blue-dark);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-secondary-link:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: rgb(31 85 119 / 55%);
 }
 
 .hero-reference-trace::before {
@@ -89,12 +115,12 @@
 
 .trace-fragment:nth-child(3) {
   margin-left: clamp(1rem, 5vw, 3.6rem);
-  color: rgb(19 36 50 / 62%);
+  color: rgb(19 36 50 / 70%);
 }
 
 .trace-fragment:nth-child(4) {
   margin-left: clamp(0.35rem, 2.5vw, 1.5rem);
-  color: rgb(19 36 50 / 48%);
+  color: rgb(19 36 50 / 56%);
 }
 
 .trace-fragment-uncertain {
@@ -116,7 +142,7 @@
   right: 0;
   left: 0;
   height: 1px;
-  background: linear-gradient(to right, rgb(45 111 152 / 10%), rgb(45 111 152 / 58%) 62%, rgb(45 111 152 / 16%));
+  background: linear-gradient(to right, rgb(45 111 152 / 14%), rgb(45 111 152 / 68%) 62%, rgb(45 111 152 / 22%));
   content: "";
 }
 
@@ -139,7 +165,7 @@
   right: 24%;
   width: 1px;
   height: 2.5rem;
-  background: rgb(45 111 152 / 18%);
+  background: rgb(45 111 152 / 22%);
 }
 
 .trace-resolution {
@@ -147,7 +173,7 @@
   width: min(88%, 26rem);
   margin-left: auto;
   padding: 0.2rem 0 1.4rem clamp(1rem, 3vw, 2rem);
-  border-left: 1px solid rgb(45 111 152 / 32%);
+  border-left: 1px solid rgb(45 111 152 / 46%);
 }
 
 .trace-resolution-label {
@@ -156,10 +182,10 @@
 
 .trace-reference {
   margin: 0.38rem 0 0;
-  color: var(--ink);
+  color: var(--brand-navy);
   font-family: var(--display);
-  font-size: clamp(2.75rem, 5vw, 4.4rem);
-  font-weight: 500;
+  font-size: clamp(2.85rem, 5.2vw, 4.55rem);
+  font-weight: 560;
   letter-spacing: -0.055em;
   line-height: 0.95;
 }
@@ -184,7 +210,7 @@
   width: min(78%, 22rem);
   margin: 0.25rem 0 0 auto;
   padding-top: 1rem;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgb(19 36 50 / 20%);
 }
 
 .trace-decision-label {
